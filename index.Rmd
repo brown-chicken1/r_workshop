@@ -1,10 +1,10 @@
- ---
+---
 title: "Test Website"
 description: |
   Welcome to the website. I hope you enjoy it!
 site: distill::distill_website
- ---
-sdlsd;fmsldf
+---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
