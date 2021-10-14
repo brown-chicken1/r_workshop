@@ -12,7 +12,7 @@ navbar:
     - text: "Report of Survey"
       href: survey.html
     - text: "Site Selection Report"
-      href: site.html
+      href: siteselection.html
   right:
     - text: "Home"
       href: index.html
