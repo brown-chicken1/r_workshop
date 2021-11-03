@@ -1,7 +1,13 @@
 ---
-title: "Test Website"
+title: "Overview of Project"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  This website comprises an overview of how we wish to tackle the issue of site selection and analysis of a suitable site for the new Jakarta capital city.
+  
+  The project requirements are as listed follows:
+  
+  1) To first 
+  
+  ## Testing
 site: distill::distill_website
 ---
 
