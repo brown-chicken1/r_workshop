@@ -1,0 +1,21 @@
+---
+title: "Overview of Project"
+description: |
+  This website comprises an overview of how we wish to tackle the issue of site selection and analysis of a suitable site for the new Jakarta capital city.
+  
+  The project requirements are as listed follows:
+  
+  1) To first testing 
+  
+  ## Testing
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+

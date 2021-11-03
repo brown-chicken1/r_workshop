@@ -1,0 +1,21 @@
+name: "testing"
+title: "Test Website"
+description: |
+  Test Website
+output_dir: "_site"
+navbar:
+  left:
+    - text: "Overview"
+      href: overview.html
+    - text: "Data Preparation"
+      href: dataprep.html
+    - text: "Report of Survey"
+      href: survey.html
+    - text: "Site Selection Report"
+      href: siteselection.html
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
