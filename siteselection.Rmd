@@ -17,27 +17,83 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Heading 1
 
-This is a placeholder for site selection
 
 ## Creating Proximity Maps
 
-### Importing Necessary Data
+### Importing Necessary Data and Merging Geographies
 
 1. We need to ensure that the data which we are utilising, is in a raster format, and we need to clip out unnecessary points.
 
-*For all layers:*
-
 2. For the selected layer, go to Vector > Geoprocessing > Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.
 
-```{r layout}
+
+![hi](images/Picture2.png){fig.width = 50px}
+
+3. Since this has to be repeated for all the 4 regencies, we repeat step 2 for all the same type of amenity (airport / bus terminal / road etc). 
+
+4. After that, we would combine all 4 clipped layers together to create a single layer, for ease of analysis. First, we have to remove any duplicate points by scanning the map. Where a point or a polygon is duplicated, we use the select tool to click on the point concerned, and then remove the point by using the Delete tool. 
 
 
-knitr::include_graphics("_site/images/Picture1.png")
+
+![hi](images/Picture4.png){fig.width = 50px}
+
+5. It would be good practice to rename the layers, as they would all carry the same name even though they are at different regency. For example, in preparing the proximity map for the airport, the layer names **Balikpapan Airport Raster, Kartanegara Airport Raster and PPU Airport Raster layer** were used. If we are interested in only a subset (a specific category) of points/polygons then move on to step 4a, to filter out those points which are not needed.
 
 
-```
+
+5aa. If we are interested in only a *subset/ specific category* of data within the entire point layer, then we need to remove the rows which we are not concerned about. For example, for the layer TOPONIMI_PT_50k, we are interested only in the banks "Kantor Bank". Therefore we right click on the layer > Open Attribute Table and then we toggle the editing by clicking the pencil icon near the top of the window. Following that, we sort the table by "Remark" by clicking on it, and then selecting all the rows with attribute Remark = "Kantor Bank". 
 
 
+![hi](images/Picture11.png){fig.width = 50px}
 
-![hi](images/Picture1.png){fig.width="50px"}
 
+5ab. Following that, we create another temporary layer by closing the attribute table, pressing CTRL+C to copy the selection, then going to Edit > Paste Selected Features > Temporary scratch Layer to paste it in a temporary layer. After this is done, move to step 6
+
+![hi](images/Picture12.png){fig.width = 50px}
+5ba. When dealing with line data, such as in the case of the road layer, there are some roads which may be disjointed or incomplete. To fix this, follow the section below "Data processing with line data".
+
+6. We go to the Vector > Merge Vector Layers and then select the layers which we intend to merge in the resulting layer. For example, for airports, I selected **Balikpapan Airport Raster, Kartanegara Airport Raster and PPU Airport Raster layer** then click “OK” after that to merge.
+
+
+![hi](images/Picture3.png)
+
+6a. NB: Step 6 can only be done if all the data is of the same type (polygon vs polygon, line vs line). If the data is of a *different type*, for example, polygon and point, a buffer would have to be created on the point dataset. This happens when creating the airport layer, because certain airports are represented only in the polygon layer and certain other airports are represented only in the point layer.
+
+6b. To do this, we first have to save the polygon layer and point layer with the correct projected coordinate system. SO for each layer we right click > Save selected Features as, and save as a byGeoPackage layer. Be sure to change the CRS to **EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)** and always save as layers to the same GeoPackage file. We also would need to change the datatype to Polygon and Point from PolygonZ and PointZ respectively, by opening the "Geometry" drop-down and make sure the data type is set either to Polygon and Point and the "Include Z Dimension" is not checked.
+
+6c. Now, click on the newly saved GeoPackage layer containing the point data. Go to Vector > Geoprocessing Tool > Buffer. In the resultant window, make a buffer of 100m x 100m by changing the distance to 100m and the units to meters, and make the resultant buffer square by changing the segments to 2. 
+
+![hi](images/Picture7.png)
+
+6d. The resulting temporary layer would be in a Polygon format. Now, we will get all data to be in polygons and we can save the data in step 5 to merge and continue on with step 6 to save.
+
+7. Save the merged vector dataset in a GeoPackage layer, with CRS as **EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)** and ensure that the Geometry data type is set to "Polygon" and the Include Z dimension is not checked.
+
+#### Data Processing with Line Data
+
+(Put in a new page?)
+
+1. In the raw data gis_osm_roads_free_1.shp 
+
+
+### Rastering Merged Vector Layers
+
+7. We need to add in burn-in values. To do that, right-click on the newly created vector layer and go to "Open Attribute Table". When the attribute table opens, toggle editing by pressing pencil icon on the top of window and then go to the button which is called "Open Field Calculator".
+
+8. In the resultant window set the field name to POI_CODE, the data type to "Integer" and enter in the field calculator "1". Then create the new field.
+
+![hi](images/Picture6.png)
+
+9. Following which, go to the **Processing Toolbox** on the right hand side of the window and click on "Rasterize (vector to raster" after typing in "Rasterize" into the searchbar.
+
+![hi](images/Picture5.png)
+8. In the resultant window make the following changes. The input layer should be the vector (be it polyline, polygon or point) layer that has the location of the desired amenities for the entire study area (therefore merged using the previous steps), in this case "AllBanks_Vector" for the banks. The field to use should be POI_CODE and the raster size units  should be "Georeferenced Units", while the resolution should be 100 for both vertical and horizontal. The output extent should be the polygonal layer for the study area, in this case "Final_Shape". 
+
+9. Click "Run" to run and make sure that the layer has been rasterised. Zoom in to the areas which are marked as points in the input vector layer (e.g AllBanks_Vector) and verify that the raster layer has been added correctly - there should be a small black square.
+
+![hi](images/Picture10.png)
+10. Repeat all the previous steps for all layers of interest in the investigation:
+
+* Airports - AIRPORT_LN_50K and AIRPORT_PT_50k (both line and polygon)
+* Banks - TOPONIMI_PT_50k (need to filter out all those Remarks != Kantor Bank rows)
+* Roads - gis_osm_road

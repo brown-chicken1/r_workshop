@@ -2100,22 +2100,67 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
 <h1 id="heading-1">Heading 1</h1>
-<p>This is a placeholder for site selection</p>
 <h2 id="creating-proximity-maps">Creating Proximity Maps</h2>
-<h3 id="importing-necessary-data">Importing Necessary Data</h3>
+<h3 id="importing-necessary-data-and-merging-geographies">Importing Necessary Data and Merging Geographies</h3>
 <ol type="1">
-<li>We need to ensure that the data which we are utilising, is in a raster format, and we need to clip out unnecessary points.</li>
+<li><p>We need to ensure that the data which we are utilising, is in a raster format, and we need to clip out unnecessary points.</p></li>
+<li><p>For the selected layer, go to Vector &gt; Geoprocessing &gt; Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.</p></li>
 </ol>
-<p><em>For all layers:</em></p>
-<ol start="2" type="1">
-<li>For the selected layer, go to Vector &gt; Geoprocessing &gt; Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.</li>
+<p><img src="images/Picture2.png" alt="hi" />{fig.width = 50px}</p>
+<ol start="3" type="1">
+<li><p>Since this has to be repeated for all the 4 regencies, we repeat step 2 for all the same type of amenity (airport / bus terminal / road etc).</p></li>
+<li><p>After that, we would combine all 4 clipped layers together to create a single layer, for ease of analysis. First, we have to remove any duplicate points by scanning the map. Where a point or a polygon is duplicated, we use the select tool to click on the point concerned, and then remove the point by using the Delete tool.</p></li>
 </ol>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="_site/images/Picture1.png" width="92" /></p>
-</div>
+<p><img src="images/Picture4.png" alt="hi" />{fig.width = 50px}</p>
+<ol start="5" type="1">
+<li>It would be good practice to rename the layers, as they would all carry the same name even though they are at different regency. For example, in preparing the proximity map for the airport, the layer names <strong>Balikpapan Airport Raster, Kartanegara Airport Raster and PPU Airport Raster layer</strong> were used. If we are interested in only a subset (a specific category) of points/polygons then move on to step 4a, to filter out those points which are not needed.</li>
+</ol>
+<p>5aa. If we are interested in only a <em>subset/ specific category</em> of data within the entire point layer, then we need to remove the rows which we are not concerned about. For example, for the layer TOPONIMI_PT_50k, we are interested only in the banks “Kantor Bank”. Therefore we right click on the layer &gt; Open Attribute Table and then we toggle the editing by clicking the pencil icon near the top of the window. Following that, we sort the table by “Remark” by clicking on it, and then selecting all the rows with attribute Remark = “Kantor Bank”.</p>
+<p><img src="images/Picture11.png" alt="hi" />{fig.width = 50px}</p>
+<p>5ab. Following that, we create another temporary layer by closing the attribute table, pressing CTRL+C to copy the selection, then going to Edit &gt; Paste Selected Features &gt; Temporary scratch Layer to paste it in a temporary layer. After this is done, move to step 6</p>
+<p><img src="images/Picture12.png" alt="hi" />{fig.width = 50px} 5ba. When dealing with line data, such as in the case of the road layer, there are some roads which may be disjointed or incomplete. To fix this, follow the section below “Data processing with line data”.</p>
+<ol start="6" type="1">
+<li>We go to the Vector &gt; Merge Vector Layers and then select the layers which we intend to merge in the resulting layer. For example, for airports, I selected <strong>Balikpapan Airport Raster, Kartanegara Airport Raster and PPU Airport Raster layer</strong> then click “OK” after that to merge.</li>
+</ol>
 <figure>
-<img src="images/Picture1.png" data-fig.width="50px" alt="" /><figcaption>hi</figcaption>
+<img src="images/Picture3.png" alt="" /><figcaption>hi</figcaption>
 </figure>
+<p>6a. NB: Step 6 can only be done if all the data is of the same type (polygon vs polygon, line vs line). If the data is of a <em>different type</em>, for example, polygon and point, a buffer would have to be created on the point dataset. This happens when creating the airport layer, because certain airports are represented only in the polygon layer and certain other airports are represented only in the point layer.</p>
+<p>6b. To do this, we first have to save the polygon layer and point layer with the correct projected coordinate system. SO for each layer we right click &gt; Save selected Features as, and save as a byGeoPackage layer. Be sure to change the CRS to <strong>EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)</strong> and always save as layers to the same GeoPackage file. We also would need to change the datatype to Polygon and Point from PolygonZ and PointZ respectively, by opening the “Geometry” drop-down and make sure the data type is set either to Polygon and Point and the “Include Z Dimension” is not checked.</p>
+<p>6c. Now, click on the newly saved GeoPackage layer containing the point data. Go to Vector &gt; Geoprocessing Tool &gt; Buffer. In the resultant window, make a buffer of 100m x 100m by changing the distance to 100m and the units to meters, and make the resultant buffer square by changing the segments to 2.</p>
+<figure>
+<img src="images/Picture7.png" alt="" /><figcaption>hi</figcaption>
+</figure>
+<p>6d. The resulting temporary layer would be in a Polygon format. Now, we will get all data to be in polygons and we can save the data in step 5 to merge and continue on with step 6 to save.</p>
+<ol start="7" type="1">
+<li>Save the merged vector dataset in a GeoPackage layer, with CRS as <strong>EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)</strong> and ensure that the Geometry data type is set to “Polygon” and the Include Z dimension is not checked.</li>
+</ol>
+<h4 id="data-processing-with-line-data">Data Processing with Line Data</h4>
+<p>(Put in a new page?)</p>
+<ol type="1">
+<li>In the raw data gis_osm_roads_free_1.shp</li>
+</ol>
+<h3 id="rastering-merged-vector-layers">Rastering Merged Vector Layers</h3>
+<ol start="7" type="1">
+<li><p>We need to add in burn-in values. To do that, right-click on the newly created vector layer and go to “Open Attribute Table”. When the attribute table opens, toggle editing by pressing pencil icon on the top of window and then go to the button which is called “Open Field Calculator”.</p></li>
+<li><p>In the resultant window set the field name to POI_CODE, the data type to “Integer” and enter in the field calculator “1”. Then create the new field.</p></li>
+</ol>
+<figure>
+<img src="images/Picture6.png" alt="" /><figcaption>hi</figcaption>
+</figure>
+<ol start="9" type="1">
+<li>Following which, go to the <strong>Processing Toolbox</strong> on the right hand side of the window and click on “Rasterize (vector to raster” after typing in “Rasterize” into the searchbar.</li>
+</ol>
+<p><img src="images/Picture5.png" alt="hi" /> 8. In the resultant window make the following changes. The input layer should be the vector (be it polyline, polygon or point) layer that has the location of the desired amenities for the entire study area (therefore merged using the previous steps), in this case “AllBanks_Vector” for the banks. The field to use should be POI_CODE and the raster size units should be “Georeferenced Units”, while the resolution should be 100 for both vertical and horizontal. The output extent should be the polygonal layer for the study area, in this case “Final_Shape”.</p>
+<ol start="9" type="1">
+<li>Click “Run” to run and make sure that the layer has been rasterised. Zoom in to the areas which are marked as points in the input vector layer (e.g AllBanks_Vector) and verify that the raster layer has been added correctly - there should be a small black square.</li>
+</ol>
+<p><img src="images/Picture10.png" alt="hi" /> 10. Repeat all the previous steps for all layers of interest in the investigation:</p>
+<ul>
+<li>Airports - AIRPORT_LN_50K and AIRPORT_PT_50k (both line and polygon)</li>
+<li>Banks - TOPONIMI_PT_50k (need to filter out all those Remarks != Kantor Bank rows)</li>
+<li>Roads - gis_osm_road</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
