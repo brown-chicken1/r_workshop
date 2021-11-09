@@ -29,6 +29,15 @@ This is a placeholder for site selection
 
 2. For the selected layer, go to Vector > Geoprocessing > Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.
 
+```{r layout}
 
-![hi](images/Picture1.png){width="50px"}
+
+knitr::include_graphics("_site/images/Picture1.png")
+
+
+```
+
+
+
+![hi](images/Picture1.png){fig.width="50px"}
 

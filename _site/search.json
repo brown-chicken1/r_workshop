@@ -41,8 +41,8 @@
         }
       ],
       "date": "`r Sys.Date()`",
-      "contents": "\r\nHeading 1\r\nThis is a placeholder for site selection\r\nCreating Proximity Maps\r\nImporting Necessary Data\r\nWe need to ensure that the data which we are utilising, is in a raster format, and we need to clip out unnecessary points.\r\nFor all layers:\r\nFor the selected layer, go to Vector > Geoprocessing > Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.\r\nhi\r\n\r\n\r\n",
-      "last_modified": "2021-11-10T01:49:08+08:00"
+      "contents": "\r\nHeading 1\r\nThis is a placeholder for site selection\r\nCreating Proximity Maps\r\nImporting Necessary Data\r\nWe need to ensure that the data which we are utilising, is in a raster format, and we need to clip out unnecessary points.\r\nFor all layers:\r\nFor the selected layer, go to Vector > Geoprocessing > Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.\r\n\r\n\r\n\r\nhi\r\n\r\n\r\n",
+      "last_modified": "2021-11-10T01:57:56+08:00"
     }
   ],
   "collections": []
