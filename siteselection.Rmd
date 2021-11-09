@@ -19,10 +19,16 @@ knitr::opts_chunk$set(echo = FALSE)
 
 This is a placeholder for site selection
 
-## Heading 2
+## Creating Proximity Maps
 
-This is a smaller heading
+### Importing Necessary Data
+
+1. We need to ensure that the data which we are utilising, is in a raster format, and we need to clip out unnecessary points.
+
+*For all layers:*
+
+2. For the selected layer, go to Vector > Geoprocessing > Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.
 
 
-
+![hi](images/Picture1.png){width="50px"}
 

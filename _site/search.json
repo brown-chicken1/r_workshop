@@ -10,16 +10,16 @@
     },
     {
       "path": "index.html",
-      "title": "Test Website",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "title": "Overview of Project",
+      "description": "This website comprises an overview of how we wish to tackle the issue of site selection and analysis of a suitable site for the new Jakarta capital city.\n\nThe project requirements are as listed follows:\n\n1) To first testing \n\n## Testing\n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-10-04T17:16:39+08:00"
+      "last_modified": "2021-11-03T13:27:15+08:00"
     },
     {
       "path": "overview.html",
       "title": "Overview",
-      "description": "A new article created using the Distill formatasdadasdsdasdsadasd.\n",
+      "description": "A new article created using the Distill fotestingrmatasdadasdsdasdsadasd. Testing\n",
       "author": [
         {
           "name": "Nora Jones",
@@ -41,8 +41,8 @@
         }
       ],
       "date": "`r Sys.Date()`",
-      "contents": "\r\nHeading 1\r\nThis is a placeholder for site selection\r\nHeading 2\r\nThis is a smaller heading\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-10-15T00:04:07+08:00"
+      "contents": "\r\nHeading 1\r\nThis is a placeholder for site selection\r\nCreating Proximity Maps\r\nImporting Necessary Data\r\nWe need to ensure that the data which we are utilising, is in a raster format, and we need to clip out unnecessary points.\r\nFor all layers:\r\nFor the selected layer, go to Vector > Geoprocessing > Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.\r\nhi\r\n\r\n\r\n",
+      "last_modified": "2021-11-10T01:47:35+08:00"
     }
   ],
   "collections": []
