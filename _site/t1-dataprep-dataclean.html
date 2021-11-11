@@ -2143,26 +2143,31 @@ Data Preparation
 </ul></li>
 <li>The study area to be used is derived from the population and demographic layer.
 <ul>
-<li>Import the shapefile into Qgis by double clicking on it.</li>
-<li>We need to select the suitable study area since the layer would contain the regencies, districts and sub-districts for the entire province of East Kalimantan. Right click on the layer, open Attribute Table and first we filter by the “KAB_KOTA” column. Open the “Select Fetures using an Expression” field and enter the following: “KAB_KOTA” = ‘KUTAI KARTANEGARA’ or “KAB_KOTA” = ‘KOTA BALIKPAPAN’ or “KAB_KOTA” = ‘PENAJAM PASER UTARA’ or “KAB_KOTA” = ‘KOTA SAMARINDA’.</li>
-<li>In the resultant selected layers, we toggle editing on the layer and then copy the selected areas and paste it as a temporary layer by going to Edit &gt; Paste Features As &gt; Temporary Scractch Layer.</li>
-<li>Repeat the second step, but with the filtering by the specific districts as mentioned in the project brief:
+<li><p>Import the shapefile into Qgis by double clicking on it.</p></li>
+<li><p>We need to select the suitable study area since the layer would contain the regencies, districts and sub-districts for the entire province of East Kalimantan. Right click on the layer, open Attribute Table and first we filter by the “KAB_KOTA” column. Open the “Select Fetures using an Expression” field and enter the following: “KAB_KOTA” = ‘KUTAI KARTANEGARA’ or “KAB_KOTA” = ‘KOTA BALIKPAPAN’ or “KAB_KOTA” = ‘PENAJAM PASER UTARA’ or “KAB_KOTA” = ‘KOTA SAMARINDA’.</p></li>
+<li><p>In the resultant selected layers, we toggle editing on the layer and then copy the selected areas and paste it as a temporary layer by going to Edit &gt; Paste Features As &gt; Temporary Scractch Layer.</p></li>
+<li><p>Repeat the second step, but with the filtering by the specific districts as mentioned in the project brief:</p>
 <ul>
 <li>All sub-districts and district of Kota Balipapan, Kota Samarinda</li>
 <li>Kutai Kartanegara: Anggana, Loa Janan, Loa Kulu, Marang Kayu, Muara Jawa, Samboja, Sanga Sanga, Sebulu Tenaggarong, Tenggarong Seberang and Muara Badak.</li>
 <li>North Penajam Paser (Penajam Paser Utara) Regency: Babulu, Penajam, Sepaku and Waru.</li>
 <li>We can manually select the districts and sub-districts by sorting by the “KECAMATAN” column. We select all the districts and sub-districts that do NOT fall into the ones listed above, and then invert the selection using the invert selection tool.</li>
 </ul></li>
-<li>Following that, we save the selection into a new GeoPackage layer, by closing the attribute table window, right-clicking on the layer which we made the selection on, and click “Save Selected Features As”. If this is the first feature to be included into the GeoPackage file, create a new GeoPackage file, and name the layer “Final Shape”.</li>
-<li>For the following analyses, there are some geometrical errors which we have to be fixed.
+<li><p>Following that, we save the selection into a new GeoPackage layer, by closing the attribute table window, right-clicking on the layer which we made the selection on, and click “Save Selected Features As”. If this is the first feature to be included into the GeoPackage file, create a new GeoPackage file, and name the layer “Final Shape”.</p></li>
+<li><p>For the following analyses, there are some geometrical errors which we have to be fixed.</p>
 <ul>
 <li>To fix this, go to the <strong>Processing &gt; Toolbox</strong> on the right and search for Fixed Geometries.</li>
-</ul></li>
 </ul>
-<img src="images/1DataPrep1.png" alt="Caption" />{fig.width = 50px}
+<p><img src="images/1DataPrep1.png" style="width:40.0%" /></p>
 <ul>
-<li>Select the newly imported layer and press “OK” in the resultant window. <img src="images/1DataPrep2.png" alt="hi" />{fig.width = 50px}</li>
+<li>Select the newly imported layer and press “OK” in the resultant window.</li>
+</ul>
+<figure>
+<img src="images/1DataPrep2.png" style="width:40.0%" alt="" /><figcaption>hi</figcaption>
+</figure>
+<ul>
 <li>Save the resultant layer in a GeoPackage format. Click on the newly created temporary layer, go to Export &gt; Save Features As. In the resultant window, select the format <strong>GeoPackage</strong> and then create a new GeoPAckage file. Name the layer “FinalShape_Fixed geometries”, leave all other features as intended, before saving.</li>
+</ul></li>
 </ul></li>
 </ul>
 <h2 id="clipping-layers-into-study-area">Clipping Layers into Study Area</h2>

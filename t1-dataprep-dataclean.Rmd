@@ -50,9 +50,11 @@ knitr::opts_chunk$set(echo = FALSE)
   + For the following analyses, there are some geometrical errors which we have to be fixed.
     + To fix this, go to the **Processing > Toolbox** on the right and search for Fixed Geometries.
   
-  ![Caption](images/1DataPrep1.png){fig.width = 50px}
+    ![](images/1DataPrep1.png){width=40%}
     + Select the newly imported layer and press "OK" in the resultant window.
-  ![hi](images/1DataPrep2.png){fig.width = 50px}
+    
+    ![hi](images/1DataPrep2.png){width=40%}
+  
     + Save the resultant layer in a GeoPackage format. Click on the newly created temporary layer, go to Export > Save Features As. In the resultant window, select the format **GeoPackage** and then create a new GeoPAckage file. Name the layer "FinalShape_Fixed geometries", leave all other features as intended, before saving.
 
 ## Clipping Layers into Study Area
@@ -111,7 +113,7 @@ The processing of each layer will differ according to their data type. We have s
 
 * We click on the edge of one line and then drag it to the start of the other line, this will join the 2 line segments together to form a complete road.
 
-![hi](images/Picture16.png)
+![hi](images/Picture16.png) 
 
 * Repeat this for all segments that have been found to have missing road segments.
 
