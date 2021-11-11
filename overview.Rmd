@@ -1,7 +1,7 @@
 ---
 title: "Overview"
 description: |
-  A new article created using the Distill fotestingrmatasdadasdsdasdsadasd. Testing
+  A new article created using the Distill for testing.
 author:
   - name: Nora Jones 
     url: https://example.com/norajones
@@ -19,13 +19,52 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## werwerwerwer
+## Motivation 
 
-#### werweruweiruwr
+
+
+## Project objective
+
+As part of the plan, part of Kutai Kartanegara Regency (Kabupaten Kutai Kartanegara) and Penajam North Paser Regency (Kabupaten Penajam Utara) in East Kalimantan will be carved out to create a new province-level planned city, and the capital will be relocated to a more central location within Indonesia. The plan is part of a strategy to reduce developmental inequality between Java and other islands in the Indonesian archipelago and to reduce Jakarta’s burden as Indonesia’s primary hub. President Joko Widodo, known as Jokowi, said the relocation will help spread economic activities outside of the most-populous island of Java and narrow its income gap with the rest of the country.
+
+### Task 1
+
+
+### Task 2
+
+## Data
+Given datasets :
+
+
+Additional dataset : 
+
+
+
+## Scope of work
+
+The project will comprise of, but not limited to the followings steps:
+
+- Selection of project area, this year the project area is provided.
+- Data collection, extraction, integration, transformation and wrangling.
+- Designing and building GIS model and database
+- Preparing report of survey
+- Performing site suitability analysis by integrating GIS and multi-criteria evaluation methods.
+- Preparing site suitability analysis report including detail discussion of the analysing method used.
+- Preparing poster and project webpage.
+
+
+## Project schudule (Gannt chart)
+
+```{r}
+knitr::include_graphics("img/ganntchart.png")
+```
+
 
 moo moo moo
 
 Updated 12.30am
 
 Update again....
+
+moo moo?
 
