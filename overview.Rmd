@@ -35,12 +35,6 @@ As part of the plan, part of Kutai Kartanegara Regency (Kabupaten Kutai Kartaneg
 ## Data
 Given datasets :
 
-+ [Batas Desa & Data Kependudukan Tahun 2019 Seluruh Indonesia](https://www.indonesia-geospasial.com/2020/04/download-shapefile-shp-batas-desa.html).  This data set provides comprehensive population data at the sub-district level.  In Indonesia local language, they are known as **kota** (i.e. urban sub-district) and **desa** (i.e. rural sub-district).  You are required to download data set for Provinsi Kalimantan Timur (i.e. East Kalimantan Province).
-+ [Rupa Bumi Iindonesia (RBI) Provinsi Kalimantan Timur Perwilayah (Kabupaten/Kota)](https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html). The term rupabumi means topographic.  This data repository provides a coprehensive collection of topographical data layers of East Kalimantan. You are required to download data of Kota Balikpapan, Kota Samarinda, Penajam Paser Utara and Kutai Kartanegara.
-+ [DEM SRTM 30m](https://www.indonesia-geospasial.com/2020/01/download-dem-srtm-30-meter-se-indonesia.html), digital elevation model at 30m resolution.
-+ [Geological data](https://www.indonesia-geospasial.com/2020/03/download-data-shapefile-shp-geologi-se.html) layer.
-+ [Forest fire hot spot data](https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html). This repository provides several years of forest hot spots data.
-+ [Buildings and Settlements](https://www.indonesia-geospasial.com/2020/12/download-shp-pemukiman-detail-seluruh.html).
 
 Additional dataset : 
 
