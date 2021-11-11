@@ -117,7 +117,162 @@ The processing of each layer will differ according to their data type. We have s
 
 * Repeat this for all segments that have been found to have missing road segments.
 
+
+#### Preparing Intersection Point Map
 * For the site survey analysis, a plot of road intersection density will be used to measure the road density in a particular area.
 
-* 
+  + First, we need to merge adjacent road segments together in order to prevent the number of intersections from being overstated. We first go to Vector >Geoprocessing > Dissolve, and in the window that opens, select the OSM road layer as the input layer.
+  
+  ![hi](images/1DataPrep5.png)
+  
+  + In the reuslting temporary layer, open the dissolved layer's atribute table, there should only be one row of data.
+  
+  + Following that, we go to the Processing Toolbox on the bottom righthand corner, and search for "Multipart to Singlepart"
+  
+  ![hi](images/1DataPrep6.png)
+  
+  + In the resulting window, just select the newly dissolved layer and click "Run".
+  
+  ![hi](images/1DataPrep7.png)
+  
+
+  + The final layer that is created, would be soon utilised to create an intersection.
+  
+  + We click on that layer, go to the PRocessing Toolbox on the right hand side and search for "Line Intersections". Open the tool and select both the input and intersect layer as the recently created layer from the previous step. 
+  
+   ![hi](images/1DataPrep10.png)
+   
+   ![hi](images/1DataPrep11.png)
+  
+  + We need to first remove any duplicate intersections to clean the layer data a bit further. We will go to the Processing Toolbox at the bottom right hand corner of the page, and then search for "Delete Duplicate Geometries". When the window opens, we use the layer that we had just created in the previous step as the Input layer, and then run.
+  
+  ![hi](images/1DataPrep12.png)
+  
+  + Remove all the previous temporary layers created by right clicking on them and selecting "Delete Selected Layer".
+  
+  + Save the newly created intersection layer by right clicking on the point layer and selecting Save Features As, and in the resultant box that comes up, ensure that the GeoPackage file that the base map layer was selected, is selected under the file name and the layer name is set to "Intersections", and the map CRS is set to EPSG:23845.
+
+### Processing Area (Polygon) Data
+
+* The area data needs to be merged into a single layer for analysis.
+  + We first open up the characteristic of concern, for example, agricultural shrub layer. 
+  
+![hi](images/AreaPrep-1.png)
+
+  + Following that, we need to clip the layers so that they only overlap our area of study. Go to Vector > Geoprocessing Tools > Clip, make sure the newly imported road layer is input as the Input Layer, and the layer to be used as a clip is the FinalShape_Fixed geometries layer (Overlay Layer)that had been prepared.
+    + *NB: If the geometries are invalid it is required to use the "Fix Geometries" tool from the Processing > Toolbox (CTRL+ALT+T) befire moving forward with the analysis.
+
+![Image was used to process road section data but the methodology is the same](images/1DataPrep4.png) 
+
+* The completed, clipper layers should look like this: 
+
+
+![hi](images/AreaPrep-2.png)
+
+* The different areas then need to be combined together. Go to the Processing toolbox on the bottom right hand corner of the page and select "Merge vector layers". 
+
+* In the resulting window, select the desired layers to be merged, for example:
+  
+![hi](images/AreaPrep-3.png)
+* We keep the CRS as it is; we will change the CRS when we export as a GeoPackage.
+  
+* After merging, the layers should appear as this:
+  
+![hi](images/AreaPrep-4.png)
+
+* The layers can now be saved as a GeoPackage. Click on the newly merged layer, go to Export > SavE Features As > and name the layer a good name (for example, MergedShrubs). Make sure GeoPAckage is selected as the format, and the chosen GeoPackage is the one in which the base layers are saved in.
+  
+* Change the "Geometry Type" to 'Polygon" and uncheck the "Include Z-dimension". 
+
+![hi](images/AreaPrep-5.png)
+
+* Repeat this step for all other applicable layers that are in the "Polygon" format.
+
+### Processing Point Data
+
+* The point data needs to be merged into a single layer for analysis.
+  
+* We first open up the characteristic of concern, for example, toponimi layer (TOPONIMI_PT_50k).
+  
+* In some layers, we are only interested in certain attributes. For example, for the Toponimi Layer, we are interested in the "Kantor Banks". Therefore, some filters need to be applied.
+    
+  + We right click on the layer > Open Attribute Table. 
+    
+  + We toggle the editing by clicking the pencil icon near the top of the window. 
+    
+  + Following that, we sort the table by "Remark" by clicking on it, and then selecting all the rows with attribute Remark = "Kantor Bank". 
+  
+    ![hi](images/Picture11.png){fig.width = 50px}
+    
+* We then close the attribute table, and toggle editing on the Toponimi layer (or any other point layer of concern). Following that, we copy the selection, and paste it in a new scratch layer by going to Edit > Paste > Temporary Scratch Layer. It would be good practice to rename the temporary scratch layer for later (for e.g, KK Kantor Bank, PPU Kantor Bank etc)
+    
+* We repeat all steps up till this one, for the same data of interest, for other regencies / cities.
+    
+* Repeat the steps above for the line data, in order to merge the layers:
+
+* First, we select the layers that describe our attribute in question. Go to the Processing Toolbox and search for "Merge Vector Layers", and select the layers which we have just added. For example, if we were working on the toponimi layer we would add in the temporary layers created previously e.g KK Kantor Bank, PPU Kantor Bank, KS Kantor Bank. We leave the CRS as is, and then run the algorithm.
+  
+![hi](images/AreaPrep-6.png)  
+
+* Before saving the layer we need to take care of duplicate points since they might be represented multiple times. Go to the Processing Toolbox and search for "Delete Duplicate Geometries" When the window opens, we use the layer that we had just created in the previous step as the Input layer, and then run.
+  
+![hi](images/AreaPrep-7.png)
+
+* After running, the duplicate geometries (For example, one bank at the same location might be represented by multiple points in different layers) should be removed. We can then save this layer in our GeoPackage file. Right click on the processed layer, select "Save Features As", and make sure GeoPackage is selected in the window that comes up. Navigate to the GeoPackage that contains the base layer, and name our layer "AllBanks_Vector", or for whatever attribute of interest that is being explored. Make sure the CRS is set to EPSG:23845 and the "Point" datatype is set in Geometry, as well as the "Include Z dimension" is unchecked, then save the newly formed layer.
+
+![hi](images/AreaPrep-8.png)
+
+
+
+### Processing Point and Polygonal Data
+
+This section should only be applicable to the airport layer, because the point data for airports comprise an additional airport that is not presented in the area data. It is important, because this missing airport is the new international airport for Samarinda and can absolutely not be eliminated from the study.
+
+* The general approach is to create a new polygon where the data is needed.
+
+* Import the airport polygon and point layers. And view them. We see that there's a point that doesn't have a corresponding polygon, and a polygon inside Samarinda that is the decomissioned airport which has to be deleted.
+
+![hi](images/Airport4.png)
+
+* For the point layer that we need to add a polygon to, we first toggle the editing by clicking on the pencil icon on the top bar.
+
+![hi](images/Airport3.png)
+
+* Following that we click on the "Add Polygon" next to it and draw it around the OSM layer boundary of the airport. To complete the shape we right click; to add a corner of the polygon we left click.
+
+![hi](images/Airport5.png)
+
+* Once the shape is created an additional window will come out to enter the attributes. To know the attributes to add, we have to open the point layer attributes, so we toggle the Information tool and click on the point layer. A window will pop up with the attributes. We transfer the data in the NAMOBJ and REMARK column to the attributes of our newly created polygon. Then we click "OK".
+
+![hi](images/Airport5.png)
+
+![hi](images/Airport7.png)
+
+* To remove the decommissioned airport, we click on the Select tool, move down to its location, select the airport and press the Delete key on the keyboard. 
+
+![hi](images/Airport8.png)
+
+* After these 2 modifications are complete we then toggle editing off by clicking on the pncil button again then accepting the changes that are made.
+
+* Following that, we follow the rest of the procedures in the Area Dataset processing in order to merge the vector layers together and then export them.
+
+
+![hi](images/Picture7.png)
+
+* Then, click on Run, and a temporary  buffer layer should be generated.
+
+
+6b. To do this, we first have to save the polygon layer and point layer with the correct projected coordinate system. SO for each layer we right click > Save selected Features as, and save as a byGeoPackage layer. Be sure to change the CRS to **EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)** and always save as layers to the same GeoPackage file. We also would need to change the datatype to Polygon and Point from PolygonZ and PointZ respectively, by opening the "Geometry" drop-down and make sure the data type is set either to Polygon and Point and the "Include Z Dimension" is not checked.
+
+6c. Now, click on the newly saved GeoPackage layer containing the point data. Go to Vector > Geoprocessing Tool > Buffer. In the resultant window, make a buffer of 100m x 100m by changing the distance to 100m and the units to meters, and make
+
+
+6d. The resulting temporary layer would be in a Polygon format. Now, we will get all data to be in polygons and we can save the data in step 5 to merge and continue on with step 6 to save.
+
+7. Save the merged vector dataset in a GeoPackage layer, with CRS as **EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)** and ensure that the Geometry data type is set to "Polygon" and the Include Z dimension is not checked.
+
+
+
+
+    
 
