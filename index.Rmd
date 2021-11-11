@@ -4,11 +4,34 @@ description: |
   This website comprises an overview of how we wish to tackle the issue of site selection and analysis of a suitable site for the new Jakarta capital city.
   
   The project requirements are as listed follows:
-  
 site: distill::distill_website
 ---
-
-Words
+    
+  **Task 1: Report of Survey Indonesia New National Capital Development Plan.**
+  
+  Assuming that you are a GIS Analyst of an international urban and regional     planning consulting company and are task to build up a GIS for the proposed    new capital area. The GIS will be used to prepare a report of survey to be     submitted to the National Development Planning Agency (abbreviated Bappenas).
+  
+  The GIS database and report of survey must include but not limited to the      following themes:
+  
+  1) Population and Demographic
+  2) Economic and Businesses
+  3) Transport and Communication
+  4) Infrastructure
+  5) Environment and Hazard
+  
+  **Task 2: Appropriate Site Selection**
+  
+  Use GIS analysis and multi-criteria evaluation method to identify site         suitability for the proposed new capital city by using the criteria below:
+  
+  1) It should be between 4500-5500 hectares in size
+  2) It should avoid steep slope. Steep slope developments are relative more     costly because they involve cut-and-fill and is less environmental friendly
+  3) It should be away from potential natural disaster risk areas such as sea    coasts, major rivers and volcanoes.
+  4) It should be near to current urban settlement areas but not at the current   major settlement areas.
+  5) It should avoid natural forest as much as possible.
+  6) It should avoid areas prone to forest fire.
+  7) It should be highly accessible via road transport.
+  8) It should be near to airport(s) and seaport(s).
+  
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
