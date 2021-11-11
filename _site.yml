@@ -8,7 +8,28 @@ navbar:
     - text: "Overview"
       href: overview.html
     - text: "Data Preparation"
-      href: dataprep.html
+      menu: 
+      - text: 'Overview of Preparation' 
+        href: dataprep.html
+        
+      - text: 'Task 1: Data Cleaning and Preparation'
+        href: t1-dataprep-dataclean.html
+      - text: 'Task 1: Preparation of Choropleth Map'
+        href: t1-dataprep-choropleth.html
+      - text: 'Task 1: Preparation of Heatmap'
+        href: t1-dataprep-heatmap.html
+      - text: 'Task 1: Preparation of Overlay Map'
+        href: t1-dataprep-overlay.html
+        
+      - text: 'Task 2: Data Cleaning and Preparation'
+        href: t2-dataprep-dataclean.html
+      - text: 'Task 2: Calculating Proximity Map'
+        href: t2-dataprep-proximity.html
+      - text: 'Task 2: AHP Criteria for Rationalisation'
+        href: t2-dataprep-ahp.html
+      - text: 'Task 2: Composite Ranked Layer'
+        href: t2-dataprep-ranking.html
+      
     - text: "Report of Survey"
       href: survey.html
     - text: "Site Selection Report"

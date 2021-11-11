@@ -20,4 +20,3 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-![hi](images/Picture1.png){fig.width = 50px}

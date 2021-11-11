@@ -87,18 +87,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Test Website: Site Selection</title>
+  <title>Test Website: Data Preparation and Cleaning</title>
   
   <meta property="description" itemprop="description" content="A new article created using the Distill format."/>
   
   
-  <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-11-10"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-11-10"/>
-  <meta name="article:author" content="Nora Jones"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Test Website: Site Selection"/>
+  <meta property="og:title" content="Test Website: Data Preparation and Cleaning"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="A new article created using the Distill format."/>
   <meta property="og:locale" content="en_US"/>
@@ -106,14 +102,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Test Website: Site Selection"/>
+  <meta property="twitter:title" content="Test Website: Data Preparation and Cleaning"/>
   <meta property="twitter:description" content="A new article created using the Distill format."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Site Selection"]},{"type":"character","attributes":{},"value":["A new article created using the Distill format.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Nora Jones"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]},{"type":"character","attributes":{},"value":["Spacely Sprockets"]},{"type":"character","attributes":{},"value":["https://example.com/spacelysprokets"]}]}]},{"type":"character","attributes":{},"value":["2021-11-10"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Data Preparation and Cleaning"]},{"type":"character","attributes":{},"value":["A new article created using the Distill format.\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2060,7 +2056,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Site Selection","description":"A new article created using the Distill format.","authors":[{"author":"Nora Jones","authorURL":"https://example.com/norajones","affiliation":"Spacely Sprockets","affiliationURL":"https://example.com/spacelysprokets","orcidID":""}],"publishedDate":"2021-11-10T00:00:00.000+08:00","citationText":"Jones, 2021"}
+{"title":"Data Preparation and Cleaning","description":"A new article created using the Distill format.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2103,103 +2099,137 @@ Data Preparation
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Site Selection</h1>
+<h1>Data Preparation and Cleaning</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 <p><p>A new article created using the Distill format.</p></p>
 </div>
 
-<div class="d-byline">
-  Nora Jones <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> (Spacely Sprockets)<a href="https://example.com/spacelysprokets" class="uri">https://example.com/spacelysprokets</a>
-  
-<br/>2021-11-10
-</div>
 
 <div class="d-article">
-<h1 id="heading-1">Heading 1</h1>
-<h2 id="creating-proximity-maps">Creating Proximity Maps</h2>
-<h3 id="importing-necessary-data-and-merging-geographies">Importing Necessary Data and Merging Geographies</h3>
-<ol type="1">
-<li><p>We need to ensure that the data which we are utilising, is in a raster format, and we need to clip out unnecessary points.</p></li>
-<li><p>For the selected layer, go to Vector &gt; Geoprocessing &gt; Clip, and select the study area Final_shape as the overlay layer, and the input layer as desired (for example, for airports, it will be AIRPORT_PT_50K). After creating, a temporary layer Clipped should be produced.</p></li>
-</ol>
-<p><img src="images/Picture2.png" alt="hi" />{fig.width = 50px}</p>
-<ol start="3" type="1">
-<li><p>Since this has to be repeated for all the 4 regencies, we repeat step 2 for all the same type of amenity (airport / bus terminal / road etc).</p></li>
-<li><p>After that, we would combine all 4 clipped layers together to create a single layer, for ease of analysis. First, we have to remove any duplicate points by scanning the map. Where a point or a polygon is duplicated, we use the select tool to click on the point concerned, and then remove the point by using the Delete tool.</p></li>
-</ol>
-<p><img src="images/Picture4.png" alt="hi" />{fig.width = 50px}</p>
-<ol start="5" type="1">
-<li>It would be good practice to rename the layers, as they would all carry the same name even though they are at different regency. For example, in preparing the proximity map for the airport, the layer names <strong>Balikpapan Airport Raster, Kartanegara Airport Raster and PPU Airport Raster layer</strong> were used. If we are interested in only a subset (a specific category) of points/polygons then move on to step 4a, to filter out those points which are not needed.</li>
-</ol>
-<p>5aa. If we are interested in only a <em>subset/ specific category</em> of data within the entire point layer, then we need to remove the rows which we are not concerned about. For example, for the layer TOPONIMI_PT_50k, we are interested only in the banks “Kantor Bank”. Therefore we right click on the layer &gt; Open Attribute Table and then we toggle the editing by clicking the pencil icon near the top of the window. Following that, we sort the table by “Remark” by clicking on it, and then selecting all the rows with attribute Remark = “Kantor Bank”.</p>
-<p><img src="images/Picture11.png" alt="hi" />{fig.width = 50px}</p>
-<p>5ab. Following that, we create another temporary layer by closing the attribute table, pressing CTRL+C to copy the selection, then going to Edit &gt; Paste Selected Features &gt; Temporary scratch Layer to paste it in a temporary layer. After this is done, move to step 6</p>
-<p>""“<img src="images/Picture12.png" alt="hi" />{fig.width = 50px}”""</p>
-<p>5ba. When dealing with line data, such as in the case of the road layer, there are some roads which may be disjointed or incomplete. This should have been taken into account when doing Task 1, but if it is not done, follow the section “Data Processing with Line Data” ~~~ this should be moved to task 1</p>
-<ol start="6" type="1">
-<li>We go to the Vector &gt; Merge Vector Layers and then select the layers which we intend to merge in the resulting layer. For example, for airports, I selected <strong>Balikpapan Airport Raster, Kartanegara Airport Raster and PPU Airport Raster layer</strong> then click “OK” after that to merge.</li>
-</ol>
+<h2 id="selection-of-required-data">1. Selection of Required Data</h2>
+<ul>
+<li>The datasets that are being used for the project include:
+<ul>
+<li>Topographical data from here: <a href="https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html" class="uri">https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html</a>. Data of Kota Balikpapan, Kota Samarinda, Penajam Paser Utara and Kutai Kartanegara are to be downloaded.</li>
+<li>The <a href="https://www.indonesia-geospasial.com/2020/04/download-shapefile-shp-batas-desa.html" class="uri">https://www.indonesia-geospasial.com/2020/04/download-shapefile-shp-batas-desa.html</a> comprises the population and demographic data. Data for Kalimantan Timur province was downloaded.</li>
+<li><a href="https://www.indonesia-geospasial.com/2020/01/download-dem-srtm-30-meter-se-indonesia.html" class="uri">https://www.indonesia-geospasial.com/2020/01/download-dem-srtm-30-meter-se-indonesia.html</a> The digital elevation model at 30m resolution</li>
+<li><a href="https://www.indonesia-geospasial.com/2020/03/download-data-shapefile-shp-geologi-se.html" class="uri">https://www.indonesia-geospasial.com/2020/03/download-data-shapefile-shp-geologi-se.html</a> The geological data.</li>
+<li><a href="https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html" class="uri">https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html</a> The forest hot spots.</li>
+<li><a href="https://download.geofabrik.de/asia/indonesia.html" class="uri">https://download.geofabrik.de/asia/indonesia.html</a> Indonesia OSM Data. Data was downloaded for Indonesia as a whole, and only the road layer was kept.</li>
+</ul></li>
+<li>After downloading and opening the data, we had to examine individual layers and see what is to be kept.
+<ul>
+<li>The topographical data layer:
+<ul>
+<li>Airports: AIRPORTS_LN_50K and AIRPORTS_PT_50k</li>
+<li>Toponimi (Miscellaneous items): TOPONIMI_PT_50k</li>
+<li>Different forms of agriculture: AGRIKEBUN_AR_50k, AGRILADANG_AR_50k, AGRISAWAH_AR_50k</li>
+<li>Different forms of forestry: NONAGRIALANG_AR_50k, NONAGRIHUTANBASAH_AR_50k, NONAGRISEMAKBELUKAR_AR_50k, NONAGRIHUTANKERING_AR_50K</li>
+<li>Roads: JALAN_LN_50k</li>
+<li>Settlements: PEMUKIMAN_AR_50k</li>
+<li>Bus Terminals: TERMINALBUS_PT_50k</li>
+<li>Mining Areas: TAMBANG_AR_50k</li>
+<li>NB: The topographical dataset .zip files comprises these layers for every regency/area (i.e one each for Kutai Kartanegara, one for Kota Balikpapan etc etc, with the same names)</li>
+</ul></li>
+<li>The demographic layer for Kalimantan Timur:
+<ul>
+<li>Just 1 layer which is kept.</li>
+</ul></li>
+</ul></li>
+<li>For the topographical map layer, we would have to merge the datasets showing different natural/artificial features to supplement, and clip the layers to within the study area.
+<ul>
+<li>For each of those layers, we would combine the layers that show the same attribute.</li>
+</ul></li>
+<li>The study area to be used is derived from the population and demographic layer.
+<ul>
+<li>Import the shapefile into Qgis by double clicking on it.</li>
+<li>We need to select the suitable study area since the layer would contain the regencies, districts and sub-districts for the entire province of East Kalimantan. Right click on the layer, open Attribute Table and first we filter by the “KAB_KOTA” column. Open the “Select Fetures using an Expression” field and enter the following: “KAB_KOTA” = ‘KUTAI KARTANEGARA’ or “KAB_KOTA” = ‘KOTA BALIKPAPAN’ or “KAB_KOTA” = ‘PENAJAM PASER UTARA’ or “KAB_KOTA” = ‘KOTA SAMARINDA’.</li>
+<li>In the resultant selected layers, we toggle editing on the layer and then copy the selected areas and paste it as a temporary layer by going to Edit &gt; Paste Features As &gt; Temporary Scractch Layer.</li>
+<li>Repeat the second step, but with the filtering by the specific districts as mentioned in the project brief:
+<ul>
+<li>All sub-districts and district of Kota Balipapan, Kota Samarinda</li>
+<li>Kutai Kartanegara: Anggana, Loa Janan, Loa Kulu, Marang Kayu, Muara Jawa, Samboja, Sanga Sanga, Sebulu Tenaggarong, Tenggarong Seberang and Muara Badak.</li>
+<li>North Penajam Paser (Penajam Paser Utara) Regency: Babulu, Penajam, Sepaku and Waru.</li>
+<li>We can manually select the districts and sub-districts by sorting by the “KECAMATAN” column. We select all the districts and sub-districts that do NOT fall into the ones listed above, and then invert the selection using the invert selection tool.</li>
+</ul></li>
+<li>Following that, we save the selection into a new GeoPackage layer, by closing the attribute table window, right-clicking on the layer which we made the selection on, and click “Save Selected Features As”. If this is the first feature to be included into the GeoPackage file, create a new GeoPackage file, and name the layer “Final Shape”.</li>
+<li>For the following analyses, there are some geometrical errors which we have to be fixed.
+<ul>
+<li>To fix this, go to the <strong>Processing &gt; Toolbox</strong> on the right and search for Fixed Geometries.</li>
+</ul></li>
+</ul>
+<img src="images/1DataPrep1.png" alt="Caption" />{fig.width = 50px}
+<ul>
+<li>Select the newly imported layer and press “OK” in the resultant window. <img src="images/1DataPrep2.png" alt="hi" />{fig.width = 50px}</li>
+<li>Save the resultant layer in a GeoPackage format. Click on the newly created temporary layer, go to Export &gt; Save Features As. In the resultant window, select the format <strong>GeoPackage</strong> and then create a new GeoPAckage file. Name the layer “FinalShape_Fixed geometries”, leave all other features as intended, before saving.</li>
+</ul></li>
+</ul>
+<h2 id="clipping-layers-into-study-area">Clipping Layers into Study Area</h2>
+<p>The processing of each layer will differ according to their data type. We have sorted the layers that have been used into the following categories:</p>
+<p><strong>Points</strong></p>
+<ul>
+<li>TOPONIMI_PT_50k</li>
+<li>TERMINALBUS_PT_50k</li>
+<li>Forest Fire</li>
+</ul>
+<p><strong>Area</strong></p>
+<ul>
+<li>Mining Areas</li>
+<li>Non-Agricultural Forest Areas</li>
+<li>Agricultural Areas</li>
+<li>Settlements</li>
+</ul>
+<p><strong>Mixed</strong></p>
+<ul>
+<li>Airport (Both point and area)</li>
+</ul>
+<p><strong>Lines</strong></p>
+<ul>
+<li>Roads (gis_osm_roads)</li>
+</ul>
+<h3 id="processing-polyline-road-layer">Processing Polyline (Road Layer)</h3>
+<ul>
+<li><p>Import the layer (gis_osm_roads_a_free.shp).</p></li>
+<li><p>There is a need to join incomplete roads. Examine each road segment closely and find out which road segments can be joined, for example roads which go above the bridge.</p>
+<ul>
+<li>This will result in the intersection points being overstated when conducting site survey analysis. While it may not be possible to fix every road, most roads where this issue presents itself, are located along the coast or over bridges.</li>
+</ul></li>
+<li><p>We need to clip the road to the study area. Go to Vector &gt; Geoprocessing Tools &gt; Clip, make sure the newly imported road layer is input as the Input Layer, and the layer to be used as a clip is the FinalShape_Fixed geometries layer (Overlay Layer)that had been prepared.</p></li>
+</ul>
 <figure>
-<img src="images/Picture3.png" alt="" /><figcaption>hi</figcaption>
+<img src="images/1DataPrep4.png" alt="" /><figcaption>hi</figcaption>
 </figure>
-<p>6a. NB: Step 6 can only be done if all the data is of the same type (polygon vs polygon, line vs line). If the data is of a <em>different type</em>, for example, polygon and point, a buffer would have to be created on the point dataset. This happens when creating the airport layer, because certain airports are represented only in the polygon layer and certain other airports are represented only in the point layer.</p>
-<p>6b. To do this, we first have to save the polygon layer and point layer with the correct projected coordinate system. SO for each layer we right click &gt; Save selected Features as, and save as a byGeoPackage layer. Be sure to change the CRS to <strong>EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)</strong> and always save as layers to the same GeoPackage file. We also would need to change the datatype to Polygon and Point from PolygonZ and PointZ respectively, by opening the “Geometry” drop-down and make sure the data type is set either to Polygon and Point and the “Include Z Dimension” is not checked.</p>
-<p>6c. Now, click on the newly saved GeoPackage layer containing the point data. Go to Vector &gt; Geoprocessing Tool &gt; Buffer. In the resultant window, make a buffer of 100m x 100m by changing the distance to 100m and the units to meters, and make the resultant buffer square by changing the segments to 2.</p>
-<figure>
-<img src="images/Picture7.png" alt="" /><figcaption>hi</figcaption>
-</figure>
-<p>6d. The resulting temporary layer would be in a Polygon format. Now, we will get all data to be in polygons and we can save the data in step 5 to merge and continue on with step 6 to save.</p>
-<ol start="7" type="1">
-<li>Save the merged vector dataset in a GeoPackage layer, with CRS as <strong>EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)</strong> and ensure that the Geometry data type is set to “Polygon” and the Include Z dimension is not checked.</li>
-</ol>
-<h4 id="data-processing-with-line-data">Data Processing with Line Data</h4>
-<p>(Put in a new page? YES - THIS SHOUD BE WITH TASK 1 INSTRUCTIONS.)</p>
-<ol type="1">
-<li><p>In the raw data gis_osm_roads_free_1.shp, there are some roads which are incomplete, for example roads which go above the bridge. This will result in the intersection points being overstated. While it may not be possible to fix every road, most roads where this issue presents itself, are located along the coast.</p></li>
-<li><p>Qgis has a function to join the road segments together. Open the original road layer gis_osm_roads_free_1.shp and immediately save it as a GeoPackage layer with the correct CRS as <strong>EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)</strong> and make sure under the “Geometry” tab, the data type is changed to “Line” and the “Include Z values” is not checked.</p></li>
+<ul>
+<li><p>Save the temporary layer as a GeoPackage layer with the correct CRS as <strong>EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)</strong> and make sure under the “Geometry” tab, the data type is changed to “Line” and the “Include Z values” is not checked.</p></li>
 <li><p>Following that, toggle editing on the layer by clicking on the pencil icon. Make sure the selection method is “Select Features” and not other selection methods.</p></li>
 <li><p>Select the 2 road segments that are supposed to be joined together.</p></li>
-</ol>
+</ul>
 <figure>
 <img src="images/Picture12.png" alt="" /><figcaption>hi</figcaption>
 </figure>
-<ol start="5" type="1">
+<ul>
 <li>Click on “Merge Selected Features” in order to merge the 2 line segments together to form a single feature, which we can then extend in order to touch the 2 edges of the line.</li>
-</ol>
+</ul>
 <figure>
 <img src="images/Picture13.png" alt="" /><figcaption>hi</figcaption>
 </figure>
-<ol start="6" type="1">
+<ul>
 <li>Post-merge we have to re-select the merged segment which has become a single feature by clicking on the line segment. Following that we click on the “Reshape Feature”.</li>
-</ol>
+</ul>
 <figure>
 <img src="images/Picture17.png" alt="" /><figcaption>hi</figcaption>
 </figure>
-<ol start="7" type="1">
-<li>We click on the edge of one line and then drag it to the start of the other line, this will join the 2 line segments together to form a complete road.</li>
-</ol>
-<p><img src="images/Picture16.png" alt="hi" /> 8. Repeat this for different layers concerned.</p>
-<h3 id="rastering-merged-vector-layers">Rastering Merged Vector Layers</h3>
-<ol start="7" type="1">
-<li><p>We need to add in burn-in values. To do that, right-click on the newly created vector layer and go to “Open Attribute Table”. When the attribute table opens, toggle editing by pressing pencil icon on the top of window and then go to the button which is called “Open Field Calculator”.</p></li>
-<li><p>In the resultant window set the field name to POI_CODE, the data type to “Integer” and enter in the field calculator “1”. Then create the new field.</p></li>
-</ol>
-<figure>
-<img src="images/Picture6.png" alt="" /><figcaption>hi</figcaption>
-</figure>
-<ol start="9" type="1">
-<li>Following which, go to the <strong>Processing Toolbox</strong> on the right hand side of the window and click on “Rasterize (vector to raster” after typing in “Rasterize” into the searchbar.</li>
-</ol>
-<p><img src="images/Picture5.png" alt="hi" /> 8. In the resultant window make the following changes. The input layer should be the vector (be it polyline, polygon or point) layer that has the location of the desired amenities for the entire study area (therefore merged using the previous steps), in this case “AllBanks_Vector” for the banks. The field to use should be POI_CODE and the raster size units should be “Georeferenced Units”, while the resolution should be 100 for both vertical and horizontal. The output extent should be the polygonal layer for the study area, in this case “Final_Shape”.</p>
-<ol start="9" type="1">
-<li>Click “Run” to run and make sure that the layer has been rasterised. Zoom in to the areas which are marked as points in the input vector layer (e.g AllBanks_Vector) and verify that the raster layer has been added correctly - there should be a small black square.</li>
-</ol>
-<p><img src="images/Picture10.png" alt="hi" /> 10. Repeat all the previous steps for all layers of interest in the investigation:</p>
 <ul>
-<li>Airports - AIRPORT_LN_50K and AIRPORT_PT_50k (both line and polygon)</li>
-<li>Banks - TOPONIMI_PT_50k (need to filter out all those Remarks != Kantor Bank rows)</li>
-<li>Roads - gis_osm_road</li>
+<li>We click on the edge of one line and then drag it to the start of the other line, this will join the 2 line segments together to form a complete road.</li>
+</ul>
+<figure>
+<img src="images/Picture16.png" alt="" /><figcaption>hi</figcaption>
+</figure>
+<ul>
+<li><p>Repeat this for all segments that have been found to have missing road segments.</p></li>
+<li><p>For the site survey analysis, a plot of road intersection density will be used to measure the road density in a particular area.</p></li>
+<li></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

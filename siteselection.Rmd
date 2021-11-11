@@ -49,8 +49,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 5ab. Following that, we create another temporary layer by closing the attribute table, pressing CTRL+C to copy the selection, then going to Edit > Paste Selected Features > Temporary scratch Layer to paste it in a temporary layer. After this is done, move to step 6
 
-![hi](images/Picture12.png){fig.width = 50px}
-5ba. When dealing with line data, such as in the case of the road layer, there are some roads which may be disjointed or incomplete. To fix this, follow the section below "Data processing with line data".
+"""![hi](images/Picture12.png){fig.width = 50px}"""
+
+5ba. When dealing with line data, such as in the case of the road layer, there are some roads which may be disjointed or incomplete. This should have been taken into account when doing Task 1, but if it is not done, follow the section "Data Processing with Line Data" ~~~ this should be moved to task 1
 
 6. We go to the Vector > Merge Vector Layers and then select the layers which we intend to merge in the resulting layer. For example, for airports, I selected **Balikpapan Airport Raster, Kartanegara Airport Raster and PPU Airport Raster layer** then click “OK” after that to merge.
 
@@ -71,9 +72,31 @@ knitr::opts_chunk$set(echo = FALSE)
 
 #### Data Processing with Line Data
 
-(Put in a new page?)
+(Put in a new page? YES - THIS SHOUD BE WITH TASK 1 INSTRUCTIONS.)
 
-1. In the raw data gis_osm_roads_free_1.shp 
+1. In the raw data gis_osm_roads_free_1.shp, there are some roads which are incomplete, for example roads which go above the bridge. This will result in the intersection points being overstated. While it may not be possible to fix every road, most roads where this issue presents itself, are located along the coast.
+
+2. Qgis has a function to join the road segments together. Open the original road layer gis_osm_roads_free_1.shp and immediately save it as a GeoPackage layer with the correct CRS as **EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)** and make sure under the "Geometry" tab, the data type is changed to "Line" and the "Include Z values" is not checked.
+
+3. Following that, toggle editing on the layer by clicking on the pencil icon. Make sure the selection method is "Select Features" and not other selection methods.
+
+4. Select the 2 road segments that are supposed to be joined together.
+
+![hi](images/Picture12.png)
+
+
+5. Click on "Merge Selected Features" in order to merge the 2 line segments together to form a single feature, which we can then extend in order to touch the 2 edges of the line.
+
+![hi](images/Picture13.png)
+
+6. Post-merge we have to re-select the merged segment which has become a single feature by clicking on the line segment. Following that we click on the "Reshape Feature".
+
+![hi](images/Picture17.png)
+
+7. We click on the edge of one line and then drag it to the start of the other line, this will join the 2 line segments together to form a complete road.
+
+![hi](images/Picture16.png)
+8. Repeat this for different layers concerned. 
 
 
 ### Rastering Merged Vector Layers
