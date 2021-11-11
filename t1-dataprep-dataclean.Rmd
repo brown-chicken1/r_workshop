@@ -257,8 +257,6 @@ This section should only be applicable to the airport layer, because the point d
 * Following that, we follow the rest of the procedures in the Area Dataset processing in order to merge the vector layers together and then export them.
 
 
-![hi](images/Picture7.png)
-
 
 
 
