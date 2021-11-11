@@ -5,12 +5,10 @@ description: |
   
   The project requirements are as listed follows:
   
-  1) To first testing 
-  
-  ## Testing
 site: distill::distill_website
 ---
 
+Words
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
