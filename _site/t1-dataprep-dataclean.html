@@ -2357,28 +2357,46 @@ Data Preparation
 <h3 id="processing-point-and-polygonal-data">Processing Point and Polygonal Data</h3>
 <p>This section should only be applicable to the airport layer, because the point data for airports comprise an additional airport that is not presented in the area data. It is important, because this missing airport is the new international airport for Samarinda and can absolutely not be eliminated from the study.</p>
 <ul>
-<li><p>The general approach is to convert the Point layer to a Polygon type through the creation of a “buffer” and extend th buffer polygon to cover the entire airport.</p></li>
+<li><p>The general approach is to create a new polygon where the data is needed.</p></li>
 <li><p>Import the airport polygon and point layers. And view them. We see that there’s a point that doesn’t have a corresponding polygon, and a polygon inside Samarinda that is the decomissioned airport which has to be deleted.</p></li>
 </ul>
 <figure>
-<img src="images/Airport1.png" alt="" /><figcaption>hi</figcaption>
+<img src="images/Airport4.png" alt="" /><figcaption>hi</figcaption>
 </figure>
 <ul>
-<li><p>To first add the additional point we generate a buffer by going to Vector &gt; Geoprocessing Tools &gt; Buffer and</p></li>
-<li><p>Then select the point layer as the buffer to be added, and the unit to be “Georeferenced Units”, and the dimensions to be 100m x 100m. Make the resultant buffer square by changing the segments to 2.</p></li>
+<li>For the point layer that we need to add a polygon to, we first toggle the editing by clicking on the pencil icon on the top bar.</li>
+</ul>
+<figure>
+<img src="images/Airport3.png" alt="" /><figcaption>hi</figcaption>
+</figure>
+<ul>
+<li>Following that we click on the “Add Polygon” next to it and draw it around the OSM layer boundary of the airport. To complete the shape we right click; to add a corner of the polygon we left click.</li>
+</ul>
+<figure>
+<img src="images/Airport5.png" alt="" /><figcaption>hi</figcaption>
+</figure>
+<ul>
+<li>Once the shape is created an additional window will come out to enter the attributes. To know the attributes to add, we have to open the point layer attributes, so we toggle the Information tool and click on the point layer. A window will pop up with the attributes. We transfer the data in the NAMOBJ and REMARK column to the attributes of our newly created polygon. Then we click “OK”.</li>
+</ul>
+<figure>
+<img src="images/Airport5.png" alt="" /><figcaption>hi</figcaption>
+</figure>
+<figure>
+<img src="images/Airport7.png" alt="" /><figcaption>hi</figcaption>
+</figure>
+<ul>
+<li>To remove the decommissioned airport, we click on the Select tool, move down to its location, select the airport and press the Delete key on the keyboard.</li>
+</ul>
+<figure>
+<img src="images/Airport8.png" alt="" /><figcaption>hi</figcaption>
+</figure>
+<ul>
+<li><p>After these 2 modifications are complete we then toggle editing off by clicking on the pncil button again then accepting the changes that are made.</p></li>
+<li><p>Following that, we follow the rest of the procedures in the Area Dataset processing in order to merge the vector layers together and then export them.</p></li>
 </ul>
 <figure>
 <img src="images/Picture7.png" alt="" /><figcaption>hi</figcaption>
 </figure>
-<ul>
-<li>Then, click on Run, and a temporary buffer layer should be generated.</li>
-</ul>
-<p>6b. To do this, we first have to save the polygon layer and point layer with the correct projected coordinate system. SO for each layer we right click &gt; Save selected Features as, and save as a byGeoPackage layer. Be sure to change the CRS to <strong>EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)</strong> and always save as layers to the same GeoPackage file. We also would need to change the datatype to Polygon and Point from PolygonZ and PointZ respectively, by opening the “Geometry” drop-down and make sure the data type is set either to Polygon and Point and the “Include Z Dimension” is not checked.</p>
-<p>6c. Now, click on the newly saved GeoPackage layer containing the point data. Go to Vector &gt; Geoprocessing Tool &gt; Buffer. In the resultant window, make a buffer of 100m x 100m by changing the distance to 100m and the units to meters, and make</p>
-<p>6d. The resulting temporary layer would be in a Polygon format. Now, we will get all data to be in polygons and we can save the data in step 5 to merge and continue on with step 6 to save.</p>
-<ol start="7" type="1">
-<li>Save the merged vector dataset in a GeoPackage layer, with CRS as <strong>EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)</strong> and ensure that the Geometry data type is set to “Polygon” and the Include Z dimension is not checked.</li>
-</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

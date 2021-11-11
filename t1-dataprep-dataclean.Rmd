@@ -259,17 +259,6 @@ This section should only be applicable to the airport layer, because the point d
 
 ![hi](images/Picture7.png)
 
-* Then, click on Run, and a temporary  buffer layer should be generated.
-
-
-6b. To do this, we first have to save the polygon layer and point layer with the correct projected coordinate system. SO for each layer we right click > Save selected Features as, and save as a byGeoPackage layer. Be sure to change the CRS to **EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)** and always save as layers to the same GeoPackage file. We also would need to change the datatype to Polygon and Point from PolygonZ and PointZ respectively, by opening the "Geometry" drop-down and make sure the data type is set either to Polygon and Point and the "Include Z Dimension" is not checked.
-
-6c. Now, click on the newly saved GeoPackage layer containing the point data. Go to Vector > Geoprocessing Tool > Buffer. In the resultant window, make a buffer of 100m x 100m by changing the distance to 100m and the units to meters, and make
-
-
-6d. The resulting temporary layer would be in a Polygon format. Now, we will get all data to be in polygons and we can save the data in step 5 to merge and continue on with step 6 to save.
-
-7. Save the merged vector dataset in a GeoPackage layer, with CRS as **EPSG:23845 (DGN / Indonesia TM-3 zone 54.1)** and ensure that the Geometry data type is set to "Polygon" and the Include Z dimension is not checked.
 
 
 
