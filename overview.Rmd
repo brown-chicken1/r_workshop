@@ -1,7 +1,7 @@
 ---
 title: "Overview"
 description: |
-  A new article created using the Distill fotestingrmatasdadasdsdasdsadasd. Testing
+  A new article created using the Distill for testing.
 author:
   - name: Nora Jones 
     url: https://example.com/norajones
