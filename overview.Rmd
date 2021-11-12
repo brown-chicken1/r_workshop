@@ -27,13 +27,32 @@ knitr::opts_chunk$set(echo = FALSE)
 
 As part of the plan, part of Kutai Kartanegara Regency (Kabupaten Kutai Kartanegara) and Penajam North Paser Regency (Kabupaten Penajam Utara) in East Kalimantan will be carved out to create a new province-level planned city, and the capital will be relocated to a more central location within Indonesia. The plan is part of a strategy to reduce developmental inequality between Java and other islands in the Indonesian archipelago and to reduce Jakarta’s burden as Indonesia’s primary hub. President Joko Widodo, known as Jokowi, said the relocation will help spread economic activities outside of the most-populous island of Java and narrow its income gap with the rest of the country.
 
-### Task 1
+### Task 1 : Report of Survey Indonesia New National Capital Development Plan
+
+Prepare a report of survey to be submitted to the National Development Planning Agency (abbreviated Bappenas) with the following themes :
+
++ Population and Demographic
++ Economic and Businesses 
++ Transport and Communication
++ Infrastructure
++ Environment and Hazard
 
 
 ### Task 2
 
+Use GIS analysis and multi-criteria evaluation method to identify site suitability for the proposed new capital city by using the criteria below:
+
++ It should be between 4500-5500 hectares in size
++ It should avoid steep slope.  Steep slope developments are relative more costly because they involve cut-and-fill and is less environmental friendly.
++ It should be away from potential natural disaster risk areas such as sea coasts, major rivers and volcanoes.
++ It should be near to current urban settlement areas but not at the current major settlement areas.
++ It should avoid natural forest as much as possible.
++ It should avoid areas prone to forest fire.
++ It should be highly accessible via road transport.
++ It should be near to airport(s) and seaport(s).
+
 ## Data
-Given datasets :
+### Given datasets :
 
 For the purpose of this project, the following data sources are recommended but students are welcome to include other appropriate data.
 
@@ -44,7 +63,11 @@ For the purpose of this project, the following data sources are recommended but 
 + [Forest fire hot spot data](https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html). This repository provides several years of forest hot spots data.
 + [Buildings and Settlements](https://www.indonesia-geospasial.com/2020/12/download-shp-pemukiman-detail-seluruh.html).
 
-Additional datasets : 
+
+### Additional datasets : 
+
++ [West Sulawesi Earthquake Shake Map of 6.2 magnitude ](https://data.humdata.org/dataset/6-2-sr-shakemap-of-majene-earthquake)
+
 
 
 
