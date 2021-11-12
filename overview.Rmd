@@ -44,7 +44,7 @@ For the purpose of this project, the following data sources are recommended but 
 + [Forest fire hot spot data](https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html). This repository provides several years of forest hot spots data.
 + [Buildings and Settlements](https://www.indonesia-geospasial.com/2020/12/download-shp-pemukiman-detail-seluruh.html).
 
-Additional dataset : 
+Additional datasets : 
 
 
 
