@@ -1,0 +1,64 @@
+---
+title: "Preparation of Heatmap"
+description: |
+  A new article created using the Distill format.
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 1. Selection of Required Data
+
+To create the heatmaps, we will be using the forest fire dataset and the final_shape shapefile.
+
+  + https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html The forest hot spots.
+  
+The forest fire hot spot are split into 6 files of each year from 2014 - 2019. We will want to merge these layers into one shapefile that contains all the hotspot from eyar 2014 - 2019.
+
+## 2. Steps to create merged forest fire shapefile
+
+1. Put in all the forest fire layers (2014 - 2019) into QGIS.
+
+
+2. Look for the merge layers function by searching for 'combine'.Open up the merge vector layers function. 
+
+```{r}
+knitr::include_graphics("img/ml1.png")
+```
+
+
+3. For the input layers, put in FF_2014 to FF_2019.For Destination CRS, put in EPSG : 23845 DGN95 / Indonesia TM-3 zone 54.1 and then click on Run.
+
+```{r}
+knitr::include_graphics("img/ml2.png")
+```
+
+
+4. A new temporary layer would appear called ‘Merged’
+
+
+5. Export ‘Merged’ into a shapefile called CombinedFF and ensure the CRS is the same as step 3. Change geometry type to Point and uncheck the box where it says include z-dimensions.
+
+```{r}
+knitr::include_graphics("img/ml3.png")
+```
+
+6. To get forest fire hotspots that are only in the study area. We first bring in the study area shapefile into QGIS.
+
+
+7. Then we use the Clip function. For the Input layer, we put in CombinedFF and the overlay layer as the shapefile for the study area (Final_shape). Then we click on run
+
+```{r}
+knitr::include_graphics("img/ml4.png")
+```
+
+8. A temporary layer would appear called Clipped. This will be our final shapefile/layer that we want
+
+
+9. Export that into a shapefile and call it Combined_FF. Ensure the CRS is the same as Step 3. This will be our final combined forest fire layer.
+
+
+## 3. Creating the heatmap
+
