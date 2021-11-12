@@ -118,39 +118,12 @@ The processing of each layer will differ according to their data type. We have s
 * Repeat this for all segments that have been found to have missing road segments.
 
 
-#### Preparing Intersection Point Map
-* For the site survey analysis, a plot of road intersection density will be used to measure the road density in a particular area.
 
-  + First, we need to merge adjacent road segments together in order to prevent the number of intersections from being overstated. We first go to Vector >Geoprocessing > Dissolve, and in the window that opens, select the OSM road layer as the input layer.
-  
-  ![hi](images/1DataPrep5.png)
-  
-  + In the reuslting temporary layer, open the dissolved layer's atribute table, there should only be one row of data.
-  
-  + Following that, we go to the Processing Toolbox on the bottom righthand corner, and search for "Multipart to Singlepart"
-  
-  ![hi](images/1DataPrep6.png)
-  
-  + In the resulting window, just select the newly dissolved layer and click "Run".
-  
-  ![hi](images/1DataPrep7.png)
-  
-
-  + The final layer that is created, would be soon utilised to create an intersection.
-  
-  + We click on that layer, go to the PRocessing Toolbox on the right hand side and search for "Line Intersections". Open the tool and select both the input and intersect layer as the recently created layer from the previous step. 
-  
-   ![hi](images/1DataPrep10.png)
-   
-   ![hi](images/1DataPrep11.png)
-  
-  + We need to first remove any duplicate intersections to clean the layer data a bit further. We will go to the Processing Toolbox at the bottom right hand corner of the page, and then search for "Delete Duplicate Geometries". When the window opens, we use the layer that we had just created in the previous step as the Input layer, and then run.
-  
   ![hi](images/1DataPrep12.png)
   
   + Remove all the previous temporary layers created by right clicking on them and selecting "Delete Selected Layer".
   
-  + Save the newly created intersection layer by right clicking on the point layer and selecting Save Features As, and in the resultant box that comes up, ensure that the GeoPackage file that the base map layer was selected, is selected under the file name and the layer name is set to "Intersections", and the map CRS is set to EPSG:23845.
+  + Save the newly created road layer by right clicking on it in the menu and selecting Save Features As, and in the resultant box that comes up, ensure that the GeoPackage file that the base map layer was selected, is selected under the file name and the layer name is set to "Roads", and the map CRS is set to EPSG:23845.
 
 ### Processing Area (Polygon) Data
 

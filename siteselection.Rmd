@@ -49,7 +49,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 5ab. Following that, we create another temporary layer by closing the attribute table, pressing CTRL+C to copy the selection, then going to Edit > Paste Selected Features > Temporary scratch Layer to paste it in a temporary layer. After this is done, move to step 6
 
-"""![hi](images/Picture12.png){fig.width = 50px}"""
+![hi](images/Picture12.png){fig.width = 50px}"""
 
 5ba. When dealing with line data, such as in the case of the road layer, there are some roads which may be disjointed or incomplete. This should have been taken into account when doing Task 1, but if it is not done, follow the section "Data Processing with Line Data" ~~~ this should be moved to task 1
 

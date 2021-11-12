@@ -20,6 +20,8 @@ navbar:
         href: t1-dataprep-heatmap.html
       - text: 'Task 1: Preparation of Overlay Map'
         href: t1-dataprep-overlay.html
+      - text: 'Task 1: Preparation of Road Density Map'
+        href: road-density.html
         
       - text: 'Task 2: Data Cleaning and Preparation'
         href: t2-dataprep-dataclean.html
