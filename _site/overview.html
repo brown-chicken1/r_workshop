@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>Test Website: Overview</title>
@@ -92,8 +93,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2021-11-11"/>
-  <meta property="article:created" itemprop="dateCreated" content="2021-11-11"/>
+  <meta property="article:published" itemprop="datePublished" content="2021-11-12"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-11-12"/>
   <meta name="article:author" content="Nora Jones"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -112,7 +113,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Overview"]},{"type":"character","attributes":{},"value":["A new article created using the Distill for testing.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Nora Jones"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]},{"type":"character","attributes":{},"value":["Spacely Sprockets"]},{"type":"character","attributes":{},"value":["https://example.com/spacelysprokets"]}]}]},{"type":"character","attributes":{},"value":["2021-11-11"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Overview"]},{"type":"character","attributes":{},"value":["A new article created using the Distill for testing.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Nora Jones"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]},{"type":"character","attributes":{},"value":["Spacely Sprockets"]},{"type":"character","attributes":{},"value":["https://example.com/spacelysprokets"]}]}]},{"type":"character","attributes":{},"value":["2021-11-12"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1866,7 +1867,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2057,7 +2061,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Overview","description":"A new article created using the Distill for testing.","authors":[{"author":"Nora Jones","authorURL":"https://example.com/norajones","affiliation":"Spacely Sprockets","affiliationURL":"https://example.com/spacelysprokets","orcidID":""}],"publishedDate":"2021-11-11T00:00:00.000+08:00","citationText":"Jones, 2021"}
+{"title":"Overview","description":"A new article created using the Distill for testing.","authors":[{"author":"Nora Jones","authorURL":"https://example.com/norajones","affiliation":"Spacely Sprockets","affiliationURL":"https://example.com/spacelysprokets","orcidID":""}],"publishedDate":"2021-11-12T00:00:00.000+08:00","citationText":"Jones, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2109,7 +2113,7 @@ Data Preparation
 <div class="d-byline">
   Nora Jones <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> (Spacely Sprockets)<a href="https://example.com/spacelysprokets" class="uri">https://example.com/spacelysprokets</a>
   
-<br/>2021-11-11
+<br/>2021-11-12
 </div>
 
 <div class="d-article">
@@ -2117,18 +2121,54 @@ Data Preparation
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#werwerwerwer">werwerwerwer</a>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#project-objective">Project objective</a>
 <ul>
-<li><a href="#werweruweiruwr">werweruweiruwr</a></li>
+<li><a href="#task-1">Task 1</a></li>
+<li><a href="#task-2">Task 2</a></li>
 </ul></li>
+<li><a href="#data">Data</a></li>
+<li><a href="#scope-of-work">Scope of work</a></li>
+<li><a href="#project-schudule-gantt-chart">Project schudule (Gantt chart)</a></li>
 </ul>
 </nav>
 </div>
-<h2 id="werwerwerwer">werwerwerwer</h2>
-<h4 id="werweruweiruwr">werweruweiruwr</h4>
+<h2 id="motivation">Motivation</h2>
+<h2 id="project-objective">Project objective</h2>
+<p>As part of the plan, part of Kutai Kartanegara Regency (Kabupaten Kutai Kartanegara) and Penajam North Paser Regency (Kabupaten Penajam Utara) in East Kalimantan will be carved out to create a new province-level planned city, and the capital will be relocated to a more central location within Indonesia. The plan is part of a strategy to reduce developmental inequality between Java and other islands in the Indonesian archipelago and to reduce Jakarta’s burden as Indonesia’s primary hub. President Joko Widodo, known as Jokowi, said the relocation will help spread economic activities outside of the most-populous island of Java and narrow its income gap with the rest of the country.</p>
+<h3 id="task-1">Task 1</h3>
+<h3 id="task-2">Task 2</h3>
+<h2 id="data">Data</h2>
+<p>Given datasets :</p>
+<p>For the purpose of this project, the following data sources are recommended but students are welcome to include other appropriate data.</p>
+<ul>
+<li><a href="https://www.indonesia-geospasial.com/2020/04/download-shapefile-shp-batas-desa.html">Batas Desa &amp; Data Kependudukan Tahun 2019 Seluruh Indonesia</a>. This data set provides comprehensive population data at the sub-district level. In Indonesia local language, they are known as <strong>kota</strong> (i.e. urban sub-district) and <strong>desa</strong> (i.e. rural sub-district). You are required to download data set for Provinsi Kalimantan Timur (i.e. East Kalimantan Province).</li>
+<li><a href="https://www.indonesia-geospasial.com/2020/01/shp-rbi-provinsi-kalimantan-timur.html">Rupa Bumi Iindonesia (RBI) Provinsi Kalimantan Timur Perwilayah (Kabupaten/Kota)</a>. The term rupabumi means topographic. This data repository provides a coprehensive collection of topographical data layers of East Kalimantan. You are required to download data of Kota Balikpapan, Kota Samarinda, Penajam Paser Utara and Kutai Kartanegara.</li>
+<li><a href="https://www.indonesia-geospasial.com/2020/01/download-dem-srtm-30-meter-se-indonesia.html">DEM SRTM 30m</a>, digital elevation model at 30m resolution.</li>
+<li><a href="https://www.indonesia-geospasial.com/2020/03/download-data-shapefile-shp-geologi-se.html">Geological data</a> layer.</li>
+<li><a href="https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html">Forest fire hot spot data</a>. This repository provides several years of forest hot spots data.</li>
+<li><a href="https://www.indonesia-geospasial.com/2020/12/download-shp-pemukiman-detail-seluruh.html">Buildings and Settlements</a>.</li>
+</ul>
+<p>Additional datasets :</p>
+<h2 id="scope-of-work">Scope of work</h2>
+<p>The project will comprise of, but not limited to the followings steps:</p>
+<ul>
+<li>Selection of project area, this year the project area is provided.</li>
+<li>Data collection, extraction, integration, transformation and wrangling.</li>
+<li>Designing and building GIS model and database</li>
+<li>Preparing report of survey</li>
+<li>Performing site suitability analysis by integrating GIS and multi-criteria evaluation methods.</li>
+<li>Preparing site suitability analysis report including detail discussion of the analysing method used.</li>
+<li>Preparing poster and project webpage.</li>
+</ul>
+<h2 id="project-schudule-gantt-chart">Project schudule (Gantt chart)</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/ganntchart.png" width="938" /></p>
+</div>
 <p>moo moo moo</p>
 <p>Updated 12.30am</p>
 <p>Update again….</p>
+<p>moo moo?</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
