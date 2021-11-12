@@ -53,7 +53,7 @@ The project will comprise of, but not limited to the followings steps:
 - Preparing poster and project webpage.
 
 
-## Project schudule (Gannt chart)
+## Project schudule (Gantt chart)
 
 ```{r}
 knitr::include_graphics("img/ganntchart.png")
