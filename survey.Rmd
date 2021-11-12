@@ -82,11 +82,23 @@ There are several seaports, wharves and harbours stretching from the coast to in
 
 To measure the extent and severity of forest fires from 2014-2019, counts of forest fires were being added to each polygon (districts) on the study area GIS map. The intensity of red signifies the number of forest fires that occurred in each polygon/district from 2014-2019, where the higher intensity of red signifies high frequency of forest fires while a lighter shade of red indicates lower frequency of forest fires happening in the district. White would be used to indicate no forest fires occurred in that district from 2014-2019.
 
+```{r}
+knitr::include_graphics("img/Forestfirechoro.png")
+```
+
 ## 5.2 Earthquake
 
 We mapped out the seismic waves from the recent 2021 Sulawesi earthquake of magnitude of 6.2
 
+```{r}
+knitr::include_graphics("img/EQ1.png")
+```
+
 There is higher tendency of earthquake in Sulawesi as major fault lines are found there which gives rise to earthquakes (https://geoscienceletters.springeropen.com/articles/10.1186/s40562-021-00197-5)
+
+```{r}
+knitr::include_graphics("img/EQ2.png")
+```
 
 While our study area is not near the epicenter of the earthquake, we can see that the seismic waves are able to be felt in our study area. We can see that the seismic waves are coming from the coastal area in the western side of our study area. This may give rise to potential typhoons and/or tsunamis due to the seismic waves.
 
@@ -94,18 +106,26 @@ While our study area is not near the epicenter of the earthquake, we can see tha
 
 For digital elevation, the DEM map gave a range of -77m under sea level to 635m above sea level. We would want to avoid areas with low elevation and especially if it is close to water bodies (lakes and rivers) so as to avoid flash floods. 
 
-Pic 1
+```{r}
+knitr::include_graphics("img/E1.png")
+```
 
 Firstly, we made any area below sea level as blue to signify that these areas are either filled with water or are extremely likely to. After doing some research (i will link), we realised that there is no optimal altitude for cities. However, areas with less than 10m above sea level are considered dangerously low-lying and susceptible to flash floods. Hence we considered anything below 10m as dangerous (red) and anything above 100m would be considered safe. 
 
-Pic 2
+```{r}
+knitr::include_graphics("img/E2.png")
+```
 
 We also added layers of all major rivers and lakes in our study area and changed all their colours to dark blue. We can see that the areas around the lakes and rivers are mostly low-lying with elevation of around 10m. Unsurprisingly, the coastal areas of the study area are all below 10m elevation and the elevation would get higher the further we are from the coastal areas.
 
-Pic 3 
+```{r}
+knitr::include_graphics("img/E3.png")
+``` 
 
 The northern region of the study area, while does have some area well above 50m, is surrounded by a large portion of low lying area 
 Even close proximity around smaller streams are not suitable for settlements as the elevation is around 15m which would still run the risk of a flash flood during heavy rainfall. 
 
-Pic 4
+```{r}
+knitr::include_graphics("img/E4.png")
+```
 
