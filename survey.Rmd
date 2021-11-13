@@ -124,7 +124,7 @@ knitr::include_graphics("img/Electricity.png")
 
 Electricity plays an important role and is a necessity in everyday life. We have analysed the distribution of electricity and power throughout the area. The darker shades are those with more electricity infrastructure in place. We should pick an area that has this basic infrastructure in place.
 
-## 4.3 Infrastructure - Water Supply (Distributers)
+## 4.3 Infrastructure - Water Supply (distributors)
 
 ```{r}
 knitr::include_graphics("img/Water.png")
@@ -132,7 +132,7 @@ knitr::include_graphics("img/Water.png")
 
 Water is a requisite resource for business. Without regular or continuous access to clean water, businesses either have to raise prices, shut down or both. Industries that rely on water for operations or manufacturing are the most vulnerable and most at risk.
 
-The study analyzes the location and distribution of water supply (distributers) in the Study Area. We should pick an area that is accessible to water supply to keep operations running.
+The study analyzes the location and distribution of water supply (distributors) in the Study Area. We should pick an area that is accessible to water supply to keep operations running.
 
 # 5. Environment and Hazard
 
