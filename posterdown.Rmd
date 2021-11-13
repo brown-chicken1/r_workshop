@@ -27,7 +27,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Introduction
 
-As Budding GIS Analyst of an international urban and regional planning consulting company. This study aims to build up a GIS for the proposed new capital area. The study utilises GIS-Enabled Urban Planning Support System by integrating open government data and other open source data sets.The study further collect, process and analyse spatially related issues using relevant real world data.
+As Budding GIS Analyst of an international urban and regional planning consulting company we are tasked to prepare a study for the proposed new capital city. 
+
+This study aims to build up a GIS for the proposed new capital area. The study utilises GIS-Enabled Urban Planning Support System by integrating open government data and other open source data sets.The study further collect, process and analyse spatially related issues using relevant real world data.
 
 ## Objectives
 
