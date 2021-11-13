@@ -1,7 +1,7 @@
 ---
 title: "Preparation of Choropleth and other qualitative and quantitative thematic maps."
 description: |
-  A new article created using the Distill format.
+  In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS.
 output: distill::distill_article
 ---
 
@@ -9,7 +9,7 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## 1. Selection of Required Data
+## 1. Objective: Creation of Appropriate Maps with these Data
 
 * Population Density by District
   + Population of Adults
@@ -31,39 +31,27 @@ knitr::opts_chunk$set(echo = FALSE)
   + Forests
   + Forest fire
 
-  
-    ![](images/1DataPrep1.png){width=40%}
-    + Select the newly imported layer and press "OK" in the resultant window.
-    
-    ![hi](images/1DataPrep2.png){width=40%}
-  
-    + Save the resultant layer in a GeoPackage format. Click on the newly created temporary layer, go to Export > Save Features As. In the resultant window, select the format **GeoPackage** and then create a new GeoPAckage file. Name the layer "FinalShape_Fixed geometries", leave all other features as intended, before saving.
+## 2. Getting Started
 
-## Clipping Layers into Study Area
+>DIY: Using the steps you had learned from the previous section, add All_electricity, All_commerce, All_Watersupply, All_mining, map layer into the project.
 
-The processing of each layer will differ according to their data type. We have sorted the layers that have been used into the following categories:
+Example of All_Electricity map layer
+```{r}
+knitr::include_graphics("img/ch1.png")
+```
 
-**Points**
+## 3.0 Symbolising Qualitative GIS Data Layers
+In this section, you will learn how to symbolise GIS data layers by using their corresponding qualitative data values.
 
-+ TOPONIMI_PT_50k
-+ TERMINALBUS_PT_50k 
-+ Forest Fire
+Using all_water_supply layer, right click on layer > properties. The Layer properties should pop up. 
 
-**Area**
+Select on Symbology > Change size to 10, marker to SVG marker and select water & tap symbol.
 
-+ Mining Areas
-+ Non-Agricultural Forest Areas
-+ Agricultural Areas
-+ Settlements
+You should see something like this:
 
-**Mixed**
-
-+ Airport (Both point and area)
-
-**Lines**
-
-+ Roads (gis_osm_roads)
-
+```{r}
+knitr::include_graphics("img/ch2.png")
+```
 
 ### Processing Polyline (Road Layer)
 

@@ -88,27 +88,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Test Website: Preparation of Choropleth and other qualitative and quantitative thematic maps.</title>
 
-  <meta property="description" itemprop="description" content="A new article created using the Distill format."/>
+  <meta property="description" itemprop="description" content="In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS."/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Test Website: Preparation of Choropleth and other qualitative and quantitative thematic maps."/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A new article created using the Distill format."/>
+  <meta property="og:description" content="In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Test Website"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Test Website: Preparation of Choropleth and other qualitative and quantitative thematic maps."/>
-  <meta property="twitter:description" content="A new article created using the Distill format."/>
+  <meta property="twitter:description" content="In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Preparation of Choropleth and other qualitative and quantitative thematic maps."]},{"type":"character","attributes":{},"value":["A new article created using the Distill format.\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Preparation of Choropleth and other qualitative and quantitative thematic maps."]},{"type":"character","attributes":{},"value":["In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS.\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2053,7 +2053,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Preparation of Choropleth and other qualitative and quantitative thematic maps.","description":"A new article created using the Distill format.","authors":[]}
+{"title":"Preparation of Choropleth and other qualitative and quantitative thematic maps.","description":"In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2101,12 +2101,12 @@ Data Preparation
 <h1>Preparation of Choropleth and other qualitative and quantitative thematic maps.</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A new article created using the Distill format.</p></p>
+<p><p>In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS.</p></p>
 </div>
 
 
 <div class="d-article">
-<h2 id="selection-of-required-data">1. Selection of Required Data</h2>
+<h2 id="objective-creation-of-appropriate-maps-with-these-data">1. Objective: Creation of Appropriate Maps with these Data</h2>
 <ul>
 <li>Population Density by District
 <ul>
@@ -2134,43 +2134,26 @@ Data Preparation
 </ul></li>
 <li>Environment and Hazard
 <ul>
-<li><p>Forests</p></li>
-<li><p>Forest fire</p>
-<p><img src="images/1DataPrep1.png" style="width:40.0%" /></p>
-<ul>
-<li>Select the newly imported layer and press “OK” in the resultant window.</li>
-</ul>
-<figure>
-<img src="images/1DataPrep2.png" style="width:40.0%" alt="hi" /><figcaption aria-hidden="true">hi</figcaption>
-</figure>
-<ul>
-<li>Save the resultant layer in a GeoPackage format. Click on the newly created temporary layer, go to Export &gt; Save Features As. In the resultant window, select the format <strong>GeoPackage</strong> and then create a new GeoPAckage file. Name the layer “FinalShape_Fixed geometries”, leave all other features as intended, before saving.</li>
-</ul></li>
+<li>Forests</li>
+<li>Forest fire</li>
 </ul></li>
 </ul>
-<h2 id="clipping-layers-into-study-area">Clipping Layers into Study Area</h2>
-<p>The processing of each layer will differ according to their data type. We have sorted the layers that have been used into the following categories:</p>
-<p><strong>Points</strong></p>
-<ul>
-<li>TOPONIMI_PT_50k</li>
-<li>TERMINALBUS_PT_50k</li>
-<li>Forest Fire</li>
-</ul>
-<p><strong>Area</strong></p>
-<ul>
-<li>Mining Areas</li>
-<li>Non-Agricultural Forest Areas</li>
-<li>Agricultural Areas</li>
-<li>Settlements</li>
-</ul>
-<p><strong>Mixed</strong></p>
-<ul>
-<li>Airport (Both point and area)</li>
-</ul>
-<p><strong>Lines</strong></p>
-<ul>
-<li>Roads (gis_osm_roads)</li>
-</ul>
+<h2 id="getting-started">2. Getting Started</h2>
+<blockquote>
+<p>DIY: Using the steps you had learned from the previous section, add All_electricity, All_commerce, All_Watersupply, All_mining, map layer into the project.</p>
+</blockquote>
+Example of All_Electricity map layer
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/ch1.png" width="516" /></p>
+</div>
+<h2 id="symbolising-qualitative-gis-data-layers">3.0 Symbolising Qualitative GIS Data Layers</h2>
+<p>In this section, you will learn how to symbolise GIS data layers by using their corresponding qualitative data values.</p>
+<p>Using all_water_supply layer, right click on layer &gt; properties. The Layer properties should pop up.</p>
+<p>Select on Symbology &gt; Change size to 10, marker to SVG marker and select water &amp; tap symbol.</p>
+<p>You should see something like this:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/ch2.png" width="623" /></p>
+</div>
 <h3 id="processing-polyline-road-layer">Processing Polyline (Road Layer)</h3>
 <ul>
 <li><p>Import the layer (gis_osm_roads_a_free.shp).</p></li>
