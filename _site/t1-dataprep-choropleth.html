@@ -2158,9 +2158,9 @@ Data Preparation
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/ch3.png" width="530" /></p>
 </div>
-<p>This map is popularly known as Point symbol map among the GIS and cartography communities. Prior to GIS era, this kind of map took more than a month to prepare. With GIS, it only needs less than 15 minutes to prepare. The advantage of GIS-based point symbol map is that the map can be changed easily with very little effort. GIS-based point symbol map is also highly interactive. You can navigate around the digital map and zoom in to view the distribution in greater details.</p>
+<p>This map is popularly known as Point symbol map among the GIS and cartography communities.The advantage of GIS-based point symbol map is that the map can be changed easily. GIS-based point symbol map is also highly interactive. You can navigate around the digital map and zoom in to view the distribution in greater details.</p>
 <blockquote>
-<p>DIY: Using the steps you had learned repeat for Airports, Seaports, Bus Terminals and use appropriate SVG Symbols for them.</p>
+<p>DIY: Using the steps you had learned repeat for Airports, Seaports, Bus Terminals, All_Electricity and use appropriate SVG Symbols for them.</p>
 </blockquote>
 <h2 id="choropleth-map-using-gis">4.0 Choropleth map using GIS</h2>
 <p>Choropleth mapping involves the symbolisation of enumeration units, such as countries, provinces, states, counties or census units, using area patterns or graduated colors.</p>
@@ -2172,12 +2172,12 @@ Data Preparation
 <li><p>When classifying data, the full range of data must be included and class values should not overlap. No more than six classes are recommended.</p></li>
 <li><p>Class symbols (i.e. colors or patterns) must be easily distinguishable.</p></li>
 </ul>
-<p>Using the All_electricity layer, we can see that it’s in point format. When creating the choropleth map, we like to see if the overall distribution in the study area.</p>
+<p>Using the INTERSECT_NIAGA (Commerce) layer, we can see that it’s in point format. When creating the choropleth map, we like to see if the overall distribution in the study area.</p>
 <p>Navigate to Processing Toolbox &gt; Count Points in Polygon</p>
 <p>In Polygon, select Final_Shape (The shape used as basemap for our Study Area)</p>
-<p>In Points, select All_Electricity (The points that you want to count)</p>
+<p>In Points, select All_Commerce (The points that you want to count)</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/ch4.png" width="478" /></p>
+<p><img src="img/ch4.png" width="480" /></p>
 </div>
 <p>Note that you should skip invalid geometry to ensure smooth process.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2186,21 +2186,21 @@ Data Preparation
 <p>Once everything is in Order, click on Run. It is also a good habit to look through the Logs to ensure there are no errors in the process.</p>
 <p>Once it has successfully run, you will notice that there are a temporary file name Count, and if you check the table attributes, you are able to see that each polygon has a new column appended to it called num_points. This is the number of points that fall within the polygon.</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/ch5.png" width="500" /></p>
+<p><img src="img/ch5.png" width="503" /></p>
 </div>
 <p>Do remember to save the layer before proceeding as it is a temporary layer.</p>
 <p>Once saved, click on layer &gt; properties. The Layer properties should pop up.</p>
 <p>In the symbology table &gt; change style to Graduated &gt; Select desired colour ramp.</p>
 <p>For Mode, select Natural Breaks (Jenks) and click classify. qGIS will automatically classify the values for you.</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/ch6.png" width="622" /></p>
+<p><img src="img/ch6.png" width="623" /></p>
 </div>
 <p>Once done, click on APPLY and OK. You should see a screen similar to mine.</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/ch7.png" width="419" /></p>
+<p><img src="img/ch7.png" width="442" /></p>
 </div>
 <blockquote>
-<p>DIY: Using the steps you had learned repeat to create choropleth maps for Population Density by district, Commerce and ForestFire.</p>
+<p>DIY: Using the steps you had learned repeat to create choropleth maps for Population Density by district and Forest Fire.</p>
 </blockquote>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

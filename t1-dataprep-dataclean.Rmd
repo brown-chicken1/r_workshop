@@ -66,6 +66,10 @@ The processing of each layer will differ according to their data type. We have s
 + TOPONIMI_PT_50k
 + TERMINALBUS_PT_50k 
 + Forest Fire
++ Commerce
++ Electricity and Network: GENLISTRIK: Electricity, KABELLISTRIK: Power cable, MENARALISTRIK: Electric Tower, MENARATELPON: Tower Phone, PANCARTV: TV Transmitter, PANCARRADIO: Radio Transmitter
++ Water Supply (Distributors)
+
 
 **Area**
 
