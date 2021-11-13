@@ -51,6 +51,17 @@ Dryland and mixed dryland farming are found closer to the coast, distributed rel
 Mining areas are mostly close to the coast, south of Samarinda. They are especially common at the Sanga Sanga district. Upon further research, the area close to Sanga Sanga has had various disagreements and protests among villages as a result of the mining activities. Furthermore, companies that had left the area did not fill up mine pits, causing floods and terrain damage whenever it rains and reducing the suitability of the land for other activities.
 
 https://www-mongabay-co-id.translate.goog/2018/08/18/tolak-perusahaan-tambang-warga-sanga-sanga-upacara-kemerdekaan-indonesia-di-area-konsesi/?_x_tr_sl=id&_x_tr_tl=en&_x_tr_hl=en-GB&_x_tr_pto=nui https://betahita-id.translate.goog/news/detail/6080/forum-sanga-sanga-tutup-tambang-pt-abn-pulihkan-lingkungan.html.html?_x_tr_sl=id&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=nui,sc
+
+## 2.2 Commerce
+```{r}
+knitr::include_graphics("img/Commerce.png")
+```
+
+it easily generates various employment opportunities in other areas such as transport and logistics, banking, and retail. Commerce overall is an essential component of national development and wealth creation.
+
+In our analysis, the distribution of commerce is correlated to urban settlements in the study area. The darker shades are those with more commerce in place. We should pick an area that has existing commerce so that we can boost economic development in that area. 
+
+
 # 3. Transport and Communication
 
 ## 3.1 Airports
@@ -92,6 +103,24 @@ There are several seaports, wharves and harbours stretching from the coast to in
 ![](sitesurvimg/Road density 2.png)
 
 # 4. Infrastructure
+
+## 4.1 Infrastructure - Buildings
+
+Existing Infrastructure such as buildings plays an important role as it shows the necessary buildings needed for people to live in. We have analysed the distribution of buildings throughout the area. The darker shades are those with more building infrastructure in place. 
+ 
+There are various pros and cons to consider when picking an area that has this basic infrastructure in place.
+Pros: Basic infrastructure buildings able to pick up the development process more quickly.
+Cons: Certain infrastructure may require demolition to make way for more development.
+
+
+
+## 4.2 Infrastructure - Electricity 
+
+Electricity plays an important role and is a necessity in everyday life. We have analysed the distribution of electricity and power throughout the area. The darker shades are those with more electricity infrastructure in place. We should pick an area that has this basic infrastructure in place.
+
+```{r}
+knitr::include_graphics("img/Electricity.png")
+```
 
 # 5. Environment and Hazard
 
