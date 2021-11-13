@@ -17,6 +17,8 @@ To create the heatmaps, we will be using the forest fire dataset and the final_s
   
 The forest fire hot spot are split into 6 files of each year from 2014 - 2019. We will want to merge these layers into one shapefile that contains all the hotspot from eyar 2014 - 2019.
 
+
+
 ## 2. Steps to create merged forest fire shapefile
 
 1. Put in all the forest fire layers (2014 - 2019) into QGIS.
@@ -95,3 +97,5 @@ knitr::include_graphics("img/hm4.png")
 ```{r}
 knitr::include_graphics("img/hm5.png")
 ```
+
+>DIY: Using the steps you had learned from the previous section, add All_electricity, map layer into the project.
