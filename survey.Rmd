@@ -177,13 +177,13 @@ knitr::include_graphics("img/E2.png")
 We also added layers of all major rivers and lakes in our study area and changed all their colours to dark blue. We can see that the areas around the lakes and rivers are mostly low-lying with elevation of around 10m. Unsurprisingly, the coastal areas of the study area are all below 10m elevation and the elevation would get higher the further we are from the coastal areas.
 
 ```{r}
-knitr::include_graphics("img/E3.png")
+knitr::include_graphics("img/E3.jpg")
 ``` 
 
 The northern region of the study area, while does have some area well above 50m, is surrounded by a large portion of low lying area 
 Even close proximity around smaller streams are not suitable for settlements as the elevation is around 15m which would still run the risk of a flash flood during heavy rainfall. 
 
 ```{r}
-knitr::include_graphics("img/E4.png")
+knitr::include_graphics("img/E4.jpg")
 ```
 
