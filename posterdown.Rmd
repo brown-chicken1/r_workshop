@@ -26,47 +26,50 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 # Introduction
+As Budding GIS Analyst of an international urban and regional planning consulting company we are tasked to prepare a study for the proposed new capital city. This study aims to build up a GIS for the proposed new capital area. 
 
-As Budding GIS Analyst of an international urban and regional planning consulting company we are tasked to prepare a study for the proposed new capital city. 
-
-This study aims to build up a GIS for the proposed new capital area. The study utilises GIS-Enabled Urban Planning Support System by integrating open government data and other open source data sets.The study further collect, process and analyse spatially related issues using relevant real world data.
+The study utilises GIS-Enabled Urban Planning Support System by integrating open government data and other open source data sets.The study further collect, process and analyse spatially related issues using relevant real world data.
 
 ## Objectives
-
 1. Prepare a report of survey to be submitted to the National Development Planning Agency (abbreviated Bappenas) on the analysis of the proposed Study Area
 
 2. Use GIS analysis and multi-criteria evaluation method to identify site suitability for the proposed new capital city according to the proposed Research Criteria.
 
 # Methods
-
-This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@R-posterdown].
+* The methods used were GIS analytical tools such as:
+  + Preparing qualitative and quantitative thematic maps.
+  + Preparing Choropleth Maps
+  + Preparing Heatmap Maps 
+  + Preparing Overlay Maps
+  + Preparing Density Maps
+  + Preparing Proximity Maps
+  + AHP Criteria for Rationalisation
+  + Composite Ranked Layers 
 
 # Results
 
-Usually you want to have a nice table displaying some important results that you have calculated. In `posterdown` this is as easy as using the `kable` table formatting you are probably use to as per typical R Markdown formatting.
+Task 1: Conclusion
 
-You can reference tables like so: Table \@ref(tab:mytable). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est.
-
-```{r mytable, out.width='80%'}
-knitr::kable(iris[1:10, 1:4], caption = 'Table caption.',align = 'c',"html")
+```{r}
+knitr::include_graphics("img/Commerce.png")
 ```
 
-Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
+Task 2: Conclusion
 
-```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!', fig.height=5}
-plot(mtcars[1:2])
+```{r}
+knitr::include_graphics("img/Commerce.png")
 ```
 
-```{r morefigs, out.width='80%', echo=TRUE, fig.cap='Amazing, right?!', fig.height=5}
-data <- iris
+AHP Criteria
 
-plot(x = data$Sepal.Length, 
-     y = data$Sepal.Width, 
-     col = data$Species,
-     pch = 19, 
-     xlab = "Sepal Length (cm)",
-     ylab = "Sepal Width (cm)")
+```{r}
+knitr::include_graphics("img/Commerce.png")
+```
 
+Site Selection
+
+```{r}
+knitr::include_graphics("img/Commerce.png")
 ```
 
 # Next Steps
