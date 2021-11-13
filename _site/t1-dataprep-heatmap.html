@@ -2067,6 +2067,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-left">
 <a href="index.html" class="title">Test Website</a>
 <a href="overview.html">Overview</a>
+<a href="posterdown.html">Poster</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Data Preparation
@@ -2148,6 +2149,38 @@ Data Preparation
 <li><p>Export that into a shapefile and call it Combined_FF. Ensure the CRS is the same as Step 3. This will be our final combined forest fire layer.</p></li>
 </ol>
 <h2 id="creating-the-heatmap">3. Creating the heatmap</h2>
+<ol type="1">
+<li>Moving on to creating the heatmap for our forest fire layer. We first search ’heatmap’in the Processing Toolbox. Then click on Heatmap(Kernel Density Estimation).</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm2.png" width="242" /></p>
+</div>
+<ol start="2" type="1">
+<li>For the point layer, put in ‘Combined_FF’ and for the Radius put in 10,000. For Pixel size Y and X put in 100 for both of them. Your final screen should look like this.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm1.png" width="707" /></p>
+</div>
+<ol start="3" type="1">
+<li>Click Run. You should get a temporary layer called Heatmap as shown below.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm3.png" width="748" /></p>
+</div>
+<ol start="4" type="1">
+<li><p>Export the Heatmap as a Geopackage and ensure that the CRS is EPSG : 23845 DGN95 / Indonesia TM-3 zone 54.1.</p></li>
+<li><p>Next, we will be changing the symbology of the layer. Click on Properties of the new Heatmap layer and then Symbology.</p></li>
+<li><p>Change the render type to ‘singleband pseudocolour’ and the colour ramp to ‘Red’. Once you are done, your screen should look like this.</p></li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm4.png" width="614" /></p>
+</div>
+<ol start="7" type="1">
+<li>Click on Apply and Ok. Your screen should look like this</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm5.png" width="582" /></p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
