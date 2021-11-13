@@ -1,7 +1,7 @@
 ---
 title: "Preparation of Heatmap"
 description: |
-  A new article created using the Distill format.
+  Overview of the steps to prepare heatmap using the forest fire layer as reference
 output: distill::distill_article
 ---
 
@@ -16,6 +16,8 @@ To create the heatmaps, we will be using the forest fire dataset and the final_s
   + https://www.indonesia-geospasial.com/2020/04/shapefile-shp-titik-api-hotspot.html The forest hot spots.
   
 The forest fire hot spot are split into 6 files of each year from 2014 - 2019. We will want to merge these layers into one shapefile that contains all the hotspot from eyar 2014 - 2019.
+
+
 
 ## 2. Steps to create merged forest fire shapefile
 
@@ -62,3 +64,36 @@ knitr::include_graphics("img/ml4.png")
 
 ## 3. Creating the heatmap
 
+1. Moving on to creating the heatmap for our forest fire layer. We first search 'heatmap'in the Processing Toolbox. Then click on Heatmap(Kernel Density Estimation).
+
+```{r}
+knitr::include_graphics("img/hm2.png")
+```
+
+2. For the point layer, put in 'Combined_FF' and for the Radius put in 10,000. For Pixel size Y and X put in 100 for both of them. Your final screen should look like this. 
+
+```{r}
+knitr::include_graphics("img/hm1.png")
+```
+
+3. Click Run. You should get a temporary layer called Heatmap as shown below.
+
+```{r}
+knitr::include_graphics("img/hm3.png")
+```
+
+4. Export the Heatmap as a Geopackage and ensure that the CRS is EPSG : 23845 DGN95 / Indonesia TM-3 zone 54.1. 
+
+5. Next, we will be changing the symbology of the layer. Click on Properties of the new Heatmap layer and then Symbology. 
+
+6. Change the render type to 'singleband pseudocolour' and the colour ramp to 'Red'. Once you are done, your screen should look like this.
+
+```{r}
+knitr::include_graphics("img/hm4.png")
+```
+
+7. Click on Apply and Ok. Your screen should look like this
+
+```{r}
+knitr::include_graphics("img/hm5.png")
+```

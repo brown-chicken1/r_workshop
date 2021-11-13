@@ -89,27 +89,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Test Website: Preparation of Heatmap</title>
 
-  <meta property="description" itemprop="description" content="A new article created using the Distill format."/>
+  <meta property="description" itemprop="description" content="Overview of the steps to prepare heatmap using the forest fire layer as reference"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Test Website: Preparation of Heatmap"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="A new article created using the Distill format."/>
+  <meta property="og:description" content="Overview of the steps to prepare heatmap using the forest fire layer as reference"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Test Website"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Test Website: Preparation of Heatmap"/>
-  <meta property="twitter:description" content="A new article created using the Distill format."/>
+  <meta property="twitter:description" content="Overview of the steps to prepare heatmap using the forest fire layer as reference"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Preparation of Heatmap"]},{"type":"character","attributes":{},"value":["A new article created using the Distill format.\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Preparation of Heatmap"]},{"type":"character","attributes":{},"value":["Overview of the steps to prepare heatmap using the forest fire layer as reference\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2057,7 +2057,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Preparation of Heatmap","description":"A new article created using the Distill format.","authors":[]}
+{"title":"Preparation of Heatmap","description":"Overview of the steps to prepare heatmap using the forest fire layer as reference","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2067,6 +2067,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-left">
 <a href="index.html" class="title">Test Website</a>
 <a href="overview.html">Overview</a>
+<a href="posterdown.html">Poster</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Data Preparation
@@ -2104,7 +2105,7 @@ Data Preparation
 <h1>Preparation of Heatmap</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A new article created using the Distill format.</p></p>
+<p><p>Overview of the steps to prepare heatmap using the forest fire layer as reference</p></p>
 </div>
 
 
@@ -2148,6 +2149,38 @@ Data Preparation
 <li><p>Export that into a shapefile and call it Combined_FF. Ensure the CRS is the same as Step 3. This will be our final combined forest fire layer.</p></li>
 </ol>
 <h2 id="creating-the-heatmap">3. Creating the heatmap</h2>
+<ol type="1">
+<li>Moving on to creating the heatmap for our forest fire layer. We first search ’heatmap’in the Processing Toolbox. Then click on Heatmap(Kernel Density Estimation).</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm2.png" width="242" /></p>
+</div>
+<ol start="2" type="1">
+<li>For the point layer, put in ‘Combined_FF’ and for the Radius put in 10,000. For Pixel size Y and X put in 100 for both of them. Your final screen should look like this.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm1.png" width="707" /></p>
+</div>
+<ol start="3" type="1">
+<li>Click Run. You should get a temporary layer called Heatmap as shown below.</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm3.png" width="748" /></p>
+</div>
+<ol start="4" type="1">
+<li><p>Export the Heatmap as a Geopackage and ensure that the CRS is EPSG : 23845 DGN95 / Indonesia TM-3 zone 54.1.</p></li>
+<li><p>Next, we will be changing the symbology of the layer. Click on Properties of the new Heatmap layer and then Symbology.</p></li>
+<li><p>Change the render type to ‘singleband pseudocolour’ and the colour ramp to ‘Red’. Once you are done, your screen should look like this.</p></li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm4.png" width="614" /></p>
+</div>
+<ol start="7" type="1">
+<li>Click on Apply and Ok. Your screen should look like this</li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/hm5.png" width="582" /></p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
