@@ -1,7 +1,7 @@
 ---
 title: "Preparation of Heatmap"
 description: |
-  A new article created using the Distill format.
+  Overview of the steps to prepare heatmap using the forest fire layer as reference
 output: distill::distill_article
 ---
 
@@ -97,5 +97,3 @@ knitr::include_graphics("img/hm4.png")
 ```{r}
 knitr::include_graphics("img/hm5.png")
 ```
-
->DIY: Using the steps you had learned from the previous section, add All_electricity, map layer into the project.
