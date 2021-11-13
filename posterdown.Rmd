@@ -1,19 +1,20 @@
 ---
-title: Generate Reproducible & Live HTML and PDF Conference Posters Using RMarkdown
+title: Site analysis and selection for the New Jakarta Capital City.
 author:
-  - name: Brent Thorne
+  - name: Sun Han Chen
     affil: 1
-    orcid: '0000-0002-1099-3857'
-  - name: Another G. Author
+  - name: Soo Yu Rong Arick
     affil: 2
+  - name: Ang Heng Di
+    affil: 3
 affiliation:
   - num: 1
-    address: Department of Earth Science, Brock University
-  - num: 2
-    address: Department of Graphics and Layouts, University of Posters; Canada
+    address: School of Economics
+  - num: 2,3
+    address: School of Computing and Information systems, Singapore Management University
 column_numbers: 3
-logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
-logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+logoright_name: "img/SCIS.png"
+logoleft_name: "img/SOE.png"
 output: 
   posterdown::posterdown_html:
     self_contained: false
@@ -26,13 +27,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Introduction
 
-Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@R-rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
+As Budding GIS Analyst of an international urban and regional planning consulting company. This study aims to build up a GIS for the proposed new capital area. The study utilises GIS-Enabled Urban Planning Support System by integrating open government data and other open source data sets.The study further collect, process and analyse spatially related issues using relevant real world data.
 
 ## Objectives
 
-1. Easy to use reproducible poster design. 
-2. Integration with R Markdown.
-3. Easy transition from `posterdown` to `pagedown` report or manuscript documents [@R-pagedown].
+1. Prepare a report of survey to be submitted to the National Development Planning Agency (abbreviated Bappenas) on the analysis of the proposed Study Area
+
+2. Use GIS analysis and multi-criteria evaluation method to identify site suitability for the proposed new capital city according to the proposed Research Criteria.
 
 # Methods
 
