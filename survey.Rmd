@@ -106,21 +106,33 @@ There are several seaports, wharves and harbours stretching from the coast to in
 
 ## 4.1 Infrastructure - Buildings
 
+```{r}
+knitr::include_graphics("img/Buildings.png")
+```
+
 Existing Infrastructure such as buildings plays an important role as it shows the necessary buildings needed for people to live in. We have analysed the distribution of buildings throughout the area. The darker shades are those with more building infrastructure in place. 
  
 There are various pros and cons to consider when picking an area that has this basic infrastructure in place.
 Pros: Basic infrastructure buildings able to pick up the development process more quickly.
 Cons: Certain infrastructure may require demolition to make way for more development.
 
-
-
 ## 4.2 Infrastructure - Electricity 
-
-Electricity plays an important role and is a necessity in everyday life. We have analysed the distribution of electricity and power throughout the area. The darker shades are those with more electricity infrastructure in place. We should pick an area that has this basic infrastructure in place.
 
 ```{r}
 knitr::include_graphics("img/Electricity.png")
 ```
+
+Electricity plays an important role and is a necessity in everyday life. We have analysed the distribution of electricity and power throughout the area. The darker shades are those with more electricity infrastructure in place. We should pick an area that has this basic infrastructure in place.
+
+## 4.3 Infrastructure - Water Supply (Distributers)
+
+```{r}
+knitr::include_graphics("img/Water.png")
+```
+
+Water is a requisite resource for business. Without regular or continuous access to clean water, businesses either have to raise prices, shut down or both. Industries that rely on water for operations or manufacturing are the most vulnerable and most at risk.
+
+The study analyzes the location and distribution of water supply (distributers) in the Study Area. We should pick an area that is accessible to water supply to keep operations running.
 
 # 5. Environment and Hazard
 
