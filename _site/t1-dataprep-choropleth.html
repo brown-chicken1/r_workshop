@@ -2147,7 +2147,7 @@ Data Preparation
 <p><img src="img/ch1.png" width="516" /></p>
 </div>
 <h2 id="symbolising-qualitative-gis-data-layers">3.0 Symbolising Qualitative GIS Data Layers</h2>
-<p>In this section, you will learn how to symbolise GIS data layers by using their corresponding qualitative data values.</p>
+<p>In this section, you will learn how to apply and use symbols to catergorise GIS data layers by using their corresponding qualitative data values.</p>
 <p>Using all_water_supply layer, right click on layer &gt; properties. The Layer properties should pop up.</p>
 <p>Select on Symbology &gt; Change size to 10, marker to SVG marker and select water &amp; tap symbol.</p>
 <p>You should see something like this:</p>
@@ -2158,19 +2158,19 @@ Data Preparation
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/ch3.png" width="530" /></p>
 </div>
-<p>This map is popularly known as Point symbol map among the GIS and cartography communities.The advantage of GIS-based point symbol map is that the map can be changed easily. GIS-based point symbol map is also highly interactive. You can navigate around the digital map and zoom in to view the distribution in greater details.</p>
+<p>In the GIS and cartography fields, this map is known as a Point symbol map. The benefit of a GIS-based point symbol map is that it can be readily modified. An interactive GIS-based point symbol map is also available. You can move around the digital map and zoom in to see more information on the distribution.</p>
 <blockquote>
 <p>DIY: Using the steps you had learned repeat for Airports, Seaports, Bus Terminals, All_Electricity and use appropriate SVG Symbols for them.</p>
 </blockquote>
 <h2 id="choropleth-map-using-gis">4.0 Choropleth map using GIS</h2>
-<p>Choropleth mapping involves the symbolisation of enumeration units, such as countries, provinces, states, counties or census units, using area patterns or graduated colors.</p>
+<p>Choropleth mapping is the process of applying area patterns or graded colors to represent enumeration units such as countries, provinces, states, counties, or census units.</p>
 <ul>
-<li><p>The major concerns of choropleth mapping are the method of data classification, areal symbolization, and the overall map design. General rules for choropleth mapping are as follows:</p></li>
-<li><p>Use data that are assumed to be uniform throughout an enumeration unit.</p></li>
-<li><p>Because enumeration units vary in size, do not map totals. Use derived values, such as ratios, rates, proportions, or percentages.</p></li>
-<li><p>The best classing method depends on the data, the map reader and the purpose of the map.</p></li>
-<li><p>When classifying data, the full range of data must be included and class values should not overlap. No more than six classes are recommended.</p></li>
-<li><p>Class symbols (i.e. colors or patterns) must be easily distinguishable.</p></li>
+<li><p>The method of data classification, areal symbolization, and the overall map design are the main concerns of choropleth mapping. Here are some of the general rules for choropleth mapping:</p></li>
+<li><p>The data that is believed to be consistent across an entire enumeration unit.</p></li>
+<li><p>Do not map totals because enumeration units vary in size. Ratios, rates, proportions, and percentages are examples of derived values.</p></li>
+<li><p>The optimum classification method is determined by the data, the map reader, and the map’s purpose.</p></li>
+<li><p>When classifying data, make sure to cover the entire range of data and avoid overlapping class values. It is suggested that you use no more than six classes.</p></li>
+<li><p>The colors and patterns used as class symbols must be easily recognized.</p></li>
 </ul>
 <p>Using the INTERSECT_NIAGA (Commerce) layer, we can see that it’s in point format. When creating the choropleth map, we like to see if the overall distribution in the study area.</p>
 <p>Navigate to Processing Toolbox &gt; Count Points in Polygon</p>
