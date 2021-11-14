@@ -56,7 +56,7 @@ knitr::include_graphics("img/task1.png")
 Task 2: Conclusion
 
 ```{r}
-knitr::include_graphics("img/Commerce.png")
+knitr::include_graphics("img/task2.png")
 ```
 
 AHP Criteria
