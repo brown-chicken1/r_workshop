@@ -162,13 +162,13 @@ While our study area is not near the epicenter of the earthquake, we can see tha
 
 ## 5.3 Major rivers with digital elevation
 
-For digital elevation, the DEM map gave a range of -77m under sea level to 635m above sea level. We would want to avoid areas with low elevation and especially if it is close to water bodies (lakes and rivers) so as to avoid flash floods. 
+For digital elevation, the DEM map gave a range of -77m under sea level to 289m above sea level. We would want to avoid areas with low elevation and especially if it is close to water bodies (lakes and rivers) so as to avoid flash floods. 
 
 ```{r}
 knitr::include_graphics("img/E1.png")
 ```
 
-Firstly, we made any area below sea level as blue to signify that these areas are either filled with water or are extremely likely to. After doing some research (i will link), we realised that there is no optimal altitude for cities. However, areas with less than 10m above sea level are considered dangerously low-lying and susceptible to flash floods. Hence we considered anything below 10m as dangerous (red) and anything above 100m would be considered safe. 
+Firstly, we made any area below sea level as blue to signify that these areas are either filled with water or are extremely likely to. Areas with less than 10m above sea level are considered dangerously low-lying and susceptible to flash floods. Hence we considered anything below 10m as dangerous (red-orange) and anything above 15 would be considered relatively safe in the near future. Any area with an elevation of above 50m and 100m would be considered "mountainous areas", hence we have these areas in light and dark shades of yellow.
 
 ```{r}
 knitr::include_graphics("img/E2.png")
@@ -177,13 +177,13 @@ knitr::include_graphics("img/E2.png")
 We also added layers of all major rivers and lakes in our study area and changed all their colours to dark blue. We can see that the areas around the lakes and rivers are mostly low-lying with elevation of around 10m. Unsurprisingly, the coastal areas of the study area are all below 10m elevation and the elevation would get higher the further we are from the coastal areas.
 
 ```{r}
-knitr::include_graphics("img/E3.jpg")
+knitr::include_graphics("img/E3.png")
 ``` 
 
 The northern region of the study area, while does have some area well above 50m, is surrounded by a large portion of low lying area 
 Even close proximity around smaller streams are not suitable for settlements as the elevation is around 15m which would still run the risk of a flash flood during heavy rainfall. 
 
 ```{r}
-knitr::include_graphics("img/E4.jpg")
+knitr::include_graphics("img/E4.png")
 ```
 
