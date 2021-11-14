@@ -50,23 +50,44 @@ Similarly, only urban settlement areas were considered in the analysis. Therefor
 
 ![](images/results/settlement.png)
 
-As we are unable to build exactly on the urban settlement, the region that is exactly on the settlement is classed as 0. Increasingly, it is obvious that most areas of the map score higher than 0.5, due to their proximity to     
+As we are unable to build exactly on the urban settlement, the region that is exactly on the settlement is classed as 0. Increasingly, it is obvious that most areas of the map score higher than 0.5, due to their proximity to the large cities of Balikpapan and Samarinda with the suitability falling as the distance increases.
 
 > It should avoid natural forest as much as possible.
 
 Natural forests from the data include Primary and Secondary Dry and Wet Forests, Primary and Secondary Mangrove Forests, Secondary Swamp Forests and shrubbery. Although a check on internet websites show that majority of the land in Samarinda had already been deforested,  including the land labelled as “Shrubbery”, we decided to go with a more conservative estimate and include shrubbery in our data analysis, as we would want to avoid those areas as much as possible to preserve whatever natural vegetation there is left.
 
+![](images/results/forest.png)
+
+Much of the map area is covered in forest, except for some narrow strips on the west and in the north of the study area. Although not all of it is primary forest as there has been a large scale of deforestation, we believe that due to the urgent need to restore forests in East Kalimantan province, as well as to avoid developing on natural areas as much as possible, we have been rather conservative in our estimates.
+
 > It should avoid areas prone to forest fire.
 
 Due to climate change, deforestation and poor forest management, the impact of forest fires on potential land suitability sites has gotten stronger. We have identified a 2km buffer around the forest fire in order to ensure a sufficient margin of safety.
 
+![](images/results/forestfire.png)
+
+Unsurprisingly, where there are forests in the above picture, there are also high occurrences of forest fires. The only areas where this does not occur, are close to the mountaineous regions in the West and the North. The coastal areas seem to be more prone to forest fires as can be seen from the higher density of points, but given that many forest fires in Indonesia are actually man-made, this could be a plausible explanation. 
+
 > It should be highly accessible via road transport.
 
+![](images/results/road.png)
+
+Most areas score well on this, because of a wide variety of roads tht can see further development to support the capital city. Again, the exception is in the more mountaineous regions in the Southwest of the study area, and some regions between Balikpapan and Samarinda.
+
 > It should be near to airport(s) and seaport(s).
+
+![](images/results/airport.png)
+![](images/results/seaport.png)
+
+A 3km buffer was constructed outside of the airport to account for noise abatement limitations. Even so, most of the study area near the coastal areas are highly accessible to airports, with the exception of the area exactly between Balikpapan and Samarinda. The South of the study area has access to only one airport (Balikpapan Airport) while there are 3 airports in the north. Further research and surveys done in task 1 found that 2 of those 3 airports are either decommissioned or very lightly utilised. However, they could still be refurbished without incurring excessive capital expenditure if the situation calls for it, instead of contructing a new airport.
+
+Seaports are located closest to the rivers, but the presence of river proximity would work against them contributing significantly favourably to the site selection.
 
 # 2. AHP Selection Matrix 
 
 Based on secondary research sources, our team has identified the prioritisation of issues as follows:
+
+# STILL TO CHANGE!
 
 1. Gradient of slope – 19.9%
 
@@ -92,6 +113,26 @@ Second is the distance from river or major coastlines. The main rationale for mo
 
 The next few factors are related to the proximity to known forest fire hotspots, the road accessibility and distance from forests, all of which receive relatively similar weightage. Forest fires can certainly have disastrous effects on the city, but it is possible to mitigate their effect through a comprehensive road network, and other methods like building small and simple canals. These canals can be done on existing agricultural land and ditches to act as firebreaks, which has been done in Kalimantan province already.  
 
-More important factors, however, are to ensure a comprehensive road network, which would facilitate forest fire mitigation methods, and avoidance of areas that are near the forest in the first place, as these areas have the potential to become fire risk areas especially if deforestation occurs. Including the shrubbery layer was important to the analysis, because literature has discovered that the nature of these low density shrubs are dry vegetation, which are at the greatest risk of triggering forest fires.  Furthermore, there is a need to build in resilience to the future capital city by reducing the incentive for deforestation as much as possible, since the more fire-resistant primary forests areas have been greatly reduced as a result of deforestation. It is estimated that only 3% of peatlands are still fire-resistant primary forest, and researchers advocate for their protection to the fullest extent. 
+Similarly important factors, however, are to ensure a comprehensive road network, which would facilitate forest fire mitigation methods, and avoidance of areas that are near the forest in the first place, as these areas have the potential to become fire risk areas especially if deforestation occurs. This would be secondary to actually avoiding forest fire prone areas in the first place, as road infrastructure can and will be built as the city expands.
+
+Including the shrubbery layer in the forest layer was important to the analysis, because literature has discovered that the nature of these low density shrubs are dry vegetation, which are at the greatest risk of triggering forest fires.  Furthermore, there is a need to build in resilience to the future capital city by reducing the incentive for deforestation as much as possible, since the more fire-resistant primary forests areas have been greatly reduced as a result of deforestation. It is estimated that only 3% of peatlands are still fire-resistant primary forest, and researchers advocate for their protection to the fullest extent. 
 
 The last two factors, our team believes, are “good-to-haves”. The distance to airport is measured at only 7%, because of the availability of alternatives like the 2 major airports at Balikpapan and Samarinda, which already have established air networks. While it is not unusual to have airports that are a long way from the city centre, for example Beijing Capital Airport is almost 30km away from downtown and Pudong Airport at 45km, it is still weighted above the seaport due to its importance in attracting investment and convenience for visiting dignatories. As the size selection is only 4500-5500 hectares, it is also unlikely that there would be an economic case for a construction of an entirely new airport to solely serve the capital. However, relative to the environmental concerns that any proposed development in Kalimantan needs to contend with, we believe that land and sea port proximity is relatively less important. 
+
+# 3. Implementing the Analysis
+
+![](images/results/overall.png)
+Based on the analysis, several areas, mostly clustered around the regions in the north and southwest, have been identified as suitable locations. Based on a threshold value of 0.6 as acceptable, the suitable sites are outlined in green.
+
+We have identified the most suitable site there. Although it does not score the highest on the scale, areas that score 9 or 10 are significantly smaller and do not fit the 4500 to 5500 hectare definition that is required of the location. Furthermore, although the mountaineous area at the southwest of the study do quite well, it is likely that in order to get to that area in the first place, one would still need to traverse steep slopes, which would expense time and resources.
+
+In view of the size constraints, therefore, we believe that the chosen area would be the most suitable.
+
+- It does not have steep slope or is close to rivers or coastline and hence would not be susceptible to flooding.
+- It is one of the few areas with low incidences of forest fire, and also would have less environmental destruction because the locations of forests are not there.
+- While it is far away from seaports they are not weighted highly in our analysis, and there are 2 existing airports which can be redeveloped for the capital's needs, and one more international airport that serves Samarinda.
+
+
+
+
+
