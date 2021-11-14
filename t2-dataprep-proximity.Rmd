@@ -128,7 +128,7 @@ For the menu bar, select Raster -> Analysis <- Proximity (Raster Distance). The 
 + For Output data type, select Float32 from the drop-down list.
 + Click on Run button.
 
->DIY: Using the steps you had learned, Clip the proximity map to Final_shape and save the newly computed proximity map into GeoPackage format with a resolution of 100m x 100m. Call the layer Road_Prox.
+>DIY: Using the steps you had learned, Clip the proximity map to Final_shape and save the newly computed proximity map into GeoPackage format with a resolution of 100m x 100m. Call the layer prox_road.
 
 Your screen should look similar to the screenshot below.
 
@@ -138,11 +138,28 @@ knitr::include_graphics("img/pr9.png")
 
 Now we can move on to normalization of the map layer.
 
-## 4.2 Working with Proximity function of QGIS
+## 4.2 Clipping proximity map to study area 
 
-* At the Search pane of Geoprocessing Toolbox panel, type raster calculator. Double-click on Raster calculator of Raster analysis. The dialog window of Raster Calculator appears.
+* At the Search pane of Geoprocessing Toolbox panel, type 'Clip Raster by Mask Layer'. Double-click on Clip Raster by Mask Layer. The dialog window of Clip Raster by Mask Layer appears.
 
-+ At the Layers panel of Raster Calculator dialog window, double-click on Road_Prox, it will appear in the expression. Select the divide key “/” and input the maximum value of the layer you are using. In this case for roads is “13263.8613281250”
+For the input layer of the Clip Raster by Mask Layer window, put in prox_road. For the mask layer, put in final_area.
+
+For the Source CRS and Target CRS, ensure that both of them are EPSG : 23845 DGN95 / Indonesia TM-3 zone 54.1. 
+
+For the section 'Assign a specific nodata value to output bands [optional]', change it to 99999999. Your screen should look like this :
+
+```{r}
+knitr::include_graphics("img/clip1.png")
+```
+
+When you are done, click on 'Run'. A new layer called Clipped by Mask Layer would appear. Save it as a geopackage and call it clippedprox_road.
+
+
+## 4.3 Working with Raster Calculator function of QGIS
+
+* At the Search pane of Geoprocessing Toolbox panel, type 'raster calculator'. Double-click on Raster calculator of Raster analysis. The dialog window of Raster Calculator appears.
+
++ At the Layers panel of Raster Calculator dialog window, double-click on clippedprox_road, it will appear in the expression. Select the divide key “/” and input the maximum value of the layer you are using. In this case for roads is “13263.8613281250”
 + Remember to add in reference layer such as the final_shape as well as change CRS type into Project CRS. 
 
 ```{r}
