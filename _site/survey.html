@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #20794d; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,14 +77,13 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.sc { color: #20794d; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
-
 
   <!--radix_placeholder_meta_tags-->
   <title>Test Website: Task 1: Survey Results</title>
@@ -1860,10 +1859,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refs = $(this).attr('data-cites').split(" ");
-        var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
-        }).join("\n");
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2076,12 +2072,10 @@ Data Preparation
 <a href="t1-dataprep-dataclean.html">Task 1: Data Cleaning and Preparation</a>
 <a href="t1-dataprep-choropleth.html">Task 1: Preparation of Choropleth Map</a>
 <a href="t1-dataprep-heatmap.html">Task 1: Preparation of Heatmap</a>
-<a href="t1-dataprep-overlay.html">Task 1: Preparation of Overlay Map</a>
 <a href="road-density.html">Task 1: Preparation of Road Density Map</a>
 <a href="t2-dataprep-dataclean.html">Task 2: Data Cleaning and Preparation</a>
 <a href="t2-dataprep-proximity.html">Task 2: Calculating Proximity Map</a>
 <a href="t2-dataprep-ahp.html">Task 2: AHP Criteria for Rationalisation</a>
-<a href="t2-dataprep-ranking.html">Task 2: Composite Ranked Layer</a>
 </div>
 </div>
 <a href="survey.html">Report of Survey</a>
@@ -2153,11 +2147,14 @@ Data Preparation
 <p><img src="sitesurvimg/Bus%20Terminal%20location.png" /></p>
 <p>The bus terminals are located within the major cities of Balikpapan and Samarinda, with two of them being outside the city limits. The first bus terminal outside those city limits is the terminal in Tenggarong, the regency capital of Kudai Kartanegara. The second bus terminal outside those city limits is the terminal in Muara Jawa on the Eastern coast, which connects to a seaport, which has routes to Pare Pare, Sulawesi.</p>
 <h2 id="seaports">3.3 Seaports</h2>
-<p><img src="sitesurvimg/Sea%20ports%20locations.png" /></p>
+<p><img src="sitesurvimg/Sea%20ports%20location.png" /></p>
 <p>There are several seaports, wharves and harbours stretching from the coast to inland. Both cities Samarinda and Balikpapan have a system of wharves within the rivers that run through the middle of the city. There are also seaports near the bus terminal in Muara Jawa, which connect to other Indonesian islands such as Sulawesi. Some ports, namely one at Tanjung Santan, have been removed because they are primarily for LPG cargo and are privately owned , and not for passenger use.</p>
 <h2 id="roads">3.4 Roads</h2>
 <p><img src="sitesurvimg/Road%20density.png" /></p>
 <p><img src="sitesurvimg/Road%20density%202.png" /></p>
+<p>The road network naturally gets more dense around the urban areas of Balikpapan and Samarinda. There are a few major throroughfares highlighted in blue on the map, indicating primary roads and motorways. They primarily connect Balikpapan with Samarinda, and from Samarinda, there is a road further inland tnto Kalimantan out of the study area.</p>
+<p>Similarly the secondary road network is also relatively well developed, especially along the coastal areas in the north of the study area.</p>
+<p>However, some areas remain relatively untouched, especially the west and southwest of the study area where the terrain is more hilly and they are far from the urban population centres.</p>
 <h1 id="infrastructure">4. Infrastructure</h1>
 <h2 id="infrastructure---buildings">4.1 Infrastructure - Buildings</h2>
 <div class="layout-chunk" data-layout="l-body">
