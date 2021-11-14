@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## 1. Objective: 
-
+The objective of this section is to create raster layers and further using the raster layers to create proximity maps (distance) as well as to normalise the values of the proximity map in order to accurate derive selection criteria analysis from it.
 
 
 ## 2. Getting Started
@@ -158,3 +158,13 @@ You should see the values normalised now similar to the screen below.
 ```{r}
 knitr::include_graphics("img/pr11.png")
 ```
+
+## 5.0 Working with Proximity function of QGIS
+
+>* DIY: Using the steps you learnt in this section, replicate the steps to create raster layers and normalised proximity map layers for: 
++ settlements
++ forest
++ airport
++ seaport
++ forest_fire
++ rivers
