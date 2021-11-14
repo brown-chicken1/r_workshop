@@ -1,0 +1,30 @@
+---
+title: "Data ranking and selection of site suitablility."
+description: |
+  In this section, the study will take into account all previous analysis results to create a ranked composite layer to identify potential site selection for the New Capital City.
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 1. Objective: 
+
+
+
+## 2. Getting Started
+
+>DIY: 
+
+Example 
+
+
+
+## 3.0 
+
+>DIY: 
+
+## 4.0 
+
+>DIY: 

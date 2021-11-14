@@ -1,0 +1,30 @@
+---
+title: "Data catergorisation and creation for AHP analysis."
+description: |
+  In this section, the study will be using the Excel-based AHP library such as the AHP Template provided by SCB Associates.
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 1. Objective: 
+
+
+
+## 2. Getting Started
+
+>DIY: 
+
+Example 
+
+
+
+## 3.0 
+
+>DIY: 
+
+## 4.0 
+
+>DIY: 

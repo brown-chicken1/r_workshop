@@ -1,0 +1,30 @@
+---
+title: "Data Preperation and Cleaning for Task 2."
+description: |
+  In this section, you will prepare and clean relevant datasets needed for task 2.
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 1. Objective: 
+
+
+
+## 2. Getting Started
+
+>DIY: 
+
+Example 
+
+
+
+## 3.0 
+
+>DIY: 
+
+## 4.0 
+
+>DIY: 

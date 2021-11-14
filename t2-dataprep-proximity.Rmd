@@ -1,0 +1,30 @@
+---
+title: "Data rasterization and proximity mapping."
+description: |
+  In this section, you will prepare and create raster layers using vectors as well as creating a proximity (distance) map to aid in the site selection for task 2
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 1. Objective: 
+
+
+
+## 2. Getting Started
+
+>DIY: 
+
+Example 
+
+
+
+## 3.0 
+
+>DIY: 
+
+## 4.0 
+
+>DIY: 

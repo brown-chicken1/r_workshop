@@ -75,7 +75,7 @@ The processing of each layer will differ according to their data type. We have s
 
 + Mining Areas
 + Non-Agricultural Forest Areas
-+ Agricultural Areas
++ Agricultural Areas (Tuplah)
 + Settlements
 
 **Mixed**
