@@ -50,7 +50,7 @@ The study incorporates open government data and other open source data sets into
 Task 1: Conclusion
 
 ```{r}
-knitr::include_graphics("img/Commerce.png")
+knitr::include_graphics("img/task1.png")
 ```
 
 Task 2: Conclusion
