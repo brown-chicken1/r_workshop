@@ -11,9 +11,7 @@ navbar:
       href: posterdown.html
     - text: "Data Preparation"
       menu: 
-      - text: 'Overview of Preparation' 
-        href: dataprep.html
-        
+      
       - text: 'Task 1: Data Cleaning and Preparation'
         href: t1-dataprep-dataclean.html
       - text: 'Task 1: Preparation of Choropleth Map'
