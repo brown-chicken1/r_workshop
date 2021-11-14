@@ -32,6 +32,9 @@ The decision criteria should be in such a way that the threshold allows for at l
 
 From the DEM layer, the gradient of the land was calculated. Areas with lower gradient scored higher, and areas with a steeper gradient scored lower. The elevation itself was excluded from the analysis, as it is the change in elevation, rather than the absolute elevation, that matters. 
 
+
+
+
 > It should be away from potential natural disaster risk areas such as sea coasts, major rivers and volcanoes.
 
 As stated in the site survey analysis from task 1, there are no major volcanoes in the study area, therefore they were not incorporated into the analysis. The major areas of consideration were the sea coast and the 2 major rivers, the Mahakam River and the Balikpapan Bay, which a buffer region was implemented. The smaller regions in the study area did not have a buffer.

@@ -90,7 +90,7 @@ The second bus terminal outside those city limits is the terminal in Muara Jawa 
 
 ## 3.3 Seaports
 
-![](sitesurvimg/Sea ports locations.png)
+![](sitesurvimg/Sea ports location.png)
 
 There are several seaports, wharves and harbours stretching from the coast to inland. Both cities Samarinda and Balikpapan have a system of wharves within the rivers that run through the middle of the city. There are also seaports near the bus terminal in Muara Jawa, which connect to other Indonesian islands such as Sulawesi. Some ports, namely one at Tanjung Santan, have been removed because they are primarily for LPG cargo and are privately owned , and not for passenger use.
 
@@ -101,6 +101,13 @@ There are several seaports, wharves and harbours stretching from the coast to in
 ![](sitesurvimg/Road density.png)
 
 ![](sitesurvimg/Road density 2.png)
+
+The road network naturally gets more dense around the urban areas of Balikpapan and Samarinda. There are a few major throroughfares highlighted in blue on the map, indicating primary roads and motorways. They primarily connect Balikpapan with Samarinda, and from Samarinda, there is a road further inland tnto Kalimantan out of the study area.
+
+Similarly the secondary road network is also relatively well developed, especially along the coastal areas in the north of the study area. 
+
+However, some areas remain relatively untouched, especially the west and southwest of the study area where the terrain is more hilly and they are far from the urban population centres.
+
 
 # 4. Infrastructure
 
