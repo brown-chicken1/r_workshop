@@ -2108,24 +2108,105 @@ Data Preparation
 <div class="d-article">
 <h2 id="objective">1. Objective:</h2>
 <h2 id="getting-started">2. Getting Started</h2>
+<p>You will learn how to create raster and proximity map layers.before that, we will be installing a plugin called serval. Serval is a Raster editing tools, you can select and apply a modification to a chosen part of a raster.</p>
+<p>Click on plugin &gt; search “Serval”.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr1.png" width="529" /></p>
+</div>
+<p>Click Install, you should be able to see it downloaded similar to the screenshot below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/download1.png" width="470" /></p>
+</div>
+<h2 id="importing-raster-gis-data-layer">2.1 Importing raster GIS data layer</h2>
+<p>Under the Layer tab &gt; select Add Layer &gt; Raster Layer. The data source manager window will pop up. From source: select under the Provinsi Kalimantan Timur folder, import DEM SRTM 30M KALIMANTAN TIMUR.tif into the qGIS project.</p>
+<p>Your screen should look similar to the figure below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr2.png" width="824" /></p>
+</div>
+<p>Using previous steps, save the layer into geopackage format and rename the file as DEM, change CRS to project CRS, change the layer resolution to 100width and 100 height. Once ready, click on save.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr3.png" width="284" /></p>
+</div>
+<p>Next we will use Serval to select the DEM layer and change the values</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr4.png" width="1920" /></p>
+</div>
+<h2 id="working-with-saga-clip-raster-with-polygon">2.2 Working with SAGA clip raster with polygon</h2>
+<p>From processing toolbox under SAGA, select clip raster with polygon. Input DEM inside and polygon select Final_shape.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr5.png" width="476" /></p>
+</div>
+<p>This is to clip the DEM so that it will be aligned to the final_shape of our Study Area.</p>
 <blockquote>
-<p>DIY:</p>
+<p>DIY: Once done, save the DEM layer as Geopackage and rename it as ClippedDEM</p>
 </blockquote>
-<p>Example</p>
+<p>Your screen should look similar to the screenshot below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr6.png" width="742" /></p>
+</div>
 <h2 id="computing-proximity-to-layers">3.0 Computing proximity to layers</h2>
+<p>After creating DEM layers, we will now learn how to use raster GIS operation to derive analytical layers from the original geographic layers.</p>
 <p>Using QGIS’ Closeness (Raster Distance) function, generate a proximity to roads layer. However, we must first rasterise the roads layer before proceeding with the computation. This is because the Proximity (Raster Distance) function requires a raster input GIS layer.</p>
 <h3 id="creating-attribute-field-for-rasterising">3.1 Creating attribute field for rasterising</h3>
 <p>Before we can rasterise the roads layer, we need to add a control attribute field in the roads layer.</p>
 <p>At the Layers panel, right-click on Roads layer &gt; Open Attribute Table. The attribute table of roads layer will appear.</p>
 <p>From the menu bar of roads layer attribute table, click on Open field calculator icon.The Field Calculator dialog window appears.</p>
 <p>Keep Create a new field option checks. For Output field name, type POI_CODE. At the Expression pane, type 1. Your screen should look similar to the figure below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr7.png" width="176" /></p>
+</div>
+<p>Click on OK button to run the function.</p>
+<p>You will notice that a new field called POI_CODE has been added into the attribute table of roads GIS layer. Also note that all the records are indicated with POI_CODE values equals to 1. Save the editing. Now we are now ready to rasterize the roads layer.</p>
+<h2 id="rasterizing-road-layer">4.0 Rasterizing road layer</h2>
+<ul>
+<li><p>From the menu bar, select Raster -&gt; Conversion -&gt; Rasterise (Vector to Raster).The Raster (Vector to Raster) dialog window appears.</p></li>
+<li><p>For Input layer, select Roads from the drop-down list.</p></li>
+<li><p>For Field to use for a burn-in value, select POI_CODE from the drop-down list.</p></li>
+<li><p>For Output raster size units, select Georeferenced units.</p></li>
+<li><p>Keep both horizontal and vertical resolutions at 100 (meaning 100m by 100m resolution).</p></li>
+<li><p>For Output extent, click on Calculate from Layer.</p></li>
+<li><p>Select DEM from the drop-down list.</p></li>
+</ul>
+<p>When you are ready, click on Run button.</p>
+<p>When the operation ended, the dialog window will display the operation log. Make it a good practice to read the output display to ensure that the process has completed without any error. After confirming that there is no error. You can close the dialog window.</p>
+<p>You should see a screen similar to this:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/PR8.jpg" /><!-- --></p>
+</div>
 <blockquote>
-<p>DIY:</p>
+<p>DIY: Using the steps you have learned in previous section, save the temporary layer into GeoPackage format. Call the newly exported layer raster_roads. Next, remove the temporary layer from QGIS.</p>
 </blockquote>
-<h2 id="section">4.0</h2>
+<h2 id="working-with-proximity-function-of-qgis">4.1 Working with Proximity function of QGIS</h2>
+<ul>
+<li><p>Now, the Proximity operation of QGIS will be used to compute the proximity to roads layer. For the menu bar, select Raster -&gt; Analysis &lt;- Proximity (Raster Distance). The Proximity (Raster Distance) dialog window appears.</p></li>
+<li><p>For Input layer, select raster_roads from the drop-down list.</p></li>
+<li><p>For Distance units, select Georeferenced coordinates from the drop-down list.</p></li>
+<li><p>For Output data type, select Float32 from the drop-down list.</p></li>
+<li><p>Click on Run button.</p></li>
+</ul>
 <blockquote>
-<p>DIY:</p>
+<p>DIY: Using the steps you had learned, Clip the proximity map to Final_shape and save the newly computed proximity map into GeoPackage format with a resolution of 100m x 100m. Call the layer Road_Prox.</p>
 </blockquote>
+<p>Your screen should look similar to the screenshot below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr9.png" width="491" /></p>
+</div>
+<p>Now we can move on to normalization of the map layer.</p>
+<h2 id="working-with-proximity-function-of-qgis-1">4.2 Working with Proximity function of QGIS</h2>
+<ul>
+<li><p>At the Search pane of Geoprocessing Toolbox panel, type raster calculator. Double-click on Raster calculator of Raster analysis. The dialog window of Raster Calculator appears.</p></li>
+<li><p>At the Layers panel of Raster Calculator dialog window, double-click on Road_Prox, it will appear in the expression. Select the divide key “/” and input the maximum value of the layer you are using. In this case for roads is “13263.8613281250”</p></li>
+<li><p>Remember to add in reference layer such as the final_shape as well as change CRS type into Project CRS.</p></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr10.png" width="480" /></p>
+</div>
+<p>Once ready, click on Run.</p>
+<p>DIY: Using the steps you had learned previously, Save the output into GeoPackage format. Called the output layer road_raster_prox.</p>
+<p>You should see the values normalised now similar to the screen below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr11.png" width="726" /></p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
