@@ -2108,18 +2108,48 @@ Data Preparation
 <div class="d-article">
 <h2 id="objective">1. Objective:</h2>
 <h2 id="getting-started">2. Getting Started</h2>
-<blockquote>
-<p>DIY:</p>
-</blockquote>
-<p>Example</p>
-<h2 id="section">3.0</h2>
-<blockquote>
-<p>DIY:</p>
-</blockquote>
-<h2 id="section-1">4.0</h2>
-<blockquote>
-<p>DIY:</p>
-</blockquote>
+<p>First, open toolbox and type in ‘Raster Calculator’ and open it</p>
+<p>In the Expression box, key in (factor layer) * (assigned weights) for all the individual factors (slope, river, road, forest fire, forest area, urban settlement, airport, seaport)</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/AHP1.png" width="701" /></p>
+</div>
+<ul>
+<li>Please use the values here:</li>
+<li>0.199 * “<a href="mailto:factor_slope@1" class="email">factor_slope@1</a>”</li>
+<li>+ 0.190 * “<a href="mailto:factor_river@1" class="email">factor_river@1</a>”</li>
+<li>+ 0.134 * “<a href="mailto:factor_FF@1" class="email">factor_FF@1</a>”</li>
+<li>+ 0.130 * “<a href="mailto:factor_road@1" class="email">factor_road@1</a>”</li>
+<li>+ 0.145 * “<a href="mailto:factor_forest@1" class="email">factor_forest@1</a>”</li>
+<li>+ 0.105 * “<a href="mailto:factor_ub@1" class="email">factor_ub@1</a>”</li>
+<li>+ 0.063 * “<a href="mailto:factor_airport@1" class="email">factor_airport@1</a>”</li>
+<li>+ 0.04 * “<a href="mailto:factor_seaport@1" class="email">factor_seaport@1</a>”</li>
+</ul>
+<p>For the Reference layer, tick the box for the DEM layer and click OK.</p>
+<p>Click on Run. There would be a new temporary layer called ‘Output’. Save it as a geopackage and name it ‘AHP’</p>
+<p>Open the toolbox again and type in ‘Reclassify by table’. Click into it</p>
+<p>In the reclassification table, click on the three dots and it would bring you into a new page.</p>
+<ul>
+<li>Click on ‘Add row’ ten times.</li>
+<li>For the first row, put in 0.1 as the max and 1 as the value.</li>
+<li>For the next row, put in min as 0.1, max as 0.2 and value as 1. Do this for the rest of the rows</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/AHP2.png" width="700" /></p>
+</div>
+<p>Once you are done. Click on OK to be returned into the previous page. Click on Run</p>
+<p>Notice that a new temporary layer would be created called Reclassification table.</p>
+<p>Save the temporary layer as a geopackage and name it AHP_reclass</p>
+<p>Now, go into properties of AHP_reclass and into Symbology.</p>
+<p>Change the render type to singlenband pseudocolour. Since the range of the AHP_reclass layer only goes from 3 to 8, we will only need to have 6 classes</p>
+<p>Once you have 6 classes, change the value of these 6 classes from 3 to 8.</p>
+<p>Click on the colour ramp and change it to spectral. Your window should look like this</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/AHP3.png" width="813" /></p>
+</div>
+<p>Click on Apply and OK. Your new layer would look like this</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/AHP4.png" width="491" /></p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

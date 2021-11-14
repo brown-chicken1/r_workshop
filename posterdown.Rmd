@@ -44,20 +44,19 @@ The study incorporates open government data and other open source data sets into
   + Preparing Density Maps
   + Preparing Proximity Maps
   + AHP Criteria for Rationalisation
-  + Composite Ranked Layers 
 
 # Results
 
 Task 1: Conclusion
 
 ```{r}
-knitr::include_graphics("img/Commerce.png")
+knitr::include_graphics("img/task1.png")
 ```
 
 Task 2: Conclusion
 
 ```{r}
-knitr::include_graphics("img/Commerce.png")
+knitr::include_graphics("img/task2.png")
 ```
 
 AHP Criteria
@@ -69,7 +68,7 @@ knitr::include_graphics("img/Commerce.png")
 Site Selection
 
 ```{r}
-knitr::include_graphics("img/Commerce.png")
+knitr::include_graphics("img/AHP.png")
 ```
 
 # Next Steps
