@@ -20,8 +20,6 @@ navbar:
         href: t1-dataprep-choropleth.html
       - text: 'Task 1: Preparation of Heatmap'
         href: t1-dataprep-heatmap.html
-      - text: 'Task 1: Preparation of Overlay Map'
-        href: t1-dataprep-overlay.html
       - text: 'Task 1: Preparation of Road Density Map'
         href: road-density.html
         

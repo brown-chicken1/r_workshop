@@ -53,6 +53,13 @@ Task 1: Conclusion
 knitr::include_graphics("img/task1.png")
 ```
 
+In task 1, we identified and analysed the study area on key factors:
+1) Population and Demographic -  Places with higher proportion of seniors or elderly, who are not considered economically productive, would mean more social support needed to empower them, and thus be a less suitable location.
+2) Economic and Businesses - There are various 
+3) Transport and Communication - 
+4) Infrastructures - 
+5) Environment and Hazards - 
+
 Task 2: Conclusion
 
 ```{r}
