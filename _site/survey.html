@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>Test Website: Task 1: Survey Results</title>
@@ -1859,7 +1860,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2189,21 +2193,21 @@ Data Preparation
 </div>
 <p>While our study area is not near the epicenter of the earthquake, we can see that the seismic waves are able to be felt in our study area. We can see that the seismic waves are coming from the coastal area in the western side of our study area. This may give rise to potential typhoons and/or tsunamis due to the seismic waves.</p>
 <h2 id="major-rivers-with-digital-elevation">5.3 Major rivers with digital elevation</h2>
-<p>For digital elevation, the DEM map gave a range of -77m under sea level to 635m above sea level. We would want to avoid areas with low elevation and especially if it is close to water bodies (lakes and rivers) so as to avoid flash floods.</p>
+<p>For digital elevation, the DEM map gave a range of -77m under sea level to 289m above sea level. We would want to avoid areas with low elevation and especially if it is close to water bodies (lakes and rivers) so as to avoid flash floods.</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/E1.png" width="150" /></p>
+<p><img src="img/E1.png" width="170" /></p>
 </div>
-<p>Firstly, we made any area below sea level as blue to signify that these areas are either filled with water or are extremely likely to. After doing some research (i will link), we realised that there is no optimal altitude for cities. However, areas with less than 10m above sea level are considered dangerously low-lying and susceptible to flash floods. Hence we considered anything below 10m as dangerous (red) and anything above 100m would be considered safe.</p>
+<p>Firstly, we made any area below sea level as blue to signify that these areas are either filled with water or are extremely likely to. Areas with less than 10m above sea level are considered dangerously low-lying and susceptible to flash floods. Hence we considered anything below 10m as dangerous (red-orange) and anything above 15 would be considered relatively safe in the near future. Any area with an elevation of above 50m and 100m would be considered “mountainous areas”, hence we have these areas in light and dark shades of yellow.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/E2.png" width="1754" /></p>
 </div>
 <p>We also added layers of all major rivers and lakes in our study area and changed all their colours to dark blue. We can see that the areas around the lakes and rivers are mostly low-lying with elevation of around 10m. Unsurprisingly, the coastal areas of the study area are all below 10m elevation and the elevation would get higher the further we are from the coastal areas.</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/E3.jpg" /><!-- --></p>
+<p><img src="img/E3.png" width="1754" /></p>
 </div>
 <p>The northern region of the study area, while does have some area well above 50m, is surrounded by a large portion of low lying area Even close proximity around smaller streams are not suitable for settlements as the elevation is around 15m which would still run the risk of a flash flood during heavy rainfall.</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/E4.jpg" /><!-- --></p>
+<p><img src="img/E4.png" width="1754" /></p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
