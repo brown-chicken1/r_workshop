@@ -32,16 +32,25 @@ The decision criteria should be in such a way that the threshold allows for at l
 
 From the DEM layer, the gradient of the land was calculated. Areas with lower gradient scored higher, and areas with a steeper gradient scored lower. The elevation itself was excluded from the analysis, as it is the change in elevation, rather than the absolute elevation, that matters. 
 
+![](images/results/slope.png)
 
-
+Most of the terrain is rlatively flat and thus scores very well. Looking to the southwest of the map, there are a few areas that are deemed more unsuitable because of the hilly terrain, as further inland west into the study area, it starts to get into mountaineous territory. As it is linked to an increase in construction costs, this area might a potential concern.
 
 > It should be away from potential natural disaster risk areas such as sea coasts, major rivers and volcanoes.
 
 As stated in the site survey analysis from task 1, there are no major volcanoes in the study area, therefore they were not incorporated into the analysis. The major areas of consideration were the sea coast and the 2 major rivers, the Mahakam River and the Balikpapan Bay, which a buffer region was implemented. The smaller regions in the study area did not have a buffer.
 
+![](images/results/river.png)
+
+As can be seen, the major areas of concern are the area near the Mahakam River and the associated streams surrounding it. However, as the river cover as a percentage of the study area is not very large, there still is a high proportion of area that is still suitable, going by this criteria alone.
+
 > It should be near to current urban settlement areas but not at the current major settlement areas.
 
 Similarly, only urban settlement areas were considered in the analysis. Therefore, being close to any settlement areas outside of Samarinda and Balikpapan city limits would not negatively impact the site suitability score.
+
+![](images/results/settlement.png)
+
+As we are unable to build exactly on the urban settlement, the region that is exactly on the settlement is classed as 0. Increasingly, it is obvious that most areas of the map score higher than 0.5, due to their proximity to     
 
 > It should avoid natural forest as much as possible.
 
