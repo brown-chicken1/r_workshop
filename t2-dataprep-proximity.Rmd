@@ -20,8 +20,20 @@ knitr::opts_chunk$set(echo = FALSE)
 Example 
 
 
+## 3.0 Computing proximity to layers
+Using QGIS' Closeness (Raster Distance) function, generate a proximity to roads layer. However, we must first rasterise the roads layer before proceeding with the computation. This is because the Proximity (Raster Distance) function requires a raster input GIS layer.
 
-## 3.0 
+### 3.1 Creating attribute field for rasterising
+Before we can rasterise the roads layer, we need to add a control attribute field in the roads layer.
+
+At the Layers panel, right-click on Roads layer > Open Attribute Table. The attribute table of roads layer will appear.
+
+From the menu bar of roads layer attribute table, click on Open field calculator icon.The Field Calculator dialog window appears.
+
+Keep Create a new field option checks.
+For Output field name, type POI_CODE.
+At the Expression pane, type 1.
+Your screen should look similar to the figure below.
 
 >DIY: 
 

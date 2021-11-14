@@ -2112,11 +2112,17 @@ Data Preparation
 <p>DIY:</p>
 </blockquote>
 <p>Example</p>
-<h2 id="section">3.0</h2>
+<h2 id="computing-proximity-to-layers">3.0 Computing proximity to layers</h2>
+<p>Using QGIS’ Closeness (Raster Distance) function, generate a proximity to roads layer. However, we must first rasterise the roads layer before proceeding with the computation. This is because the Proximity (Raster Distance) function requires a raster input GIS layer.</p>
+<h3 id="creating-attribute-field-for-rasterising">3.1 Creating attribute field for rasterising</h3>
+<p>Before we can rasterise the roads layer, we need to add a control attribute field in the roads layer.</p>
+<p>At the Layers panel, right-click on Roads layer &gt; Open Attribute Table. The attribute table of roads layer will appear.</p>
+<p>From the menu bar of roads layer attribute table, click on Open field calculator icon.The Field Calculator dialog window appears.</p>
+<p>Keep Create a new field option checks. For Output field name, type POI_CODE. At the Expression pane, type 1. Your screen should look similar to the figure below.</p>
 <blockquote>
 <p>DIY:</p>
 </blockquote>
-<h2 id="section-1">4.0</h2>
+<h2 id="section">4.0</h2>
 <blockquote>
 <p>DIY:</p>
 </blockquote>
