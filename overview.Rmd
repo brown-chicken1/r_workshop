@@ -78,13 +78,6 @@ The project will comprise of, but not limited to the followings steps:
 - Preparing site suitability analysis report including detail discussion of the analysing method used.
 - Preparing poster and project webpage.
 
-## Project Team
-
-```{r}
-knitr::include_graphics("img/ganntchart.png")
-```
-
-
 ## Project schedule (Gantt chart)
 
 ```{r}
