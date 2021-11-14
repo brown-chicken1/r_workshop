@@ -31,8 +31,6 @@ navbar:
         href: t2-dataprep-proximity.html
       - text: 'Task 2: AHP Criteria for Rationalisation'
         href: t2-dataprep-ahp.html
-      - text: 'Task 2: Composite Ranked Layer'
-        href: t2-dataprep-ranking.html
       
     - text: "Report of Survey"
       href: survey.html
