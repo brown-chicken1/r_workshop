@@ -75,21 +75,22 @@ Site Selection
 knitr::include_graphics("img/AHP.png")
 ```
 
-Site selection overview:
+The final location that has the most favourable conditions is in East Kalimantan, Makarti as highlighted in the map above. 
+
+Overview of Selected Site:
+
 * It does not have steep slope or is close to rivers or coastline and hence would not be susceptible to flooding.
 + It is one of the few areas with low incidences of forest fire, and also would have less environmental destruction because the locations of forests are not there.
 + While it is far away from seaports they are not weighted highly in our analysis, and there are 2 existing airports which can be redeveloped for the capital’s needs, and one more international airport that serves Samarinda.
 
 # Next Steps
 
-Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis tempus eleifend. Aliquam sagittis dictum ipsum, quis viverra ligula eleifend ut. Curabitur sagittis vitae arcu eget faucibus. In non elementum felis. Duis et aliquam nunc. Nunc pulvinar sapien nunc, vel pretium nisi efficitur in. Fusce fringilla maximus leo et maximus. Fusce at ligula laoreet, iaculis mi at, auctor odio. Praesent sed elementum justo. Aenean consectetur risus rhoncus tincidunt efficitur. Praesent dictum mauris at diam maximus maximus [@R-posterdown].
+Moving forward, we would further analyse in detail of the selected site with more factors such as Military, Economic, Political, Education, Healthcare or even to the Race and Ethnicity that has been excluded in this study. This would allow for a more robust and concrete selection to ensure the sustainability and well-being of the country.
 
 # Conclusion
 
-Try `posterdown` out! Hopefully you like it!
-
-```{r, include=FALSE}
-knitr::write_bib(c('knitr','rmarkdown','posterdown','pagedown'), 'packages.bib')
-```
+We acknowledge that this differs from various online sources that have rumoured the new city to be between Balikpapan and Samarinda. While we are unsure of the exact rationale behind their decision to locate the new capital between Balikpapan and Samarinda, based on the evidence that we have gathered, and the weights we put on different factors, we believe that our weightage of environmental risks would be relatively higher. 
 
 # References
+
+Thorne, Brent. 2021. Posterdown: Generate PDF Conference Posters Using r Markdown. https://github.com/brentthorne/posterdown.
