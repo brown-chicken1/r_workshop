@@ -124,7 +124,16 @@ The last two factors, our team believes, are “good-to-haves”. The distance t
 
 # 3. Implementing the Analysis
 
-![](images/results/overall.png)
+Selected Site:
+
+```{r}
+knitr::include_graphics("img/3.png")
+```
+
+```{r}
+knitr::include_graphics("img/123.jpg")
+```
+
 Based on the analysis, several areas, mostly clustered around the regions in the north and southwest, have been identified as suitable locations. Based on a threshold value of 0.6 as acceptable, the suitable sites are outlined in green.
 
 We have identified the most suitable site there. Although it does not score the highest on the scale, areas that score 9 or 10 are significantly smaller and do not fit the 4500 to 5500 hectare definition that is required of the location. Furthermore, although the mountaineous area at the southwest of the study do quite well, it is likely that in order to get to that area in the first place, one would still need to traverse steep slopes, which would expense time and resources.
@@ -134,12 +143,6 @@ In view of the size constraints, therefore, we believe that the chosen area woul
 - It does not have steep slope or is close to rivers or coastline and hence would not be susceptible to flooding.
 - It is one of the few areas with low incidences of forest fire, and also would have less environmental destruction because the locations of forests are not there.
 - While it is far away from seaports they are not weighted highly in our analysis, and there are 2 existing airports which can be redeveloped for the capital's needs, and one more international airport that serves Samarinda.
-
-Selected Site:
-
-```{r}
-knitr::include_graphics("img/3.png")
-```
 
 ## 3.1 Referencing Vector layers
 
