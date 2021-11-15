@@ -132,7 +132,122 @@ In view of the size constraints, therefore, we believe that the chosen area woul
 - It is one of the few areas with low incidences of forest fire, and also would have less environmental destruction because the locations of forests are not there.
 - While it is far away from seaports they are not weighted highly in our analysis, and there are 2 existing airports which can be redeveloped for the capital's needs, and one more international airport that serves Samarinda.
 
+Selected Site
+```{r}
+knitr::include_graphics("img/3.png")
+```
+
+## 3.1 Referencing Vector layers
+
+### 3.1.1 Population and Demographic (Density by District)
+
+
+```{r}
+knitr::include_graphics("img/k1.png")
+```
 
 
 
+```{r}
+knitr::include_graphics("img/k1.png")
+```
+
+
+
+```{r}
+knitr::include_graphics("img/k1.png")
+```
+
+
+
+### 3.1.2 Economic and Businesses
+
+Agriculture
+
+```{r}
+knitr::include_graphics("img/k4.png")
+```
+
+Mining
+
+```{r}
+knitr::include_graphics("img/k5.png")
+```
+
+Commerce
+
+```{r}
+knitr::include_graphics("img/k6.png")
+```
+
+
+### 3.1.3 Transport and Communication
+
+Airports
+
+```{r}
+knitr::include_graphics("img/k7.png")
+```
+
+Bus Terminals
+
+```{r}
+knitr::include_graphics("img/k8.png")
+```
+
+Seaports
+
+```{r}
+knitr::include_graphics("img/k9.png")
+```
+
+Roads
+
+```{r}
+knitr::include_graphics("img/k10.png")
+```
+
+```{r}
+knitr::include_graphics("img/k11.png")
+```
+
+### 3.1.4 Infrastructures
+
+Buildings
+
+```{r}
+knitr::include_graphics("img/k12.png")
+```
+
+Electricity Network
+
+```{r}
+knitr::include_graphics("img/k13.png")
+```
+
+Water Supply (distributors)
+
+```{r}
+knitr::include_graphics("img/k14.png")
+```
+
+### 3.1.5 Environment and Hazard
+
+Forest Fire 
+
+```{r}
+knitr::include_graphics("img/k15.png")
+```
+
+Earthquake
+
+```{r}
+knitr::include_graphics("img/k16.png")
+```
+
+Major rivers with digital elevation
+
+```{r}
+knitr::include_graphics("img/k17.png")
+```
 
