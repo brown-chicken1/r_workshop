@@ -3,6 +3,7 @@ title: "Overview of Project"
 description: |
   This website comprises an overview of how we wish to tackle the issue of site selection and analysis of a suitable site for the new Jakarta capital city.
   
+  A more comprehensive analysis, with citations, is available in our full report
 site: distill::distill_website
 ---
 This project serves to recommend a suitable site for the construction of a new capital city in Indonesia. Jakarta, Indonesia’s capital, has long been sinking, sometimes by as much as 10cm a year. A key reason has been the issue with the terrain in Jakarta and human intervention – the poor water network in Indonesia, and especially Jakarta, combined with the huge population, means that a large number of people have to turn to obtaining their own water sources in order to survive. This has resulted in them extracting groundwater, leading to the terrain above it sinking. [1] Some have reasoned that the discriminatory systems of the past when Jakarta was a Dutch colony led to the unequal distribution of infrastructure, a problem that has persisted to this day. [2] It is expected that Jakarta would eventually sink below sea level, a major concern given its status as a capital city, but even more so for the citizens living there, exacerbated by the concerns for climate change.
