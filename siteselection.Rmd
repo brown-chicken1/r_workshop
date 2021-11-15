@@ -187,7 +187,7 @@ Having little to no buildings within our selected site is ideal when starting to
 ## Forest Fire 
 
 ```{r}
-knitr::include_graphics("img/k15.png")
+knitr::include_graphics("img/k155.png")
 ```
 
 While the study area has many occurance of forest fires, we avoided the darkest shade in our selection in order to reduce the risks of potential forest fire. Our selected site however has encompass nearby frequent forest fire however, it would not be the case once you build the capital there which reduces the forested area and hence reducing forest fires.
