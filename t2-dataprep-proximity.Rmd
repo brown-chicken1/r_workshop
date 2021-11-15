@@ -1,7 +1,7 @@
 ---
-title: "Data rasterization and proximity mapping."
+title: "Proximity Mapping"
 description: |
-  In this section, you will prepare and create raster layers using vectors as well as creating a proximity (distance) map to aid in the site selection for task 2
+  In this section, we will create a proximity (distance) map to for site suitability analysis
 output: distill::distill_article
 ---
 
@@ -10,127 +10,42 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## 1. Objective: 
-The objective of this section is to create raster layers and further using the raster layers to create proximity maps (distance) as well as to normalise the values of the proximity map in order to accurate derive selection criteria analysis from it.
 
+The objective of this section is to use the raster layers from the data preparation section to create proximity maps (distance) as well as to normalise the values of the proximity map in order to accurate derive selection criteria analysis from it.
 
 ## 2. Getting Started
 
-You will learn how to create raster and proximity map layers.before that, we will be installing a plugin called serval. Serval is a Raster editing tools, you can select and apply a modification to a chosen part of a raster.
+### 2.1 Clipping DEM to Study Area
 
-Click on plugin > search “Serval”.
+We will need to clip the raster layers to the study area.
 
-```{r}
-knitr::include_graphics("img/pr1.png")
-```
-
-Click Install, you should be able to see it downloaded similar to the screenshot below.
-
+From processing toolbox select under Raster > Clip as Mask Layer. Input DEM inside and polygon select Final_shape. 
+To ensure the no data values show up correctly, assign '99999999' to  "specific nodata value to output bands". We should see something similar to this.
 
 ```{r}
-knitr::include_graphics("img/download1.png")
-```
-
-## 2.1 Importing raster GIS data layer
-Under the Layer tab > select Add Layer > Raster Layer. The data source manager window will pop up.
-From source: select under the Provinsi Kalimantan Timur folder, import DEM SRTM 30M KALIMANTAN TIMUR.tif into the qGIS project.
-
-Your screen should look similar to the figure below.
-
-```{r}
-knitr::include_graphics("img/pr2.png")
-```
-
-Using previous steps, save the layer into geopackage format and rename the file as DEM, change CRS to project CRS, change the layer resolution to 100width and 100 height. Once ready, click on save.
-
-```{r}
-knitr::include_graphics("img/pr3.png")
-```
-
-Next we will use Serval to select the DEM layer and change the values 
-
-```{r}
-knitr::include_graphics("img/pr4.png")
-```
-
-## 2.2 Working with SAGA clip raster with polygon
-
-From processing toolbox under SAGA, select clip raster with polygon. Input DEM inside and polygon select Final_shape.
-
-```{r}
-knitr::include_graphics("img/pr5.png")
+knitr::include_graphics("img/clip1.png")
 ```
 
 This is to clip the DEM so that it will be aligned to the final_shape of our Study Area.
 
->DIY: Once done, save the DEM layer as Geopackage and rename it as ClippedDEM
+Repeat for the other raster layers.
 
-Your screen should look similar to the screenshot below.
+>Following instructions stated in other parts of the guide we have to save the new raster layers as layers in the GeoPackage. Ensure that ALL height and width of raster grids are set to 100 exactly.
 
 ```{r}
 knitr::include_graphics("img/pr6.png")
 ```
 
-## 3.0 Computing proximity to layers
-After creating DEM layers, we will now learn how to use raster GIS operation to derive analytical layers from the original geographic layers.
-
-Using QGIS' Closeness (Raster Distance) function, generate a proximity to roads layer. However, we must first rasterise the roads layer before proceeding with the computation. This is because the Proximity (Raster Distance) function requires a raster input GIS layer.
-
-### 3.1 Creating attribute field for rasterising
-Before we can rasterise the roads layer, we need to add a control attribute field in the roads layer.
-
-At the Layers panel, right-click on Roads layer > Open Attribute Table. The attribute table of roads layer will appear.
-
-From the menu bar of roads layer attribute table, click on Open field calculator icon.The Field Calculator dialog window appears.
-
-Keep Create a new field option checks.
-For Output field name, type POI_CODE.
-At the Expression pane, type 1.
-Your screen should look similar to the figure below.
-
-```{r}
-knitr::include_graphics("img/pr7.png")
-```
-Click on OK button to run the function.
-
-You will notice that a new field called POI_CODE has been added into the attribute table of roads GIS layer. Also note that all the records are indicated with POI_CODE values equals to 1. Save the editing.
-Now we are now ready to rasterize the roads layer.
-
-## 4.0 Rasterizing road layer
-* From the menu bar, select Raster -> Conversion -> Rasterise (Vector to Raster).The Raster (Vector to Raster) dialog window appears.
-
-+ For Input layer, select Roads from the drop-down list.
-+ For Field to use for a burn-in value, select POI_CODE from the drop-down list.
-+ For Output raster size units, select Georeferenced units.
-+ Keep both horizontal and vertical resolutions at 100 (meaning 100m by 100m resolution).
-+ For Output extent, click on Calculate from Layer.
-+ Select DEM from the drop-down list.
-
-When you are ready, click on Run button.
-
-When the operation ended, the dialog window will display the operation log. Make it a good practice to read the output display to ensure that the process has completed without any error. After confirming that there is no error. You can close the dialog window.
-
-You should see a screen similar to this:
-
-```{r}
-knitr::include_graphics("img/PR8.jpg")
-```
- 
->DIY: Using the steps you have learned in previous section, save the temporary layer into GeoPackage format. Call the newly exported layer raster_roads. Next, remove the temporary layer from QGIS.
-
-
-## 4.1 Working with Proximity function of QGIS
+## 3. Creating the Proximity Map
 
 * Now, the Proximity operation of QGIS will be used to compute the proximity to roads layer.
-For the menu bar, select Raster -> Analysis <- Proximity (Raster Distance). The Proximity (Raster Distance) dialog window appears.
+For the menu bar, select Raster -> Analysis -> Proximity (Raster Distance). In the window that appears, enter the following:
 
-+ For Input layer, select raster_roads from the drop-down list.
-+ For Distance units, select Georeferenced coordinates from the drop-down list.
-+ For Output data type, select Float32 from the drop-down list.
-+ Click on Run button.
-
->DIY: Using the steps you had learned, Clip the proximity map to Final_shape and save the newly computed proximity map into GeoPackage format with a resolution of 100m x 100m. Call the layer prox_road.
-
-Your screen should look similar to the screenshot below.
+  + Input layer, select raster_roads from the drop-down list.
+  + For Distance units, select Georeferenced coordinates from the drop-down list.
+  + For Output data type, select Float32 from the drop-down list.
+  
+After running, the output should be similar to this:
 
 ```{r}
 knitr::include_graphics("img/pr9.png")
@@ -138,50 +53,68 @@ knitr::include_graphics("img/pr9.png")
 
 Now we can move on to normalization of the map layer.
 
-## 4.2 Clipping proximity map to study area 
+## 4. Clipping the Proximity Map 
 
 * At the Search pane of Geoprocessing Toolbox panel, type 'Clip Raster by Mask Layer'. Double-click on Clip Raster by Mask Layer. The dialog window of Clip Raster by Mask Layer appears.
 
-For the input layer of the Clip Raster by Mask Layer window, put in prox_road. For the mask layer, put in final_area.
+For the input layer of the Clip Raster by Mask Layer window, put in prox_road. For the mask layer, put in FinalShape.
 
 For the Source CRS and Target CRS, ensure that both of them are EPSG : 23845 DGN95 / Indonesia TM-3 zone 54.1. 
 
-For the section 'Assign a specific nodata value to output bands [optional]', change it to 99999999. Your screen should look like this :
+For the section 'Assign a specific nodata value to output bands [optional]', change it to 99999999. We should see this:
 
 ```{r}
 knitr::include_graphics("img/clip1.png")
 ```
 
-When you are done, click on 'Run'. A new layer called Clipped by Mask Layer would appear. Save it as a geopackage and call it clippedprox_road.
+When we are done, click on 'Run'. A new layer called Clipped by Mask Layer would appear. Save it as a geopackage and call it clippedprox_road, keeping in mind the project CRS.
 
 
-## 4.3 Working with Raster Calculator function of QGIS
+## 5 Using Raster Calculator
 
-* At the Search pane of Geoprocessing Toolbox panel, type 'raster calculator'. Double-click on Raster calculator of Raster analysis. The dialog window of Raster Calculator appears.
+* At the Search pane of Processing Toolbox panel on the right hand side of the window, type 'raster calculator'. Double-click on Raster calculator of Raster analysis. The dialog window of Raster Calculator appears.
 
-+ At the Layers panel of Raster Calculator dialog window, double-click on clippedprox_road, it will appear in the expression. Select the divide key “/” and input the maximum value of the layer you are using. In this case for roads is “13263.8613281250”
-+ Remember to add in reference layer such as the final_shape as well as change CRS type into Project CRS. 
++ At the Layers panel of Raster Calculator dialog window, double-click on clippedprox_road, it will appear in the expression. Select the divide key “/” and input the maximum value of the layer you are using. In this case for roads is “13263.8613281250”. We can find out the maximum and minimum value by going to right click on the proximity map layer > Properties and scroll down to bands.
+
++ We add in reference layer  (FinalShape) as well as change CRS type into Project CRS. 
 
 ```{r}
 knitr::include_graphics("img/pr10.png")
 ```
 
-Once ready, click on Run.
++ After this is done, save the clipped layer as a GeoPackage layer. Give it an appropriate name like "factor_road".
 
-DIY: Using the steps you had learned previously,  Save the output into GeoPackage format. Called the output layer road_raster_prox. 
-
-You should see the values normalised now similar to the screen below.
++ The output should be somewhat similar to below:
 
 ```{r}
 knitr::include_graphics("img/pr11.png")
 ```
 
-## 5.0 Working with Proximity function of QGIS
+We then have to repeat these steps for:
 
->* DIY: Using the steps you learnt in this section, replicate the steps to create raster layers and normalised proximity map layers for: 
 + settlements
 + forest
-+ airport
++ airport (make sure the buffer layer is being selected)
 + seaport
 + forest_fire
 + rivers
++ Slope. Note: Special Case for normalising the "Slope" layer. There is no need to find the proximity map. Simply go straight to the Raster Calculator and enter the maximum and minimum values of the slope raster layer by going to proximity map layer > Properties and scroll down to bands.
+
+## 6. Changing of Certain Raster Values
+
+For the airport and forest fire layers we need to make sure that the locations themselves have a value of 0. It is only values that are right outside them that take on a value of 1, because it is not logical to build over the airport or settlements as a recommendation.
+
+* We use the Serval tool again. This time we use "Select Raster based on Layer" tool. In the window that opens, select either the Urban Settlements or the Airport Buffer vector layer and then run the command. The raster should be selected in the shape of those two layers.
+
+  ![](images/Serval2.png){width=30%}
+  
+* Following that we  go to the top bar we enter a 0 to indicate non suitability.
+
+![](images/demserval.png){width=80%}
+
+When this is done, we then click on the "Apply Value to Selection" 2 buttons to the right of the number we just input. Then, the value should be changed to 0 for the entire selection.
+
+![](images/demfinal.png){width=80%}
+
+The layer is now ready for future processing.
+

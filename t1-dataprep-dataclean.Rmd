@@ -279,6 +279,65 @@ This section should only be applicable to the airport layer, because the point d
 
 * Following that, we follow the rest of the procedures in the Area Dataset processing in order to merge the vector layers together and then export them.
 
+### Processing Raster (DEM) Layer
+
+There are some erroneous values neaar the wetlands that have to be resolved and this is a rudimentary way of doing ig.
+
+Click on plugin > search “Serval”.
+
+```{r}
+knitr::include_graphics("img/pr1.png")
+```
+
+Click Install, we should be able to see it downloaded similar to the screenshot below.
+
+
+```{r}
+knitr::include_graphics("img/download1.png")
+```
+
+
+Under the Layer tab > select Add Layer > Raster Layer. The data source manager window will pop up.
+From source: select under the Provinsi Kalimantan Timur folder, import DEM SRTM 30M KALIMANTAN TIMUR.tif into the Qgis project.
+
+![](dem.png){width=40%}
+
+
+Using previous steps, save the layer into geopackage format and rename the file as DEM, change CRS to project CRS, then click on save.
+
+We will need to reproject it to 100x100m in order for our further analysis. Go to the Processing Tools on the right hand side and click on Reproject (Warp).
+
+![](images/warp.png){width=40%}
+
+In the window that comes up, make sure that the window settings are set as follows: (The output file resolution in target georeferenced units should be 100)
+
+![](images/warp1.png){width=80%}
+
+We the run the command then we will get a reprojected layer. Again we save that layer into the GeoPackage format and we will use this for further analysis.
+
+
+
+```{r}
+knitr::include_graphics("img/pr3.png")
+```
+
+Next we will use Serval to select the DEM layer and change the values 
+Zooming into the Mangrove layers, there are several anomalies where the pixel value is over 1000. It is not possible for the height level to be above 1000 in that area and not with such a steep gradient.
+
+![](images/demerror.png){width=80%}
+
+We go to serval's select by polygon tool and draw a polygon around it. Then, on the top bar we enter a low value (e.g 10). 
+
+
+```{r}
+knitr::include_graphics("img/pr4.png")
+```
+
+![](images/dem3.png){width=80%}
+
+When this is done, we then click on the "Apply Value to Selection" 2 buttons to the right of the number we just input. Then, the value should be changed to 10 for the entire selection.
+
+The layer is now ready for future processing.
 
 
 

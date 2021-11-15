@@ -2074,16 +2074,13 @@ Data Preparation
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<a href="dataprep.html">Overview of Preparation</a>
 <a href="t1-dataprep-dataclean.html">Task 1: Data Cleaning and Preparation</a>
 <a href="t1-dataprep-choropleth.html">Task 1: Preparation of Choropleth Map</a>
 <a href="t1-dataprep-heatmap.html">Task 1: Preparation of Heatmap</a>
-<a href="t1-dataprep-overlay.html">Task 1: Preparation of Overlay Map</a>
 <a href="road-density.html">Task 1: Preparation of Road Density Map</a>
 <a href="t2-dataprep-dataclean.html">Task 2: Data Cleaning and Preparation</a>
 <a href="t2-dataprep-proximity.html">Task 2: Calculating Proximity Map</a>
 <a href="t2-dataprep-ahp.html">Task 2: AHP Criteria for Rationalisation</a>
-<a href="t2-dataprep-ranking.html">Task 2: Composite Ranked Layer</a>
 </div>
 </div>
 <a href="survey.html">Report of Survey</a>
@@ -2359,6 +2356,36 @@ Data Preparation
 <li><p>After these 2 modifications are complete we then toggle editing off by clicking on the pncil button again then accepting the changes that are made.</p></li>
 <li><p>Following that, we follow the rest of the procedures in the Area Dataset processing in order to merge the vector layers together and then export them.</p></li>
 </ul>
+<h3 id="processing-raster-dem-layer">Processing Raster (DEM) Layer</h3>
+<p>There are some erroneous values neaar the wetlands that have to be resolved and this is a rudimentary way of doing ig.</p>
+<p>Click on plugin &gt; search “Serval”.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr1.png" width="529" /></p>
+</div>
+<p>Click Install, we should be able to see it downloaded similar to the screenshot below.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/download1.png" width="470" /></p>
+</div>
+<p>Under the Layer tab &gt; select Add Layer &gt; Raster Layer. The data source manager window will pop up. From source: select under the Provinsi Kalimantan Timur folder, import DEM SRTM 30M KALIMANTAN TIMUR.tif into the Qgis project.</p>
+<p><img src="dem.png" style="width:40.0%" /></p>
+<p>Using previous steps, save the layer into geopackage format and rename the file as DEM, change CRS to project CRS, then click on save.</p>
+<p>We will need to reproject it to 100x100m in order for our further analysis. Go to the Processing Tools on the right hand side and click on Reproject (Warp).</p>
+<p><img src="images/warp.png" style="width:40.0%" /></p>
+<p>In the window that comes up, make sure that the window settings are set as follows: (The output file resolution in target georeferenced units should be 100)</p>
+<p><img src="images/warp1.png" style="width:80.0%" /></p>
+<p>We the run the command then we will get a reprojected layer. Again we save that layer into the GeoPackage format and we will use this for further analysis.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr3.png" width="284" /></p>
+</div>
+<p>Next we will use Serval to select the DEM layer and change the values Zooming into the Mangrove layers, there are several anomalies where the pixel value is over 1000. It is not possible for the height level to be above 1000 in that area and not with such a steep gradient.</p>
+<p><img src="images/demerror.png" style="width:80.0%" /></p>
+<p>We go to serval’s select by polygon tool and draw a polygon around it. Then, on the top bar we enter a low value (e.g 10).</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="img/pr4.png" width="1920" /></p>
+</div>
+<p><img src="images/dem3.png" style="width:80.0%" /></p>
+<p>When this is done, we then click on the “Apply Value to Selection” 2 buttons to the right of the number we just input. Then, the value should be changed to 10 for the entire selection.</p>
+<p>The layer is now ready for future processing.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
