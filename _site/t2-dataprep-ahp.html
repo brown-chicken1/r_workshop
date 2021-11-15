@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #20794d; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,7 +77,7 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.sc { color: #20794d; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -85,24 +85,23 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
-
   <!--radix_placeholder_meta_tags-->
-  <title>Test Website: Data catergorisation and creation for AHP analysis.</title>
+  <title>Group 2: Data catergorisation and creation for AHP analysis.</title>
 
   <meta property="description" itemprop="description" content="In this section, the study will be using the Excel-based AHP library such as the AHP Template provided by SCB Associates."/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Test Website: Data catergorisation and creation for AHP analysis."/>
+  <meta property="og:title" content="Group 2: Data catergorisation and creation for AHP analysis."/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="In this section, the study will be using the Excel-based AHP library such as the AHP Template provided by SCB Associates."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Test Website"/>
+  <meta property="og:site_name" content="Group 2"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Test Website: Data catergorisation and creation for AHP analysis."/>
+  <meta property="twitter:title" content="Group 2: Data catergorisation and creation for AHP analysis."/>
   <meta property="twitter:description" content="In this section, the study will be using the Excel-based AHP library such as the AHP Template provided by SCB Associates."/>
 
   <!--/radix_placeholder_meta_tags-->
@@ -1863,10 +1862,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refs = $(this).attr('data-cites').split(" ");
-        var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
-        }).join("\n");
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2065,7 +2061,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
-<a href="index.html" class="title">Test Website</a>
+<a href="index.html" class="title">Group 2</a>
 <a href="overview.html">Overview</a>
 <a href="posterdown.html">Poster</a>
 <div class="nav-dropdown">
@@ -2107,8 +2103,7 @@ Data Preparation
 
 
 <div class="d-article">
-<h2 id="objective">1. Objective:</h2>
-<h2 id="getting-started">2. Getting Started</h2>
+<h2 id="steps-involved">1. Steps involved</h2>
 <p>First, open toolbox and type in ‘Raster Calculator’ and open it</p>
 <p>In the Expression box, key in (factor layer) * (assigned weights) for all the individual factors (slope, river, road, forest fire, forest area, urban settlement, airport, seaport)</p>
 <div class="layout-chunk" data-layout="l-body">

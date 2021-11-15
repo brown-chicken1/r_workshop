@@ -9,11 +9,7 @@ output: distill::distill_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## 1. Objective: 
-
-
-
-## 2. Getting Started
+## 1. Steps involved
 
 First, open toolbox and type in 'Raster Calculator' and open it 
 
