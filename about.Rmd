@@ -1,7 +1,9 @@
 ---
 title: "About this site"
 description: |
-  Some additional details about the website
+  This research study is created by the project team for the fulfilment for SMT201 Geographic Information Systems for Urban Planning.
+  
+  Instructor: Dr. Kam Tin Seong
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +22,15 @@ Please see https://github.com/brown-chicken1/website for our Project GitHub.
 
 # 2.1 Ang Heng Di
 
+Heng di is a second-year undergraduate pursuing a Bachelor of Science in (BSc(IS)), Major in Smart City Management and Technology. Being passionate in utilizing Data to improve the lives of people and places, he joined SMU Business Intelligence and Analytics as a Data Associate and took up various data analytic courses such as Google Data Analytics Specialization and Smartcademy Data Analytic courses. In his free time, he nuture and groom future leaders of Singapore through tutoring and mentoring at Intellect Learning Hub and Chinese Development Assistance Council (CDAC). 
+
+Linkedin: https://www.linkedin.com/in/anghengdi/
+
 # 2.2 Arick Soo
+
+Arick is a second-year undergraduate pursuing a Bachelor of Science in (BSc(IS)), Major in Smart City Management and Technology. As a budding Technologist, he took part in the ASEAN Geo-spatial Challenge recently as he is inspired at how map is driving the next generation mobility experience across all transport types. With Data is at the core on how we make maps smarter, he found ways to utilizes machine learning to solve complex challenges across various transport types allowing his team to emerges as Singapore Finalists and attaining the ASEAN Excellence award. In his free time, he assist with Geo-spatial companies by being a licensed Unmanned Aircraft Pilot to aid in various projects in collaboration with the local town councils.
+
+LinkedIn: https://www.linkedin.com/in/aricksoo/
 
 # 2.3 Sun Hanchen
 
