@@ -94,3 +94,13 @@ We acknowledge that this differs from various online sources that have rumoured 
 # References
 
 Thorne, Brent. 2021. Posterdown: Generate PDF Conference Posters Using r Markdown. https://github.com/brentthorne/posterdown.
+
+G. C. Mildner, J. Johnson, R. Trapa, J. Horwitz, A. Wallace and T. Wright, "Impact of slope on housing development costs," Portland State University, Portland, 2021.
+
+P. Carrion-Mero, J. Briones-Bitar, F. Morante-Carballo, D. Stay-Coello, R. Blanco-Torrens and E. Berrezueta, "Evaluation of Slope Stability in an Urban Area as a Basis for Territorial Planning: A Case Study," Applied Sciences, vol. 11, no. 11, 2011. 
+
+R. B. Sukmara, R. S. Wu and A. Ariyaningsih, "Flood Management in Samarinda, Indonesia: Recent Progress," Preprints, 2021. 
+
+H. N. Salsabila, A. F. Sahitya and P. Mahyatar, "Spatio-temporal pattern analysis of forest fire event in South Kalimantan using integration remote sensing data and GIS for forest fire disaster mitigatio," IOP Publishing, Yogyakarta, 2020.
+
+T. Nikonovas, A. Spessa, S. H. Doerr, G. D. Clay and S. Mezbahuddin, Communications Earth & Environment volume, 2020.
