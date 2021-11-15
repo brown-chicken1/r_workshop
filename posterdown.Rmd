@@ -69,7 +69,7 @@ knitr::include_graphics("img/task2.png")
 AHP Criteria
 
 ```{r}
-knitr::include_graphics("img/Commerce.png")
+knitr::include_graphics("img/select.png")
 ```
 
 Site Selection
