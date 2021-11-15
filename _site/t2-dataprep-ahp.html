@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>Test Website: Data catergorisation and creation for AHP analysis.</title>
@@ -1862,7 +1863,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2112,14 +2116,14 @@ Data Preparation
 </div>
 <ul>
 <li>Please use the values here:</li>
-<li>0.199 * “<a href="mailto:factor_slope@1" class="email">factor_slope@1</a>”</li>
-<li>+ 0.190 * “<a href="mailto:factor_river@1" class="email">factor_river@1</a>”</li>
-<li>+ 0.134 * “<a href="mailto:factor_FF@1" class="email">factor_FF@1</a>”</li>
-<li>+ 0.130 * “<a href="mailto:factor_road@1" class="email">factor_road@1</a>”</li>
-<li>+ 0.145 * “<a href="mailto:factor_forest@1" class="email">factor_forest@1</a>”</li>
-<li>+ 0.105 * “<a href="mailto:factor_ub@1" class="email">factor_ub@1</a>”</li>
-<li>+ 0.063 * “<a href="mailto:factor_airport@1" class="email">factor_airport@1</a>”</li>
-<li>+ 0.04 * “<a href="mailto:factor_seaport@1" class="email">factor_seaport@1</a>”</li>
+<li>0.205 * “<a href="mailto:factor_slope@1" class="email">factor_slope@1</a>”</li>
+<li>+ 0.204 * “<a href="mailto:factor_river@1" class="email">factor_river@1</a>”</li>
+<li>+ 0.128 * “<a href="mailto:factor_ub@1" class="email">factor_ub@1</a>”</li>
+<li>+ 0.121 * “<a href="mailto:factor_forest@1" class="email">factor_forest@1</a>”</li>
+<li>+ 0.124 * “<a href="mailto:factor_FF@1" class="email">factor_FF@1</a>”</li>
+<li>+ 0.113 * “<a href="mailto:factor_road@1" class="email">factor_road@1</a>”</li>
+<li>+ 0.067 * “<a href="mailto:factor_airport@1" class="email">factor_airport@1</a>”</li>
+<li>+ 0.038 * “<a href="mailto:factor_seaport@1" class="email">factor_seaport@1</a>”</li>
 </ul>
 <p>For the Reference layer, tick the box for the DEM layer and click OK.</p>
 <p>Click on Run. There would be a new temporary layer called ‘Output’. Save it as a geopackage and name it ‘AHP’</p>
@@ -2137,15 +2141,14 @@ Data Preparation
 <p>Notice that a new temporary layer would be created called Reclassification table.</p>
 <p>Save the temporary layer as a geopackage and name it AHP_reclass</p>
 <p>Now, go into properties of AHP_reclass and into Symbology.</p>
-<p>Change the render type to singlenband pseudocolour. Since the range of the AHP_reclass layer only goes from 3 to 8, we will only need to have 6 classes</p>
-<p>Once you have 6 classes, change the value of these 6 classes from 3 to 8.</p>
-<p>Click on the colour ramp and change it to spectral. Your window should look like this</p>
+<p>Change the render type to Palette/Unique Colours. Click on Classify and change the colour ramp to RedtoGreen</p>
+<p>Your window should look like this</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/AHP3.png" width="813" /></p>
+<p><img src="img/AHP3.png" width="814" /></p>
 </div>
 <p>Click on Apply and OK. Your new layer would look like this</p>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="img/AHP4.png" width="484" /></p>
+<p><img src="img/AHP4.png" width="498" /></p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->

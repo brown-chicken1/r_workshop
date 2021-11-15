@@ -24,15 +24,16 @@ knitr::include_graphics("img/AHP1.png")
 ```
 
 * Please use the values here:
-+ 0.199 * "factor_slope@1"
-+ \+ 0.190 * "factor_river@1"
-+ \+ 0.134 * "factor_FF@1"
-+ \+ 0.130 * "factor_road@1"
-+ \+ 0.145 * "factor_forest@1"
-+ \+ 0.105 * "factor_ub@1"
-+ \+ 0.063 * "factor_airport@1"
-+ \+ 0.04 * "factor_seaport@1"
++ 0.205 * "factor_slope@1"
++ \+ 0.204 * "factor_river@1"
++ \+ 0.128 * "factor_ub@1"
++ \+ 0.121 * "factor_forest@1"
++ \+ 0.124 * "factor_FF@1"
++ \+ 0.113 * "factor_road@1"
++ \+ 0.067 * "factor_airport@1"
++ \+ 0.038 * "factor_seaport@1"
 
+ 
 For the Reference layer, tick the box for the DEM layer and click OK.
 
 Click on Run. There would be a new temporary layer called 'Output'. Save it as a geopackage and name it 'AHP'
@@ -57,11 +58,9 @@ Save the temporary layer as a geopackage and name it AHP_reclass
 
 Now, go into properties of AHP_reclass and into Symbology.
 
-Change the render type to singlenband pseudocolour. Since the range of the AHP_reclass layer only goes from 3 to 8, we will only need to have 6 classes
+Change the render type to Palette/Unique Colours. Click on Classify and change the colour ramp to RedtoGreen
 
-Once you have 6 classes, change the value of these 6 classes from 3 to 8.
-
-Click on the colour ramp and change it to spectral. Your window should look like this
+Your window should look like this
 
 ```{r}
 knitr::include_graphics("img/AHP3.png")
