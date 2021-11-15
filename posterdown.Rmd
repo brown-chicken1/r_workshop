@@ -43,9 +43,7 @@ We are budding GIS Analyst preparing a study for the planned new capital city as
   + Preparing Proximity Maps
   + AHP Criteria for Rationalisation
 
-# Results
-
-Task 1: Conclusion
+# Task 1: Conclusion
 
 ```{r}
 knitr::include_graphics("img/task1.png")
@@ -53,7 +51,7 @@ knitr::include_graphics("img/task1.png")
 
 In task 1, we identified and analysed the study area on key factors such as, Population and Demographic, Economic and Businesses, Transport and Communication , Infrastructures and Environment and Hazards. Overall, the survey found several strategic sites given the rich agricultural and economic activities. However, many considerations will still need to be taken into account, which will be done in task 2.  
 
-Task 2: Conclusion
+# Task 2: Conclusion
 
 ```{r}
 knitr::include_graphics("img/task2.png")
@@ -61,7 +59,7 @@ knitr::include_graphics("img/task2.png")
 
 In task 2, following a list of criteria, we further create buffers, rasters and proximity maps to mark out areas that are deemed not suitable. We further utilise Raster-based GIS Multiple‐Criteria Decision Analysis (GIS-MCDA), which integrates raster-based GIS modelling as well as the Analytical Hierarchical Process to further identify our study area.
 
-AHP Criteria
+# AHP Criteria
 
 ```{r}
 knitr::include_graphics("img/select.png")
@@ -69,7 +67,7 @@ knitr::include_graphics("img/select.png")
 
 The prioritization of issues were ranked together after the team had come up with various on secondary research sources. The most important factor we agreed on was the gradient of the slope, because of there were many consequences of disregarding slope, and the economic costs involved.
 
-Site Selection
+# Site Selection
 
 ```{r}
 knitr::include_graphics("img/AHP.png")
