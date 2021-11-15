@@ -151,6 +151,15 @@ To measure the extent and severity of forest fires from 2014-2019, counts of for
 knitr::include_graphics("img/Forestfirechoro.png")
 ```
 
+Using count points in polygon to create a choropleth map does not accurately tell us where the forest fires are concentrated at. So we decided to plot a heatmap for the forest fires to get a better understanding as to the precise locations and concentration of the forest fires in our study area.
+
+```{r}
+knitr::include_graphics("img/heatmapFF.png")
+```
+
+The heatmap reveals that the top two districts with the most forest fires does not have forest fires evently spread across the entire district. Rather, most of the forest fires are concentrated in certain areas of the districts. 
+
+
 ## 5.2 Earthquake
 
 We mapped out the seismic waves from the recent 2021 Sulawesi earthquake of magnitude of 6.2
