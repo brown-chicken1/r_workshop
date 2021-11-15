@@ -150,11 +150,11 @@ knitr::include_graphics("img/k1.png")
 ```
 
 ```{r}
-knitr::include_graphics("img/k1.png")
+knitr::include_graphics("img/k2.png")
 ```
 
 ```{r}
-knitr::include_graphics("img/k1.png")
+knitr::include_graphics("img/k3.png")
 ```
 
 ## 3.1.2 Economic and Businesses
