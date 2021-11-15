@@ -53,7 +53,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 * First, we need to merge adjacent road segments together in order to prevent the number of intersections from being overstated. We first go to Vector >Geoprocessing > Dissolve, and in the window that opens, select the OSM road layer as the input layer.
   
-  ![](images/1DataPrep5.png)
+  ![](images/1DataPrep5.png){width=60%}
   
 * In the reuslting temporary layer, open the dissolved layer's atribute table, there should only be one row of data.
   
@@ -63,7 +63,7 @@ knitr::opts_chunk$set(echo = FALSE)
   
 * In the resulting window, just select the newly dissolved layer and click "Run".
   
-  ![](images/1DataPrep7.png)
+  ![](images/1DataPrep7.png){width=60%}
   
 * The final layer that is created, would be soon utilised to create density map. We save the single roads as a new layer in the GeoPackage file.
   
@@ -82,7 +82,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](images/RoadMap6.png)
 
-* Following that, we use the Vector > Analysis Tools > Sum Lines Length to calculate the total length of the lines in the polygon.
+* Following that, we use the Vector > Analysis Tools > Sum Lines Length to calculate the total length of the lines in the polygon. Ensure that the roads are the input layer and the other polygon vector layer is set to the hexagon.
 
-* 
+![](images/RoadMap7.png)
+
+* When this is done we need to change the visual representation on the new temporary layer that is created. Go to right click on the layer > Properties and "Symbology", change the symbology to "Graduated", and the columns are set as "Length". Classify the column by clicking on the classify button and then the values will appear. Leave it as equal count and press apply then close the window.
+
+![](images/RoadMap8.png)
+
+Now, the road density map is complete.
+
    

@@ -22,8 +22,11 @@ output: distill::distill_article
 	+ Distance from Forest Fire: We use the forest fire heatmap layer that had been created in task 1.
 	+ Distance from Road and Distance from Seaport: We use the road and seaport layers that we had prepared in task 1. Follow section 2.1.
 	+ Distance from Forest: We use the forest vector layer. Follow section 2.2.
+	
 ## Section 1.1. For all applicable layers
+
 We will need to add a POI_CODE field in the layer which we intend to rasterise.
+
 * Right click on the layer > Open Attribute Table. In the window that opens, select “Create Calculated Field”.
 
 ![](images/t2p1/t2p1-pref-1.png){width=80%}

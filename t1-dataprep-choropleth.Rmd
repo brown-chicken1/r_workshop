@@ -33,91 +33,114 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## 2. Getting Started
 
->DIY: Using the steps you had learned from the previous section, add All_electricity, All_commerce, All_Watersupply, All_mining, map layer into the project.
+* Add All_commerce layer and forest fire into the project. These should have been merged earlier.
 
-Example of All_Electricity map layer
+Example of map layer
 
 ```{r}
 knitr::include_graphics("img/ch1.png")
 ```
 
-## 3.0 Symbolising Qualitative GIS Data Layers
-In this section, you will learn how to apply and use symbols to catergorise GIS data layers by using their corresponding qualitative data values.
+## 3. Creating Symbols
 
-Using all_water_supply layer, right click on layer > properties. The Layer properties should pop up. 
+* We will need to use symbols to represent the various point layers in order for easier visualisation. 
 
-Select on Symbology > Change size to 10, marker to SVG marker and select water & tap symbol.
+* Using all_water_supply layer, right click on layer > properties. The Layer properties should pop up. 
 
-You should see something like this:
+* Select on Symbology > Change size to 10, marker to SVG marker and select water & tap symbol.
+
+If done correctly this should show:
 
 ```{r}
 knitr::include_graphics("img/ch2.png")
 ```
 
-Click on Apply and OK to close the window. You should see a screen similar to mine.
+If done correctly this should show:
 
 ```{r}
 knitr::include_graphics("img/ch3.png")
 ```
 
-In the GIS and cartography fields, this map is known as a Point symbol map. The benefit of a GIS-based point symbol map is that it can be readily modified. An interactive GIS-based point symbol map is also available. You can move around the digital map and zoom in to see more information on the distribution.
+> If coming from section "Create Overlay Map", follow instructions until here. There is no need to generate the choropleth map in the previous section. Otherwise, continue with the analysis.
 
->DIY: Using the steps you had learned repeat for Airports, Seaports, Bus Terminals, All_Electricity and use appropriate SVG Symbols for them.
-
-## 4.0 Choropleth map using GIS
-
-Choropleth mapping is the process of applying area patterns or graded colors to represent enumeration units such as countries, provinces, states, counties, or census units.
-
-*   The method of data classification, areal symbolization, and the overall map design are the main concerns of choropleth mapping. Here are some of the general rules for choropleth mapping:
-
-  + The data that is believed to be consistent across an entire enumeration unit.
-  + Do not map totals because enumeration units vary in size. Ratios, rates, proportions, and percentages are examples of derived values.
-  + The optimum classification method is determined by the data, the map reader, and the map's purpose.
-  + When classifying data, make sure to cover the entire range of data and avoid overlapping class values. It is suggested that you use no more than six classes.
-  + The colors and patterns used as class symbols must be easily recognized.
+## 4. Creating the Choropleth Map
 
 Using the INTERSECT_NIAGA (Commerce) layer, we can see that it's in point format. When creating the choropleth map, we like to see if the overall distribution in the study area.
 
-Navigate to Processing Toolbox > Count Points in Polygon
+* Navigate to Processing Toolbox > Count Points in Polygon
 
-In Polygon, select Final_Shape (The shape used as basemap for our Study Area)
+* Under Polygon, select Final_Shape (The shape used as basemap for our Study Area)
 
-In Points, select All_Commerce (The points that you want to count)
+* Under Points, select All_Commerce (the points to be used as inputs into choropleth map)
 
 ```{r}
 knitr::include_graphics("img/ch4.png")
 ```
 
-Note that you should skip invalid geometry to ensure smooth process.
+* If there is invalid geometry error, go to the Processing Toolbox on the bottom right hand corner of the page and type "Fix geometries". In the tool that comes up, select the "Fixed Geometry" tool and change the input layer to the Polygon (Final Shape) layer. If the data processing was done properly in the data preparation and cleaning stage, this should not occur.
 
 ```{r}
 knitr::include_graphics("img/ch4_1.png")
 ```
 
-Once everything is in Order, click on Run. It is also a good habit to look through the Logs to ensure there are no errors in the process.
+* Click on Run to start the process.
 
-Once it has successfully run, you will notice that there are a temporary file name Count, and if you check the table attributes, you are able to see that each polygon has a new column appended to it called num_points. This is the number of points that fall within the polygon.
+* A temporary file named Count will appear. Each value in the column NUM_POINTS is the number of points in the polygon.
 
 ```{r}
 knitr::include_graphics("img/ch5.png")
 ```
 
-Do remember to save the layer before proceeding as it is a temporary layer.
+* We save this layer as a laye in the GeoPackage file by right clicking on the layer, selecting "Save Feature As", and choosing the GeoPackage which we are using for the project. Ensure the correct CRS is set (EPSG:23845).
 
-Once saved, click on layer > properties. The Layer properties should pop up. 
+* Once saved, click on layer > properties. The Layer properties should pop up. 
 
-In the symbology table > change style to Graduated > Select desired colour ramp.
+* In the symbology table > change style to Graduated > Select desired colour ramp.
 
-For Mode, select Natural Breaks (Jenks) and click classify. qGIS will automatically classify the values for you. 
+* For Mode, select Equal Count and click classify. This will classify based on percentile. 
 
 ```{r}
 knitr::include_graphics("img/ch6.png")
 ```
 
-Once done, click on APPLY and OK. You should see a screen similar to mine.
+* Click on Apply in order for the classification to come up. Then close the window.
 
 ```{r}
 knitr::include_graphics("img/ch7.png")
 ```
 
->DIY: Using the steps you had learned repeat to create choropleth maps for Population Density by district and Forest Fire.
+>DIY: Using the steps you had learned repeat to createfor Forest Fire.
+
+## 5. Heatmap for Population Density
+
+* This will be done using the study area layer.
+
+* We need to create several fields.
+
+* First we have to right click> Open attribute table. In the layer that comes up, we need to add all the different population groups together. Therefore we have to create a new field.
+
+* Right click on the layer > Open Attribute Table. In the window that opens, select “Create Calculated Field”.
+
+![](images/t2p1/t2p1-pref-1.png){width=80%}
+
+* In the window that opens, make sure ‘Create a New Field’ is selected. Enter “POPULATION” into the field name and sum up all the population layers "U5", "U10" etc. The code should be something like "U5" + "U10" + "U15" ... etc, taking into account that one column equals to the number of people in that column.
+
+* When this is done, we need to calculate the area of each district.
+
+* We repeat the step before but instead of "POPULATION", type "AREA". In the field window, type "AREA". Then click Run to create the calculated field.
+
+![](images/t2p1/10000.png){width=80%}
+
+* Following that, we create a new field called "DENSITY". Repeat the following step but in the field window type "POPULATION" / "AREA", this will divide the population by area to get density.
+
+* If all is done this should come up:
+
+![](images/t2p1/10001.png){width=80%}
+
+* Now, we can follow the steps in the previous section to generate the choropleth map, starting from section 4. Ensure that for the columns to be chosen to generate the choropleth map, it is set to "DENSITY" and not any other column.
+
+* When it is complete, the map should look like this:
+
+![](images/t2p1/10002.png){width=80%}
+
+
