@@ -53,12 +53,9 @@ Task 1: Conclusion
 knitr::include_graphics("img/task1.png")
 ```
 
-In task 1, we identified and analysed the study area on key factors:
-1) Population and Demographic -  Places with higher proportion of seniors or elderly, who are not considered economically productive, would mean more social support needed to empower them, and thus be a less suitable location.
-2) Economic and Businesses - There are various 
-3) Transport and Communication - 
-4) Infrastructures - 
-5) Environment and Hazards - 
+In task 1, we identified and analysed the study area on key factors such as, Population and Demographic, Economic and Businesses, Transport and Communication , Infrastructures and Environment and Hazards. Overall, the survey found several strategic sites given the rich agricultural and economic activities. However, many considerations will still need to be taken into account, which will be done in task 2.  
+
+> In-depth analysis available in the Report of Survey.
 
 Task 2: Conclusion
 
@@ -66,17 +63,32 @@ Task 2: Conclusion
 knitr::include_graphics("img/task2.png")
 ```
 
+In task 2, following a list of criteria, we further create buffers, rasters and proximity maps to mark out areas that are deemed not suitable. We further utilise Raster-based GIS Multiple‐Criteria Decision Analysis (GIS-MCDA), which integrates raster-based GIS modelling as well as the Analytical Hierarchical Process to further identify our study area.
+
+> In-depth analysis available in the Site Selection report
+
 AHP Criteria
 
 ```{r}
 knitr::include_graphics("img/select.png")
 ```
 
+The prioritization of issues were ranked together after the team had come up with various on secondary research sources. The most important factor we agreed on was the gradient of the slope, because of there were many consequences of disregarding slope, and the economic costs involved.
+
+> In-depth report available in the Site Selection report
+
 Site Selection
 
 ```{r}
 knitr::include_graphics("img/AHP.png")
 ```
+
+Site selection overview:
+* It does not have steep slope or is close to rivers or coastline and hence would not be susceptible to flooding.
++ It is one of the few areas with low incidences of forest fire, and also would have less environmental destruction because the locations of forests are not there.
++ While it is far away from seaports they are not weighted highly in our analysis, and there are 2 existing airports which can be redeveloped for the capital’s needs, and one more international airport that serves Samarinda.
+
+> In-depth report available in the Site Selection report
 
 # Next Steps
 
