@@ -89,27 +89,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Test Website: Preparation of Choropleth and other qualitative and quantitative thematic maps.</title>
   
-  <meta property="description" itemprop="description" content="In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS."/>
+  <meta property="description" itemprop="description" content="This section is for the preparation of choropleth and qualitative/quantitative maps that will facilitate the site survey analysis."/>
   
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Test Website: Preparation of Choropleth and other qualitative and quantitative thematic maps."/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS."/>
+  <meta property="og:description" content="This section is for the preparation of choropleth and qualitative/quantitative maps that will facilitate the site survey analysis."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Test Website"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Test Website: Preparation of Choropleth and other qualitative and quantitative thematic maps."/>
-  <meta property="twitter:description" content="In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS."/>
+  <meta property="twitter:description" content="This section is for the preparation of choropleth and qualitative/quantitative maps that will facilitate the site survey analysis."/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Preparation of Choropleth and other qualitative and quantitative thematic maps."]},{"type":"character","attributes":{},"value":["In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS.\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Preparation of Choropleth and other qualitative and quantitative thematic maps."]},{"type":"character","attributes":{},"value":["This section is for the preparation of choropleth and qualitative/quantitative maps that will facilitate the site survey analysis.\n"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2056,7 +2056,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Preparation of Choropleth and other qualitative and quantitative thematic maps.","description":"In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS.","authors":[]}
+{"title":"Preparation of Choropleth and other qualitative and quantitative thematic maps.","description":"This section is for the preparation of choropleth and qualitative/quantitative maps that will facilitate the site survey analysis.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2101,7 +2101,7 @@ Data Preparation
 <h1>Preparation of Choropleth and other qualitative and quantitative thematic maps.</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS.</p></p>
+<p><p>This section is for the preparation of choropleth and qualitative/quantitative maps that will facilitate the site survey analysis.</p></p>
 </div>
 
 
@@ -2138,7 +2138,7 @@ Data Preparation
 <li>Forest fire</li>
 </ul></li>
 </ul>
-<h2 id="getting-started">2. Getting Started</h2>
+<h2 id="creating-categorical-map">Creating Categorical Map</h2>
 <ul>
 <li>Add All_commerce layer and forest fire into the project. These should have been merged earlier.</li>
 </ul>
@@ -2146,13 +2146,13 @@ Data Preparation
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/ch1.png" width="516" /></p>
 </div>
-<h2 id="creating-symbols">3. Creating Symbols</h2>
+<h1 id="creating-symbols-andor-area-colour">3. Creating Symbols and/or Area Colour</h1>
+<h2 id="a.-for-point-data-symbols">3a. For point data (symbols)</h2>
 <ul>
 <li><p>We will need to use symbols to represent the various point layers in order for easier visualisation.</p></li>
 <li><p>Using all_water_supply layer, right click on layer &gt; properties. The Layer properties should pop up.</p></li>
-<li><p>Select on Symbology &gt; Change size to 10, marker to SVG marker and select water &amp; tap symbol.</p></li>
+<li><p>Select on Symbology &gt; Click on Simple Marker &gt; Change size to 10, marker to SVG marker and select water &amp; tap symbol.</p></li>
 </ul>
-<p>If done correctly this should show:</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/ch2.png" width="623" /></p>
 </div>
@@ -2160,10 +2160,24 @@ Data Preparation
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/ch3.png" width="530" /></p>
 </div>
+<h2 id="b.-for-area-data-shaded-area">3b. For area data (shaded area)</h2>
+<ul>
+<li><p>We will use different colour to represent the different land type (e.g different types of forest)</p></li>
+<li><p>Using agriculture layer, right click on layer &gt; properties. The Layer properties should pop up.</p></li>
+<li><p>Select on Symbology &gt; Click on Single Symbol and change to “Categorical” at the top.</p></li>
+<li><p>Select the appropriate category (e.g Legenda for the agricultural layer) and click on “Classify”. The colouration should popup like this.</p></li>
+</ul>
+<p><img src="images/choropleth-1.png" /></p>
+<ul>
+<li><p>We click on “Apply” and then ok to close the layer.</p></li>
+<li><p>If done correctly we should see something like this:</p></li>
+</ul>
+<p><img src="images/choropleth-2.png" /></p>
 <blockquote>
-<p>If coming from section “Create Overlay Map”, follow instructions until here. There is no need to generate the choropleth map in the previous section. Otherwise, continue with the analysis.</p>
+<p>If we are only creating a categorical map, other examples include generating maps for electricity, airport, seaport, bus terminal (all point data), and for forest and agriculture (all area data) For ROADS, follow ROAD DENSITY MAP preparation and for forest fire, follow FOREST FIRE preparation. For all other layers continue on forward.</p>
 </blockquote>
-<h2 id="creating-the-choropleth-map">4. Creating the Choropleth Map</h2>
+<h2 id="c.-creating-the-choropleth-map">3c. Creating the Choropleth Map</h2>
+<p>Choropleth map is used for some data like commerce (INTERSECT_NIAGA)</p>
 <p>Using the INTERSECT_NIAGA (Commerce) layer, we can see that it’s in point format. When creating the choropleth map, we like to see if the overall distribution in the study area.</p>
 <ul>
 <li><p>Navigate to Processing Toolbox &gt; Count Points in Polygon</p></li>
@@ -2201,14 +2215,11 @@ Data Preparation
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="img/ch7.png" width="442" /></p>
 </div>
-<blockquote>
-<p>DIY: Using the steps you had learned repeat to createfor Forest Fire.</p>
-</blockquote>
-<h2 id="heatmap-for-population-density">5. Heatmap for Population Density</h2>
+<h2 id="d.-choropleth-map-for-population-density">3d. Choropleth Map for Population Density</h2>
 <ul>
-<li><p>This will be done using the study area layer.</p></li>
+<li><p>This will be done using the study area layer. (FinalShape)</p></li>
 <li><p>We need to create several fields.</p></li>
-<li><p>First we have to right click&gt; Open attribute table. In the layer that comes up, we need to add all the different population groups together. Therefore we have to create a new field.</p></li>
+<li><p>First we have to right click &gt; Open attribute table. In the layer that comes up, we need to add all the different population groups together. Therefore we have to create a new field.</p></li>
 <li><p>Right click on the layer &gt; Open Attribute Table. In the window that opens, select “Create Calculated Field”.</p></li>
 </ul>
 <p><img src="images/t2p1/t2p1-pref-1.png" style="width:80.0%" /></p>
@@ -2224,8 +2235,10 @@ Data Preparation
 </ul>
 <p><img src="images/t2p1/10001.png" style="width:80.0%" /></p>
 <ul>
-<li>Now, we can follow the steps in the previous section to generate the choropleth map, starting from section 4. Ensure that for the columns to be chosen to generate the choropleth map, it is set to “DENSITY” and not any other column.</li>
+<li><p>Now, we can follow the steps in the previous section to generate the choropleth map, starting from section 4. Ensure that for the columns to be chosen to generate the choropleth map, it is set to “DENSITY” and not any other column.</p></li>
+<li><p>When it is complete, the map should look like this:</p></li>
 </ul>
+<p><img src="images/t2p1/10002.png" style="width:80.0%" /></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

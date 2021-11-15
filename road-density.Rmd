@@ -1,5 +1,7 @@
 ---
-title: "Untitled"
+title: "Road Density Map"
+description: |
+  This section describes how to get the road density map using a hexagonal grid, along with the road distribution, which will be used for the site survey analysis.
 
 output: distill::distill_article
 ---

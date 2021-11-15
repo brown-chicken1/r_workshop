@@ -1,7 +1,7 @@
 ---
 title: "Data Preparation and Cleaning"
 description: |
-  A new article created using the Distill format.
+  We will need to get the data into a suitable format for analysis.
 output: distill::distill_article
 ---
 

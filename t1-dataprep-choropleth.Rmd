@@ -1,7 +1,7 @@
 ---
 title: "Preparation of Choropleth and other qualitative and quantitative thematic maps."
 description: |
-  In this section, you will learn how to prepare qualitative and quantitative thematic maps using QGIS. You will also learn how to create a joint table by using the concept of georelational data model of GIS.
+ This section is for the preparation of choropleth and qualitative/quantitative maps that will facilitate the site survey analysis.
 output: distill::distill_article
 ---
 
@@ -31,7 +31,7 @@ knitr::opts_chunk$set(echo = FALSE)
   + Forests
   + Forest fire
 
-## 2. Getting Started
+## Creating Categorical Map
 
 * Add All_commerce layer and forest fire into the project. These should have been merged earlier.
 
@@ -41,15 +41,17 @@ Example of map layer
 knitr::include_graphics("img/ch1.png")
 ```
 
-## 3. Creating Symbols
+# 3. Creating Symbols and/or Area Colour
+
+## 3a. For point data (symbols)
 
 * We will need to use symbols to represent the various point layers in order for easier visualisation. 
 
 * Using all_water_supply layer, right click on layer > properties. The Layer properties should pop up. 
 
-* Select on Symbology > Change size to 10, marker to SVG marker and select water & tap symbol.
+* Select on Symbology > Click on Simple Marker > Change size to 10, marker to SVG marker and select water & tap symbol.
 
-If done correctly this should show:
+
 
 ```{r}
 knitr::include_graphics("img/ch2.png")
@@ -61,9 +63,30 @@ If done correctly this should show:
 knitr::include_graphics("img/ch3.png")
 ```
 
-> If coming from section "Create Overlay Map", follow instructions until here. There is no need to generate the choropleth map in the previous section. Otherwise, continue with the analysis.
+## 3b. For area data (shaded area)
 
-## 4. Creating the Choropleth Map
+* We will use different colour to represent the different land type (e.g different types of forest)
+
+* Using agriculture layer, right click on layer > properties. The Layer properties should pop up. 
+
+* Select on Symbology > Click on Single Symbol and change to "Categorical" at the top.
+
+* Select the appropriate category (e.g Legenda for the agricultural layer) and click on "Classify". The colouration should popup like this.
+
+![](images/choropleth-1.png)
+
+* We click on "Apply" and then ok to close the layer.
+
+* If done correctly we should see something like this:
+
+![](images/choropleth-2.png)
+
+> If we are only creating a categorical map, other examples include generating maps for electricity, airport, seaport, bus terminal (all point data), and for forest and agriculture (all area data) For ROADS, follow ROAD DENSITY MAP preparation and for forest fire, follow FOREST FIRE preparation. For all other layers continue on forward.
+
+
+## 3c. Creating the Choropleth Map
+
+Choropleth map is used for some data like commerce (INTERSECT_NIAGA)
 
 Using the INTERSECT_NIAGA (Commerce) layer, we can see that it's in point format. When creating the choropleth map, we like to see if the overall distribution in the study area.
 
@@ -109,15 +132,13 @@ knitr::include_graphics("img/ch6.png")
 knitr::include_graphics("img/ch7.png")
 ```
 
->DIY: Using the steps you had learned repeat to createfor Forest Fire.
+## 3d. Choropleth Map for Population Density
 
-## 5. Heatmap for Population Density
-
-* This will be done using the study area layer.
+* This will be done using the study area layer. (FinalShape)
 
 * We need to create several fields.
 
-* First we have to right click> Open attribute table. In the layer that comes up, we need to add all the different population groups together. Therefore we have to create a new field.
+* First we have to right click > Open attribute table. In the layer that comes up, we need to add all the different population groups together. Therefore we have to create a new field.
 
 * Right click on the layer > Open Attribute Table. In the window that opens, select “Create Calculated Field”.
 
