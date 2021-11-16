@@ -92,3 +92,8 @@ The project will comprise of, but not limited to the followings steps:
 knitr::include_graphics("img/ganntchart.png")
 ```
 
+## Project Poster
+
+```{r}
+knitr::include_graphics("img/poster.jpg")
+```
